@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNAL PREPARATORY SCHOOL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #202A44;
+            padding: 15px 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+        .logo-text {
+            font-size: 22px;
+            font-weight: bold;
+            color: #E67E22;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+        .nav-links li {
+            position: relative;
+        }
+        .nav-item {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+        .nav-item:hover {
+            color: #E67E22;
+        }
+        .nav-item::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background: #E67E22;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        .nav-item:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .donate-btn {
+            background: #E67E22;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+            box-shadow: 0px 4px 8px rgba(230, 126, 34, 0.3);
+            margin-right: 60px;
+        }
+        .donate-btn:hover {
+            background: #D35400;
+        }
+        .hero {
+            background: url('background.JPG') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            text-align: left;
+            color: white;
+            flex-direction: column;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content h2{
+            font-size: 34px;
+        }
+        .hero-content p{
+            color: #E67E22;
+            font-size: 14px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.4em;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+        .hero-button{
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #D35400;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .hero-button:hover{
+            background-color: #202A44;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-item">Home</a></li>
+            <li><a href="#" class="nav-item">About</a></li>
+            <li><a href="#" class="nav-item">Address</a></li>
+            <li><a href="#" class="nav-item">Completed Projects</a></li>
+            <li><a href="#" class="nav-item">Contacts</a></li>
+        </ul>
+        <button class="donate-btn">Donate</button>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="slideshow">
+            <img src="image1.jpg" class="slide active">
+            <img src="image2.jpg" class="slide">
+            <img src="image3.jpg" class="slide">
+            <img src="image4.jpg" class="slide">
+            <img src="image5.jpg" class="slide">
+            <img src="image6.jpg" class="slide">
+            <img src="image7.jpg" class="slide">
+            <img src="image8.jpg" class="slide">
+            <img src="image9.jpg" class="slide">
+            <img src="image10.jpg" class="slide">
+        </div>
+        <div class="hero-content">
+            <h2>Signal Preparatory is a school aiming at <br>mentoring a coexisting generation...</h2>
+            <p>Good foundation, better future</p>
+            <button class="hero-button">Explore More</button>
+        </div>
+    </section>
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="about-image.jpg" alt="About Signal Preparatory">
+            </div>
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>
+                    Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of 
+                    creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults. 
+                </p>
+                <p>
+                    Fostering creative thinking, problem-solving, and interdependence skills in children and young adults is a 
+                    core responsibility that everyone needs to play in making the world a better place for all.
+                </p>
+                <a href="#" class="learn-more-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="vision-section">
+        <div class="vision-image">
+            <img src="your-image.jpg" alt="Signal Preparatory school">
+        </div>
+        <div class="vision-content">
+            <h2>Our Vision</h2>
+            <p>
+                Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in.
+            </p>
+            <a href="#" class="btn">Donate Now</a>
+        </div>
+    </section>
+    <div class="container">
+        <div class="card">
+            <h2>Welcome from the Headteacher</h2>
+            <p>At Signal School, our guiding principle is ‘Aim High, Be Kind, and Dare to save mother earth’. This is deeply rooted at our core and combined with exceptional teaching.</p>
+        </div>
+        <div class="card">
+            <h2>Visit Signal School</h2>
+            <p>Experience firsthand hospitality, creativity, and a child-based culture in the teaching/learning process.</p>
+            <p>Be part of our movement. Visit and leave a mark of Peace, Love, and Kindness that our generation in the making shall celebrate your visit for life.</p>
+            <a href="#" class="btn">Arrange a Visit</a>
+        </div>
+        <div class="card logo-card">
+            <img src="logo.png" alt="School Logo">
+        </div>
+    </div>
+    <section class="section">
+        <div class="content">
+            <h2>The Ethos and the Environment</h2>
+            <p>At Signal Preparatory School, our ethos goes beyond academia. We believe in nurturing the whole child, promoting coexistence, creativity, and global awareness.</p>
+            <p>Child Art, Child Waste Management, Child Kitchen Gardening, and Child Sports are key in our teaching-learning process.</p>
+            <p>Signal Preparatory School offers an environment where pupils are daily inspired both by the lessons in the classroom and the serenity outside.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="image-container">
+            <img src="secc.jpg" alt="Children with an art project">
+        </div>
+    </section>
+    <h1 class="section-title">Join us and play your part</h1>
+    <h2 class="sub-title">Our thematic areas</h2>
+    <div class="programs-container">
+        <div class="program">
+            <img src="child.jpeg" alt="Signal Preparatory child art">
+            <h3 class="program-title">Child Art</h3>
+            <p class="program-description">Art is a unique style of bringing an imagination to reality. At Signal Preparatory School, we equip pupils with child art skills to spark their creativity and team working abilities.</p>
+        </div>
+        <div class="program">
+            <img src="waste.jpeg" alt="Signal Preparatory waste management">
+            <h3 class="program-title">Child Waste Management</h3>
+            <p class="program-description">With the adopted slogan, “Waste is Waste if Wasted”, at Signal School, we equip learners with the art of managing waste.
+
+                We emphasize the 5R’s of waste management to our pupils. We aim to empower ambassadors who will make Mother Earth a better place to live in.</p>
+        </div>
+    </div>
+    <div class="alternate-container">
+        <!-- First Row -->
+        <div class="alternate-row">
+            <div class="alternate-image-container">
+                <img src="academic.jpg" alt="Children Learning">
+            </div>
+            <div class="alternate-text-container">
+                <h2>Academic Excellence</h2>
+                <p>
+                    Dynamic instruction at Signal School fosters intellectual curiosity, autonomy, and self-assurance. We inspire girls and boys to cultivate distinctiveness in character and innovative thought. This has made our Pupils icons of community transformation.
+                </p>
+            </div>
+        </div>
+
+        <!-- Second Row (Alternated) -->
+        <div class="alternate-row">
+            <div class="alternate-image-container">
+                <img src="happy.jpg" alt="Children Engaging in Activities">
+            </div>
+            <div class="alternate-text-container">
+                <h2>A happy Learning Environment</h2>
+                <p>
+                    Our objective is to ignite a lifelong passion for learning. By challenging the advanced and uplifting the less assured, we ensure each pupil realizes their unique academic potential that can help him be an inspiration the world needs.
+
+Read More
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="kindergarten-counter-section">
+        <div class="counter-box students">
+            <h2 class="count" data-target="150">0</h2>
+            <p>Total pupils at Signal preparatory</p>
+        </div>
+        <div class="counter-box teachers">
+            <h2 class="count" data-target="600">0</h2>
+            <p>School alumni</p>
+        </div>
+        <div class="counter-box activities">
+            <h2 class="count" data-target="300">0</h2>
+            <p>Fun Activities Completed</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo and School Name -->
+            <div class="footer-column logo-column">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo">
+                    <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+                </div>
+                <p class="footer-text">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Home</a></li>
+                    <li><a href="#" class="footer-link">About</a></li>
+                    <li><a href="#" class="footer-link">Address</a></li>
+                    <li><a href="#" class="footer-link">Completed Projects</a></li>
+                    <li><a href="#" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Contact Information -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <p class="footer-text">Email: signalarts1@gmail.com</p>
+                <p class="footer-text">Phone: +256 775413318</p>
+                <p class="footer-text">Phone: +256754406992</p>
+                <p class="footer-text">Address: Bwera, Kasese, Uganda</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
+            <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
