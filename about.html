@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIGNAL PREPARATORY SCHOOL</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+        <style>
+            .heroo {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            background: url('image4.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .mission-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 100px 50px;
+            background: #f4f4f4;
+            position: relative;
+        }
+        .mission-image {
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+            position: absolute;
+            top: -150px; /* More overlap with hero */
+            left: 5%;
+        }
+        .mission-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .mission-content {
+            max-width: 600px;
+            margin-left: 500px; /* Ensures text is visible beside the image */
+        }
+        .mission-content h2 {
+            font-size: 2rem;
+            color: #111;
+            margin-bottom: 20px;
+        }
+        .mission-content p {
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+        }
+        @media (max-width: 1024px) {
+            .mission-image {
+                width: 350px;
+                height: 350px;
+                left: 3%;
+                top: -100px;
+            }
+            .mission-content {
+                margin-left: 380px;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero0 {
+                font-size: 2rem;
+                height: 50vh;
+            }
+            .mission-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 180px;
+            }
+            .mission-image {
+                position: static;
+                width: 300px;
+                height: 300px;
+                margin-bottom: 20px;
+            }
+            .mission-content {
+                margin-left: 0;
+            }
+            .mission-content h2 {
+                font-size: 1.8rem;
+            }
+            .mission-content p {
+                font-size: 1rem;
+            }
+        }
+        .image-text-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+        .image-text-section:hover {
+            transform: scale(1.02);
+        }
+        .text-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+        .text-content h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .text-content p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        .image-container {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .image-text-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+            .text-content {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            .text-content h2 {
+                font-size: 2rem;
+            }
+            .text-content p {
+                font-size: 1rem;
+            }
+        }
+        .text-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .text-section h3 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .text-section p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .text-section {
+                padding: 30px;
+            }
+            
+            .text-section h3 {
+                font-size: 1.8rem;
+            }
+            
+            .text-section p {
+                font-size: 1rem;
+            }
+        }
+        </style>
+
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo" class="logo">
+                <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="address.html" class="nav-item">Address</a></li>
+                <li><a href="projects.html" class="nav-item">Completed Projects</a></li>
+                <li><a href="contacts.html" class="nav-item">Contacts</a></li>
+            </ul>
+            <button class="donate-btn">Donate</button>
+        </nav>
+        <div class="heroo">About Us</div>
+    <section class="mission-section">
+        <div class="mission-image">
+            <img src="circle.jpeg" alt="Community Image">
+        </div>
+        <div class="mission-content">
+            <h2>Our Aim</h2>
+            <p>We aim at grooming a coexisting generation with high levels of creativity, innovations, world awareness and respect for environmental conservation in children and Young adults.</p>
+            <p>SIGNAL is an Acronym for Strategic Initiative for Grooming Natives into Active Art Learners. In this, we define Art as a spiced way of doing something. It is the value we add to whatever we do in life.</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="content">
+            <h2>About Us</h2>
+            <p>Signal Preparatory is a school with a mission to mentor and inspire. It focuses on nurturing a generation with high levels of creativity and innovation. The school promotes world awareness and respects environmental conservation in children and young adults.</p>
+            <p>It was registered in 2018 with the Ministry of Education and sports (MoES) under Registration Number ED/N/22/MoES/2018.</p>
+            <p>It’s every one’s responsibility to work with and mentor a generation. This generation will work towards playing a part in making the world a better place for everyone to live in.</p>
+            
+        </div>
+        <div class="image-container">
+            <img src="seccc.jpg" alt="Signal preparatory school">
+        </div>
+    </section>
+    <section class="full-width-section">
+        <div class="column left">
+            <h2>OUR MISSION</h2>
+            <p>Mentoring a Coexisting generation with high levels of creativity, innovation, world awareness and respect for environmental conservation in children and Young Adults.</p>
+        </div>
+        <div class="column center">
+            <h2>OUR VISION</h2>
+            <p>A generation where every child and young adult commits to coexistence, personal  management and respect for environmental conservation.</p>
+            
+        </div>
+        <div class="column right">
+            <h2>CORE VALUES</h2>
+            <p>Discipline, Creativity, Coexistence, Conservation.</p>
+        </div>
+    </section>
+    <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <p>Our passionate professionals are dedicated to excellence and innovation. Discover the faces behind our success.</p>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="bwambale.webp" alt="Staff Member 1">
+                <h3>Bwambale Henry</h3>
+                <p>Director Signal Preparatory School</p>
+            </div>
+            <div class="team-card">
+                <img src="dep.jpeg" alt="Staff Member 2">
+                <h3>Name of Staff</h3>
+                <p>Chairperson Board</p>
+            </div>
+            <div class="team-card">
+                <img src="headteacher.webp" alt="Staff Member 3">
+                <h3>Biira Alice</h3>
+                <p>Headteacher</p>
+            </div>
+            <div class="team-card">
+                <img src="affairs.jpeg" alt="Staff Member 4">
+                <h3>Name</h3>
+                <p>Academic affairs</p>
+            </div>
+            <div class="team-card">
+                <img src="ass.jpeg" alt="Staff Member 5">
+                <h3>Name</h3>
+                <p>Assistant Team leader</p>
+            </div>
+            <div class="team-card">
+                <img src="daycare.jpeg" alt="Staff Member 6">
+                <h3>Name</h3>
+                <p>Daycare Team leader</p>
+            </div>
+            <div class="team-card">
+                <img src="domestic.jpeg" alt="Staff Member 7">
+                <h3>Name</h3>
+                <p>Domestic Affairs</p>
+            </div>
+            <div class="team-card">
+                <img src="sportsandent.jpeg" alt="Staff Member 8">
+                <h3>Name</h3>
+                <p>Sports and entertainment master</p>
+            </div>
+        </div>
+    </section>
+    <section class="image-text-section">
+        <div class="text-content">
+            <h2>Empowering a Generation: Shaping Creative Minds for a Better Tomorrow</h2>
+            <p>Everyone has a role to play in mentoring an all round generation equipped with high creativity, problem solving and interpersonal skills ready to make Mother Earth a better place for everyone to live in.
+
+                In this, every single action matters. Be the change you want to see in the world.</p>
+        </div>
+        <div class="image-container">
+            <img src="change.webp" alt="Our Mission">
+        </div>
+    </section>
+    <div class="text-section">
+        <h3>Life at Signal School</h3>
+        <p>Life at our School is Just fun. Play is considered a spice that drives our teaching learning process.</p>
+        <p>The more we play is the more we learn and the more we learn is the more we play</p>
+        <p>A concussive learning environment is set and meaningful plays are inspired to promote self discovery, awareness,team working, problem solving among others in our children.</p>
+    </div>
+    <div class="gallery">
+        <img src="g1.webp" alt="Gallery Image 1">
+        <img src="g2.webp" alt="Gallery Image 2">
+        <img src="g3.webp" alt="Gallery Image 3">
+        <img src="g5.webp" alt="Gallery Image 5">
+        <img src="g6.webp" alt="Gallery Image 6">
+        <img src="g7.webp" alt="Gallery Image 7">
+        <img src="g8.webp" alt="Gallery Image 8">
+        <img src="g9.webp" alt="Gallery Image 9">
+        <img src="g10.webp" alt="Gallery Image 10">
+        <img src="g11.webp" alt="Gallery Image 11">
+        <img src="g12.webp" alt="Gallery Image 12">
+        <img src="g13.webp" alt="Gallery Image 13">
+        <img src="g14.webp" alt="Gallery Image 14">
+        <img src="g15.webp" alt="Gallery Image 15">
+        <img src="g23.webp" alt="Gallery Image 23">
+        <img src="g24.webp" alt="Gallery Image 24">
+        <img src="g25.webp" alt="Gallery Image 25">
+        <img src="g16.webp" alt="Gallery Image 16">
+        <img src="g17.webp" alt="Gallery Image 17">
+        <img src="g18.webp" alt="Gallery Image 18">
+        <img src="g19.webp" alt="Gallery Image 19">
+        <img src="g20.webp" alt="Gallery Image 20">
+        <img src="g21.webp" alt="Gallery Image 21">
+        <img src="g22.webp" alt="Gallery Image 22">
+       
+    </div>
+        
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Logo and School Name -->
+                <div class="footer-column logo-column">
+                    <div class="logo-container">
+                        <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo">
+                        <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+                    </div>
+                    <p class="footer-text">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
+                </div>
+        
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Home</a></li>
+                        <li><a href="#" class="footer-link">About</a></li>
+                        <li><a href="#" class="footer-link">Address</a></li>
+                        <li><a href="#" class="footer-link">Completed Projects</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Contact Information -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <p class="footer-text">Email: signalarts1@gmail.com</p>
+                    <p class="footer-text">Phone: +256 775413318</p>
+                    <p class="footer-text">Phone: +256754406992</p>
+                    <p class="footer-text">Address: Bwera, Kasese, Uganda</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Footer Bottom Section -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
+                <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
+            </div>
+        </footer>
+        
+    </body>
+</html>
