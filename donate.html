@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+            color: #333;
+            line-height: 1.6;
+        }
+        .donate-header p{
+            color: #ff914d;
+        }
+        .donate-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .donate-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .donate-header h1 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .donate-header p {
+            font-size: 1.2rem;
+            color: #ff914d;
+            animation: fadeInUp 1s ease;
+        }
+
+        .donate-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .why-donate, .donate-via {
+            flex: 1 1 45%;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .why-donate:hover, .donate-via:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .why-donate h2, .donate-via h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .why-donate p {
+            font-size: 1.1rem;
+            color: #666;
+            text-align: justify;
+        }
+
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .payment-method {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1 1 200px;
+            max-width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .payment-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .payment-method i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .payment-method h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .payment-method p {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Parallax Section */
+        .parallax-section {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            margin: 60px 0;
+        }
+
+        .parallax-image {
+            position: fixed; /* Fixed position for parallax effect */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('donate.jpg') no-repeat center center/cover;
+            z-index: -1; /* Place behind the content */
+            transform: translateZ(0);
+        }
+
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            animation: fadeInUp 1s ease;
+        }
+
+        .parallax-content h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .parallax-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .donate-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .donate-header p {
+                font-size: 1rem;
+            }
+
+            .donate-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .payment-method {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .parallax-content {
+                padding: 20px;
+            }
+
+            .parallax-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .parallax-content p {
+                font-size: 1rem;
+            }
+
+            .why-donate, .donate-via {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (You mentioned you already have this) -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-item">Home</a></li>
+            <li><a href="about.html" class="nav-item">About</a></li>
+            <li><a href="address.html" class="nav-item">Address</a></li>
+            <li><a href="projects.html" class="nav-item">Completed Projects</a></li>
+            <li><a href="contacts.html" class="nav-item">Contacts</a></li>
+        </ul>
+        <button class="donate-btn">Donate</button>
+    </nav>
+    <br>
+
+    <!-- Main Content -->
+    <main class="donate-container">
+        <div class="donate-header">
+            <h1>Support Our Cause</h1>
+            <p>Your contribution helps us make a difference. Every donation counts!</p>
+        </div>
+
+        <!-- Donation Methods -->
+        <div class="donate-content">
+            <div class="why-donate">
+                <h2>Why Donate?</h2>
+                <p>Your donations help us continue our mission to provide quality education and support to underprivileged children. With your support, we can build a brighter future for the next generation.</p>
+            </div>
+            <div class="donate-via">
+                <h2>Donate Via</h2>
+                <div class="payment-methods">
+                    <div class="payment-method">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>MTN Mobile Money</h3>
+                        <p>+256 775413318</p>
+                    </div>
+                    <div class="payment-method">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Airtel Money</h3>
+                        <p>+256754406992</p>
+                    </div>
+                    <div class="payment-method">
+                        <i class="fas fa-university"></i>
+                        <h3>Centenary Bank</h3>
+                        <p>Account: 1234567890</p>
+                    </div>
+                    <div class="payment-method">
+                        <i class="fas fa-university"></i>
+                        <h3>Stanbic Bank</h3>
+                        <p>Account: 0987654321</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parallax Section -->
+        <div class="parallax-section">
+            <div class="parallax-image"></div>
+            <div class="parallax-content">
+                <h2>Together We Can Make a Difference</h2>
+                <p>Your support helps us create a better future for everyone. Join us in our mission to bring positive change to the world.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo and School Name -->
+            <div class="footer-column logo-column">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo">
+                    <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+                </div>
+                <p class="footer-text">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Home</a></li>
+                    <li><a href="#" class="footer-link">About</a></li>
+                    <li><a href="#" class="footer-link">Address</a></li>
+                    <li><a href="#" class="footer-link">Completed Projects</a></li>
+                    <li><a href="#" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Contact Information -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <p class="footer-text">Email: signalarts1@gmail.com</p>
+                <p class="footer-text">Phone: +256 775413318</p>
+                <p class="footer-text">Phone: +256754406992</p>
+                <p class="footer-text">Address: Bwera, Kasese, Uganda</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
+            <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
+        </div>
+    </footer>
+</body>
+</html>
