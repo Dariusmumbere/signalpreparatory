@@ -79,7 +79,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     counters.forEach(counter => observer.observe(counter));
 });
-function toggleNav() {
-    const navLinks = document.getElementById("navLinks");
-    navLinks.classList.toggle("active");
-}
+
