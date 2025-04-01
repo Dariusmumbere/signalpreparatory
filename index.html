@@ -251,25 +251,30 @@
 </head>
 <body>
     <nav class="navbar">
-    <div class="logo-container">
-        <img src="logo.png" alt="Logo" class="logo">
-        <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
-    </div>
-    <!-- Hamburger Menu Icon -->
-    <div class="hamburger" onclick="toggleNav()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <!-- Navbar Links -->
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="nav-item">Home</a></li>
-        <li><a href="about.html" class="nav-item">About</a></li>
-        <li><a href="projects.html" class="nav-item">Projects</a></li>
-        <li><a href="address.html" class="nav-item">Contacts</a></li>
-    </ul>
-    <a href="donate.html"><button class="donate-btn">Donate</button></a>
-</nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+        </div>
+        
+        <!-- Hamburger Menu -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <!-- Navbar Links -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-item">Home</a></li>
+            <li><a href="about.html" class="nav-item">About</a></li>
+            <li><a href="projects.html" class="nav-item">Projects</a></li>
+            <li><a href="address.html" class="nav-item">Contacts</a></li>
+            <li class="mobile-donate-btn"><a href="donate.html"><button class="donate-btn">Donate</button></a></li>
+        </ul>
+        
+        <a href="donate.html" class="desktop-donate-btn"><button class="donate-btn">Donate</button></a>
+    </nav>
     
     <section class="hero">
         <div class="hero-overlay"></div>
