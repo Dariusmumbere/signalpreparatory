@@ -145,6 +145,58 @@
         .hero-button:hover{
             background-color: #202A44;
         }
+        /* Add media query for mobile view */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #202A44;
+        width: 100%;
+        height: 100vh;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 8px;
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -153,12 +205,14 @@
         <img src="logo.png" alt="Logo" class="logo">
         <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
     </div>
+    
     <!-- Hamburger Menu Icon -->
     <div class="hamburger" onclick="toggleNav()">
         <span></span>
         <span></span>
         <span></span>
     </div>
+
     <!-- Navbar Links -->
     <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="nav-item">Home</a></li>
@@ -168,6 +222,7 @@
     </ul>
     <a href="donate.html"><button class="donate-btn">Donate</button></a>
 </nav>
+
     
     <section class="hero">
         <div class="hero-overlay"></div>
@@ -363,6 +418,13 @@ Read More
             <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
         </div>
     </footer>
+    <script>
+        function toggleNav() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active'); // Toggle the 'active' class to show/hide navbar links
+}
+
+    </script>
 
     
 </body>
