@@ -214,13 +214,15 @@
     </div>
 
     <!-- Navbar Links -->
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="nav-item">Home</a></li>
-        <li><a href="about.html" class="nav-item">About</a></li>
-        <li><a href="projects.html" class="nav-item">Projects</a></li>
-        <li><a href="address.html" class="nav-item">Contacts</a></li>
-    </ul>
-    <a href="donate.html"><button class="donate-btn">Donate</button></a>
+        <!-- Navbar Links (Including Donate Button) -->
+<ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="nav-item">Home</a></li>
+    <li><a href="about.html" class="nav-item">About</a></li>
+    <li><a href="projects.html" class="nav-item">Projects</a></li>
+    <li><a href="address.html" class="nav-item">Contacts</a></li>
+    <li><a href="donate.html"><button class="donate-btn">Donate</button></a></li> <!-- Moved inside -->
+</ul>
+    
 </nav>
 
     
@@ -424,8 +426,6 @@ Read More
     navLinks.classList.toggle('active'); // Toggle the 'active' class to show/hide navbar links
 }
 
-    </script>
-
-    
+    </script>    
 </body>
 </html>
