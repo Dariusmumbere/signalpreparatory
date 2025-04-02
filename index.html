@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGNAL PREPARATORY SCHOOL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
     <style>
         body {
             margin: 0;
@@ -43,6 +41,8 @@
             list-style: none;
             display: flex;
             gap: 35px;
+            margin: 0;
+            padding: 0;
         }
         .nav-links li {
             position: relative;
@@ -84,7 +84,6 @@
             font-weight: 600;
             transition: background 0.3s;
             box-shadow: 0px 4px 8px rgba(230, 126, 34, 0.3);
-            margin-right: 60px;
         }
         .donate-btn:hover {
             background: #D35400;
@@ -101,7 +100,7 @@
             padding: 0 20px;
             position: relative;
             overflow: hidden;
-
+            margin-top: 80px;
         }
         .hero-overlay {
             position: absolute;
@@ -141,102 +140,646 @@
             background-color: #D35400;
             font-size: 18px;
             cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
         .hero-button:hover{
             background-color: #202A44;
         }
-        /* Add media query for mobile view */
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #202A44;
-        width: 100%;
-        height: 100vh;
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        padding: 20px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
+        
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .hamburger span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-wrap: wrap;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: #202A44;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 20px 0;
+                display: none;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .donate-btn {
+                margin-right: 0;
+                margin-top: 10px;
+            }
+            
+            .hero-content {
+                text-align: center;
+                margin-right: 0;
+                padding: 0 20px;
+            }
+            
+            .hero-content h2 {
+                font-size: 24px;
+            }
+        }
 
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-
-    .hamburger span {
-        display: block;
-        width: 30px;
-        height: 3px;
-        background-color: white;
-        margin: 5px 0;
-        transition: all 0.3s;
-    }
-
-    /* Hamburger Animation */
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg);
-        position: relative;
-        top: 8px;
-    }
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg);
-        position: relative;
-        top: -8px;
-    }
-}
-
+        /* Rest of your existing styles */
+        .about-section {
+            padding: 100px 5%;
+        }
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .about-image {
+            flex: 1;
+            max-width: 50%;
+            overflow: hidden;
+            position: relative;
+        }
+        .about-image img {
+            width: 550px;
+            height: 50vh;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            transform: scale(1.1);
+            transition: transform 0.5s ease-in-out;
+        }
+        .about-image:hover img {
+            transform: scale(1);
+        }
+        .about-content {
+            flex: 1;
+            max-width: 50%;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .about-content h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .learn-more-btn {
+            display: inline-block;
+            background: #ff6b00;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .learn-more-btn:hover {
+            color: #ff6b00;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            transform: scale(1.05);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-image, .about-content {
+                max-width: 100%;
+            }
+            .about-content h2 {
+                font-size: 30px;
+            }
+            .about-content p {
+                font-size: 16px;
+            }
+            .learn-more-btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+        .vision-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f9fc;
+            padding: 40px;
+        }
+        .vision-image {
+            flex: 1;
+            min-width: 400px;
+        }
+        .vision-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .vision-content {
+            flex: 1;
+            min-width: 300px;
+            background-color: #3b6d99;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-left: -80px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .vision-content h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .vision-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .vision-content .btn {
+            background-color: #ff914d;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+        }
+        .vision-content .btn:hover {
+            background-color: #e87e3d;
+        }
+        @media (max-width: 768px) {
+            .vision-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .vision-content {
+                margin-left: 0;
+                margin-top: -50px;
+                padding: 20px;
+            }
+        }
+        .container {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1265px;
+            width: 100%;
+            justify-content: center;
+            margin-left: 40px;
+        }
+        .card {
+            background-color: #0a0f44;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card:first-child {
+            background: url('Headteacher.jpg') no-repeat center/cover;
+            padding: 40px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .card h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: white;
+            color: #0a0f44;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+            border: 1px solid white;
+        }
+        .btn:hover {
+            background-color: #00509E;
+            color: white;
+        }
+        .logo-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0a0f44;
+            padding: 40px;
+        }
+        .logo-card img {
+            max-width: 150px;
+        }
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin-left: 0;
+                padding: 0 20px;
+            }
+        }
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+            margin: 20px;
+        }
+        .content {
+            flex: 1;
+            max-width: 720px;
+            padding: 20px;
+        }
+        .content h2 {
+            font-size: 28px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+        .content p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .read-more {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .read-more:hover {
+            background-color: #34495e;
+        }
+        .image-container {
+            flex: 1;
+            max-width: 400px;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .content, .image-container {
+                max-width: 100%;
+            }
+        }
+        .section-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .sub-title {
+            font-size: 1.7em;
+            color: #444;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .programs-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 80px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .program {
+            text-align: center;
+            max-width: 400px;
+        }
+        .program img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .program-title {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .program-description {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .programs-container {
+                flex-direction: column;
+            }
+        }
+        .kindergarten-counter-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #cce7e8;
+        }
+        .counter-box {
+            flex: 1;
+            padding: 40px;
+            margin: 10px;
+            border-radius: 8px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.3s ease-in-out;
+        }
+        .students { background-color: #4a6fa5; }
+        .teachers { background-color: #f18f01; }
+        .activities { background-color: #4a6fa5; }
+        .counter-box:hover {
+            transform: scale(1.05);
+        }
+        .count {
+            font-size: 3rem;
+            margin: 10px 0;
+        }
+        @media (max-width: 768px) {
+            .kindergarten-counter-section {
+                flex-direction: column;
+            }
+        }
+        .alternate-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin: 50px 0;
+            background-color: #202A44;
+        }
+        .alternate-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .alternate-row:nth-child(odd) {
+            flex-direction: row;
+        }
+        .alternate-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .alternate-image-container {
+            flex: 1;
+            max-width: 50%;
+        }
+        .alternate-image-container img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        .alternate-text-container {
+            flex: 1;
+            max-width: 50%;
+            padding: 20px;
+        }
+        .alternate-text-container h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #E67E22;
+        }
+        .alternate-text-container p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .alternate-read-more {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .alternate-read-more:hover {
+            background-color: white;
+            color: #00104a;
+        }
+        @media (max-width: 768px) {
+            .alternate-row {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            .alternate-image-container, .alternate-text-container {
+                max-width: 100%;
+            }
+            .alternate-image-container img {
+                width: 100%;
+            }
+        }
+        .footer {
+            background-color: #202A44;
+            color: white;
+            padding: 50px 20px 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        .logo-column {
+            max-width: 300px;
+        }
+        .footer-logo {
+            width: 60px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .logo-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #E67E22;
+            margin-bottom: 15px;
+        }
+        .footer-heading {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #E67E22;
+        }
+        .footer-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .footer-link:hover {
+            color: #E67E22;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .social-icon {
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .social-icon:hover {
+            color: #E67E22;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .footer-copyright {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .designer-credit {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 10px;
+        }
+        .designer-link {
+            color: #E67E22;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .designer-link:hover {
+            color: #D35400;
+        }
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-column {
+                margin-bottom: 30px;
+            }
+        }
+        /* Slide styles */
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 120vh;
+            object-fit: cover;
+            opacity: 0;
+            transform: scale(1.1);
+            transition: opacity 1.5s ease-in-out, transform 3s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .slide.fade-out {
+            opacity: 0;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
-    <div class="logo-container">
-        <img src="logo.png" alt="Logo" class="logo">
-        <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
-    </div>
-    <!-- Hamburger Menu Icon -->
-    <div class="hamburger" onclick="toggleNav()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <!-- Navbar Links -->
-   <nav class="navbar">
-    <div class="logo-container">
-        <img src="logo.png" alt="Logo" class="logo">
-        <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
-    </div>
-    
-    <!-- Hamburger Menu Icon -->
-    <div class="hamburger" onclick="toggleNav()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+        </div>
+        
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-    <!-- Navbar Links -->
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="nav-item">Home</a></li>
-        <li><a href="about.html" class="nav-item">About</a></li>
-        <li><a href="projects.html" class="nav-item">Projects</a></li>
-        <li><a href="address.html" class="nav-item">Contacts</a></li>
-        <li><a href="donate.html"><button class="donate-btn">Donate</button></a></li>
-    </ul>
-    
-</nav>
-
-</nav>
+        <!-- Navbar Links -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-item">Home</a></li>
+            <li><a href="about.html" class="nav-item">About</a></li>
+            <li><a href="projects.html" class="nav-item">Projects</a></li>
+            <li><a href="address.html" class="nav-item">Contacts</a></li>
+            <li><a href="donate.html"><button class="donate-btn">Donate</button></a></li>
+        </ul>
+    </nav>
     
     <section class="hero">
         <div class="hero-overlay"></div>
@@ -293,7 +836,7 @@
     <div class="container">
         <div class="card">
             <h2>Welcome from the Headteacher</h2>
-            <p>At Signal School, our guiding principle is ‘Aim High, Be Kind, and Dare to save mother earth’. This is deeply rooted at our core and combined with exceptional teaching.</p>
+            <p>At Signal School, our guiding principle is 'Aim High, Be Kind, and Dare to save mother earth'. This is deeply rooted at our core and combined with exceptional teaching.</p>
         </div>
         <div class="card">
             <h2>Visit Signal School</h2>
@@ -328,9 +871,9 @@
         <div class="program">
             <img src="waste.jpeg" alt="Signal Preparatory waste management">
             <h3 class="program-title">Child Waste Management</h3>
-            <p class="program-description">With the adopted slogan, “Waste is Waste if Wasted”, at Signal School, we equip learners with the art of managing waste.
+            <p class="program-description">With the adopted slogan, "Waste is Waste if Wasted", at Signal School, we equip learners with the art of managing waste.
 
-                We emphasize the 5R’s of waste management to our pupils. We aim to empower ambassadors who will make Mother Earth a better place to live in.</p>
+                We emphasize the 5R's of waste management to our pupils. We aim to empower ambassadors who will make Mother Earth a better place to live in.</p>
         </div>
         <div class="program">
             <img src="sports.jpeg" alt="Signal Preparatory waste management">
@@ -366,10 +909,7 @@
                 <h2>A happy Learning Environment</h2>
                 <p>
                     Our objective is to ignite a lifelong passion for learning. By challenging the advanced and uplifting the less assured, we ensure each pupil realizes their unique academic potential that can help him be an inspiration the world needs.
-
-Read More
                 </p>
-                
             </div>
         </div>
     </div>
@@ -418,11 +958,11 @@ Read More
                 <p class="footer-text">Phone: +256754406992</p>
                 <p class="footer-text">Address: Bwera, Kasese, Uganda</p>
                 <div class="social-icons">
-                        <a href="https://www.facebook.com/signal.arts.5" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@signalarts85" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.tiktok.com/@henry.signal.arts" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    </div>
+                    <a href="https://www.facebook.com/signal.arts.5" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@signalarts85" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@henry.signal.arts" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
     
@@ -434,12 +974,66 @@ Read More
     </footer>
     <script>
         function toggleNav() {
-    const navLinks = document.getElementById('navLinks');
-    navLinks.classList.toggle('active'); // Toggle the 'active' class to show/hide navbar links
-}
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+            
+            const hamburger = document.querySelector('.hamburger');
+            hamburger.classList.toggle('active');
+        }
 
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.classList.add('fade-out');
+            });
+            
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            slides[currentSlide].classList.remove('fade-out');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Counter animation
+        const counters = document.querySelectorAll('.count');
+        const speed = 200;
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if(count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        // Start counter animation when counters are in view
+        window.addEventListener('scroll', function() {
+            const counterSection = document.querySelector('.kindergarten-counter-section');
+            const sectionTop = counterSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if(sectionTop < windowHeight - 100) {
+                animateCounters();
+                // Remove the event listener after first trigger
+                window.removeEventListener('scroll', arguments.callee);
+            }
+        });
     </script>
-
-    
 </body>
 </html>
