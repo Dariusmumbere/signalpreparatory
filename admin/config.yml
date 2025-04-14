@@ -1,17 +1,18 @@
 backend:
-  name: git-gateway
-  branch: main # Change this if you're using a different branch
+  name: github
+  repo: Dariusmumbere/signalpreparatory
+  branch: main
 
-media_folder: "static/uploads" # Where images will be stored
-public_folder: "/uploads"
+media_folder: "assets/uploads"  # Where uploaded images will go
+public_folder: "/assets/uploads"
 
 collections:
-  - name: "blog" # Identifier
-    label: "Blog Posts" # Admin Panel Display Name
-    folder: "content/blog" # Path to store posts
-    create: true # Allow creating new posts
+  - name: "announcements"
+    label: "Announcements"
+    folder: "content/announcements"
+    create: true
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
