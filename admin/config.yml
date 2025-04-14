@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Dariusmumbere/signalpreparatoryschool  # replace with your actual repo path
+  repo: Dariusmumbere/signalpreparatory  # replace with your actual repo path
   branch: main
 
   auth_type: oauth
