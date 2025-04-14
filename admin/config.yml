@@ -1,10 +1,15 @@
 backend:
   name: github
-  repo: Dariusmumbere/signalpreparatory
+  repo: Dariusmumbere/signalpreparatoryschool  # replace with your actual repo path
   branch: main
 
-media_folder: "assets/uploads"  # Where uploaded images will go
-public_folder: "/assets/uploads"
+  auth_type: oauth
+  app_id: Ov23lieNysoFOVdz59BP
+  base_url: https://auth.decapcms.org
+  auth_endpoint: oauth/authorize
+
+media_folder: "assets/uploads"       # Where images are stored in the repo
+public_folder: "/assets/uploads"     # How the CMS refers to them in the frontend
 
 collections:
   - name: "announcements"
@@ -16,3 +21,26 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+
+  - name: "staff"
+    label: "Staff Members"
+    folder: "content/staff"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "text", required: false }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  - name: "news"
+    label: "News & Updates"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Cover Image", name: "cover", widget: "image", required: false }
