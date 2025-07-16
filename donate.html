@@ -3,716 +3,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate - SIGNAL PREPARATORY SCHOOL</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Donate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #202A44;
-            --secondary-color: #E67E22;
-            --secondary-dark: #D35400;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
-            --white: #ffffff;
-            --dark-blue: #0a0f44;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --section-padding: 80px 5%;
-        }
-        
-        * {
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text-color);
-            overflow-x: hidden;
+            background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+            color: #333;
             line-height: 1.6;
         }
-        
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
+        .donate-header p{
+            color: #ff914d;
         }
-        
-        /* Navbar styles */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--primary-color);
-            padding: 15px 5%;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-        
-        .navbar.scrolled {
-            padding: 10px 5%;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo {
-            width: 50px;
-            height: auto;
-            transition: var(--transition);
-        }
-        
-        .logo-text {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--secondary-color);
-            line-height: 1.2;
-        }
-        
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-            transition: var(--transition);
-        }
-        
-        .nav-links li {
-            position: relative;
-        }
-        
-        .nav-item {
-            text-decoration: none;
-            color: var(--white);
-            font-size: 16px;
-            font-weight: 500;
-            padding: 8px 0;
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .nav-item:hover {
-            color: var(--secondary-color);
-        }
-        
-        .nav-item::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--secondary-color);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-        }
-        
-        .nav-item:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-        
-        .donate-btn {
-            background: var(--secondary-color);
-            color: var(--white);
-            padding: 10px 25px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: 0px 4px 15px rgba(230, 126, 34, 0.3);
-        }
-        
-        .donate-btn:hover {
-            background: var(--secondary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0px 6px 20px rgba(230, 126, 34, 0.4);
-        }
-        
-        /* Modern hamburger menu */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1001;
-            transition: var(--transition);
-        }
-        
-        .hamburger span {
-            display: block;
-            width: 30px;
-            height: 3px;
-            background-color: var(--white);
-            margin: 6px 0;
-            transition: var(--transition);
-            transform-origin: center;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.JPG') no-repeat center center/cover;
-            height: 60vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            position: relative;
-            margin-top: 80px;
-            animation: fadeIn 1s ease-out;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            color: var(--secondary-color);
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-        }
-        
-        .hero-button {
-            background: var(--secondary-color);
-            color: var(--white);
-            padding: 12px 30px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0px 4px 15px rgba(230, 126, 34, 0.3);
-        }
-        
-        .hero-button:hover {
-            background: var(--secondary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0px 6px 20px rgba(230, 126, 34, 0.4);
-        }
-        
-        /* Donation Content */
         .donate-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: var(--section-padding);
+            padding: 40px 20px;
         }
-        
+
         .donate-header {
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .donate-header h1 {
-            color: var(--primary-color);
             font-size: 2.8rem;
-            margin-bottom: 20px;
-            position: relative;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease;
         }
-        
-        .donate-header h1::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -15px;
-            width: 80px;
-            height: 4px;
-            background: var(--secondary-color);
-            border-radius: 2px;
-        }
-        
+
         .donate-header p {
-            color: var(--secondary-color);
             font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
+            color: #ff914d;
+            animation: fadeInUp 1s ease;
         }
-        
+
         .donate-content {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 60px;
+            gap: 20px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
         }
-        
+
         .why-donate, .donate-via {
             flex: 1 1 45%;
-            min-width: 300px;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(30px);
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
-        .why-donate.visible, .donate-via.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
+
         .why-donate:hover, .donate-via:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
-        
+
         .why-donate h2, .donate-via h2 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
+            font-size: 2rem;
+            color: #2c3e50;
             margin-bottom: 25px;
-            position: relative;
+            text-align: center;
         }
-        
-        .why-donate h2::after, .donate-via h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 60px;
-            height: 3px;
-            background: var(--secondary-color);
-        }
-        
+
         .why-donate p {
-            color: var(--text-color);
             font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
+            color: #666;
+            text-align: justify;
         }
-        
+
         .payment-methods {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
-        
+
         .payment-method {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
             flex: 1 1 200px;
             max-width: 250px;
-            background: var(--light-bg);
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .payment-method:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
-        
+
         .payment-method i {
             font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-        
-        .payment-method h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
+            color: #3498db;
             margin-bottom: 15px;
         }
-        
+
+        .payment-method h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
         .payment-method p {
-            color: var(--text-color);
             font-size: 1.1rem;
+            color: #666;
             margin: 0;
         }
-        
-        /* Parallax Section - Fixed */
+
+        /* Parallax Section */
         .parallax-section {
             position: relative;
             height: 400px;
             overflow: hidden;
             margin: 60px 0;
-            border-radius: 15px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: url('donate.jpg');
         }
-        
+
+        .parallax-image {
+            position: fixed; /* Fixed position for parallax effect */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('donate.jpg') no-repeat center center/cover;
+            z-index: -1; /* Place behind the content */
+            transform: translateZ(0);
+        }
+
         .parallax-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: relative;
+            z-index: 2;
             background: rgba(255, 255, 255, 0.9);
             padding: 40px;
             border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             max-width: 800px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translate(-50%, calc(-50% + 30px));
-            transition: var(--transition);
-        }
-        
-        .parallax-content.visible {
-            opacity: 1;
-            transform: translate(-50%, -50%);
-        }
-        
-        .parallax-content h2 {
-            color: var(--primary-color);
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .parallax-content p {
-            color: var(--text-color);
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 80px 5% 30px;
-        }
-        
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            max-width: 1200px;
             margin: 0 auto;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .logo-column {
-            max-width: 350px;
-        }
-        
-        .footer-logo {
-            width: 60px;
-            height: auto;
-            margin-bottom: 15px;
-            transition: var(--transition);
-        }
-        
-        .footer-logo:hover {
-            transform: rotate(15deg);
-        }
-        
-        .footer-logo-text {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        
-        .footer-text {
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-        
-        .footer-heading {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: var(--secondary-color);
-            position: relative;
-        }
-        
-        .footer-heading::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 40px;
-            height: 2px;
-            background: var(--secondary-color);
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-link {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            opacity: 0.9;
-            position: relative;
-        }
-        
-        .footer-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 0;
-            height: 1px;
-            background: var(--secondary-color);
-            transition: width 0.3s ease;
-        }
-        
-        .footer-link:hover {
-            color: var(--secondary-color);
-            opacity: 1;
-        }
-        
-        .footer-link:hover::after {
-            width: 100%;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            border-radius: 50%;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        
-        .social-icon:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeInUp 1s ease;
         }
-        
-        .footer-copyright {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
+
+        .parallax-content h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
         }
-        
-        .designer-credit {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 10px;
+
+        .parallax-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
         }
-        
-        .designer-link {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .designer-link:hover {
-            color: var(--secondary-dark);
-            text-decoration: underline;
-        }
-        
-        /* Admin link */
-        .admin-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .admin-link:hover {
-            color: var(--secondary-color);
-        }
-        
+
         /* Animations */
-        @keyframes fadeIn {
-            from {
+        @keyframes fadeInDown {
+            0% {
                 opacity: 0;
+                transform: translateY(-20px);
             }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
+            100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
-        /* Responsive styles */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
             }
-            
-            .hero p {
-                font-size: 1.2rem;
+            100% {
+                opacity: 1;
+                transform: translateY(0);
             }
-            
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .donate-header h1 {
                 font-size: 2.2rem;
             }
-            
+
             .donate-header p {
                 font-size: 1rem;
             }
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 5%;
+
+            .donate-content h2 {
+                font-size: 1.8rem;
             }
-            
-            .nav-links {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: var(--primary-color);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 30px;
-                clip-path: circle(0% at 90% 5%);
-                transition: clip-path 0.8s ease-in-out;
-                z-index: 1000;
-            }
-            
-            .nav-links.active {
-                clip-path: circle(150% at 90% 5%);
-            }
-            
-            .hamburger {
-                display: block;
-                z-index: 1001;
-            }
-            
-            .hero {
-                height: 50vh;
-                margin-top: 70px;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .why-donate, .donate-via {
-                flex: 1 1 100%;
-            }
-            
+
             .payment-method {
                 flex: 1 1 100%;
                 max-width: 100%;
             }
 
-            .parallax-section {
-                height: 300px;
-                background-attachment: scroll;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .donate-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .why-donate h2, .donate-via h2 {
-                font-size: 1.5rem;
-            }
-            
-            .why-donate p, .donate-via p, .payment-method p {
-                font-size: 1rem;
-            }
-            
             .parallax-content {
                 padding: 20px;
             }
-            
+
             .parallax-content h2 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+            }
+
+            .parallax-content p {
+                font-size: 1rem;
+            }
+
+            .why-donate, .donate-via {
+                flex: 1 1 100%;
+            }
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #202A44;
+            padding: 15px 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+        .logo-text {
+            font-size: 22px;
+            font-weight: bold;
+            color: #E67E22;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            position: relative;
+        }
+        .nav-item {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+        .nav-item:hover {
+            color: #E67E22;
+        }
+        .nav-item::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background: #E67E22;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        .nav-item:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .donate-btn {
+            background: #E67E22;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+            box-shadow: 0px 4px 8px rgba(230, 126, 34, 0.3);
+        }
+        .donate-btn:hover {
+            background: #D35400;
+        }
+        .hero {
+            background: url('background.JPG') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            text-align: left;
+            color: white;
+            flex-direction: column;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            align-items: right;
+            text-align: right;
+            margin-right: 30px;
+        }
+        .hero-content h2{
+            font-size: 34px;
+        }
+        .hero-content p{
+            color: #E67E22;
+            font-size: 14px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.4em;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+        .hero-button{
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #D35400;
+            font-size: 18px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .hero-button:hover{
+            background-color: #202A44;
+        }
+        
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .hamburger span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-wrap: wrap;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: #202A44;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 20px 0;
+                display: none;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .donate-btn {
+                margin-right: 0;
+                margin-top: 10px;
+            }
+            
+            .hero-content {
+                text-align: center;
+                margin-right: 0;
+                padding: 0 20px;
+            }
+            
+            .hero-content h2 {
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar" id="navbar">
+    <!-- Header (You mentioned you already have this) -->
+    <nav class="navbar">
         <div class="logo-container">
             <img src="logo.png" alt="Logo" class="logo">
             <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
         </div>
         
-        <!-- Modern Hamburger Menu -->
-        <div class="hamburger" id="hamburger">
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger" onclick="toggleNav()">
             <span></span>
             <span></span>
             <span></span>
@@ -724,40 +447,24 @@
             <li><a href="about.html" class="nav-item">About</a></li>
             <li><a href="projects.html" class="nav-item">Projects</a></li>
             <li><a href="address.html" class="nav-item">Contacts</a></li>
-            <li><a href="donate.html" class="nav-item"><button class="donate-btn">Donate</button></a></li>
+            <li><a href="donate.html"><button class="donate-btn">Donate</button></a></li>
         </ul>
     </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Support Our Mission</h1>
-            <p>Your donation helps us create a better future for our students</p>
-            <button class="hero-button">Donate Now</button>
-        </div>
-    </section>
+    <br>
 
-    <!-- Donation Content -->
+    <!-- Main Content -->
     <main class="donate-container">
         <div class="donate-header">
             <h1>Support Our Cause</h1>
             <p>Your contribution helps us make a difference. Every donation counts!</p>
         </div>
 
+        <!-- Donation Methods -->
         <div class="donate-content">
             <div class="why-donate">
                 <h2>Why Donate?</h2>
-                <p>Your donations help us continue our mission to provide quality education and support to underprivileged children. With your support, we can:</p>
-                <ul style="margin-left: 20px; margin-bottom: 20px;">
-                    <li>Improve school facilities and learning materials</li>
-                    <li>Support our innovative educational programs</li>
-                    <li>Provide scholarships for needy students</li>
-                    <li>Expand our community outreach initiatives</li>
-                    <li>Develop new skills training programs</li>
-                </ul>
-                <p>Together, we can build a brighter future for the next generation.</p>
+                <p>Your donations help us continue our mission to provide quality education and support to underprivileged children. With your support, we can build a brighter future for the next generation.</p>
             </div>
-            
             <div class="donate-via">
                 <h2>Donate Via</h2>
                 <div class="payment-methods">
@@ -765,59 +472,52 @@
                         <i class="fas fa-mobile-alt"></i>
                         <h3>MTN Mobile Money</h3>
                         <p>+256 775413318</p>
-                        <p>Name: Signal Preparatory School</p>
                     </div>
                     <div class="payment-method">
                         <i class="fas fa-mobile-alt"></i>
                         <h3>Airtel Money</h3>
                         <p>+256754406992</p>
-                        <p>Name: Signal Preparatory School</p>
                     </div>
                     <div class="payment-method">
                         <i class="fas fa-university"></i>
                         <h3>Centenary Bank</h3>
                         <p>Account: 3200054198</p>
-                        <p>Name: Signal Preparatory School</p>
                     </div>
+                   
                 </div>
             </div>
         </div>
 
-        <!-- Parallax Section - Fixed -->
+        <!-- Parallax Section -->
         <div class="parallax-section">
+            <div class="parallax-image"></div>
             <div class="parallax-content">
                 <h2>Together We Can Make a Difference</h2>
-                <p>Your support helps us create a better future for everyone. Join us in our mission to bring positive change to our community through education and empowerment.</p>
-                <button class="hero-button" style="margin-top: 20px;">Donate Now</button>
+                <p>Your support helps us create a better future for everyone. Join us in our mission to bring positive change to the world.</p>
             </div>
         </div>
     </main>
-    
+
     <footer class="footer">
         <div class="footer-container">
             <!-- Logo and School Name -->
             <div class="footer-column logo-column">
                 <div class="logo-container">
                     <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo">
-                    <div class="footer-logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+                    <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
                 </div>
                 <p class="footer-text">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/signal.arts.5" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.youtube.com/@signalarts85" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.tiktok.com/@henry.signal.arts" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                </div>
             </div>
     
             <!-- Quick Links -->
             <div class="footer-column">
                 <h3 class="footer-heading">Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="about.html" class="footer-link">About</a></li>
-                    <li><a href="projects.html" class="footer-link">Projects</a></li>
-                    <li><a href="address.html" class="footer-link">Contacts</a></li>
+                    <li><a href="#" class="footer-link">Home</a></li>
+                    <li><a href="#" class="footer-link">About</a></li>
+                    <li><a href="#" class="footer-link">Address</a></li>
+                    <li><a href="#" class="footer-link">Completed Projects</a></li>
+                    <li><a href="#" class="footer-link">Contact</a></li>
                 </ul>
             </div>
     
@@ -828,6 +528,12 @@
                 <p class="footer-text">Phone: +256 775413318</p>
                 <p class="footer-text">Phone: +256754406992</p>
                 <p class="footer-text">Address: Bwera, Kasese, Uganda</p>
+                <div class="social-icons">
+                        <a href="https://www.facebook.com/signal.arts.5" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@signalarts85" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@henry.signal.arts" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
             </div>
         </div>
     
@@ -835,91 +541,71 @@
         <div class="footer-bottom">
             <p class="footer-copyright">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
             <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
-            <a href="/admin/" class="admin-link">Admin Login</a>
         </div>
     </footer>
-
     <script>
-        // Modern toggle menu with animation
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
+        function toggleNav() {
+            const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
             
-            // Toggle body scroll when menu is open
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
+            const hamburger = document.querySelector('.hamburger');
+            hamburger.classList.toggle('active');
+        }
+
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
         
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-item').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
+        function showSlide(n) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.classList.add('fade-out');
             });
-        });
-        
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Animation on scroll for content sections
-        const animateOnScroll = () => {
-            const sections = document.querySelectorAll('.why-donate, .donate-via, .parallax-content');
             
-            sections.forEach(section => {
-                const sectionPosition = section.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            slides[currentSlide].classList.remove('fade-out');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Counter animation
+        const counters = document.querySelectorAll('.count');
+        const speed = 200;
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
                 
-                if (sectionPosition < screenPosition) {
-                    section.classList.add('visible');
+                if(count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
                 }
             });
-        };
+        }
         
-        // Set initial styles for animation
-        document.querySelectorAll('.why-donate, .donate-via, .parallax-content').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = section.classList.contains('parallax-content') 
-                ? 'translate(-50%, calc(-50% + 30px))' 
-                : 'translateY(30px)';
-        });
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navLinks.classList.contains('active')) {
-                        hamburger.classList.remove('active');
-                        navLinks.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                }
-            });
+        // Start counter animation when counters are in view
+        window.addEventListener('scroll', function() {
+            const counterSection = document.querySelector('.kindergarten-counter-section');
+            const sectionTop = counterSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if(sectionTop < windowHeight - 100) {
+                animateCounters();
+                // Remove the event listener after first trigger
+                window.removeEventListener('scroll', arguments.callee);
+            }
         });
     </script>
 </body>
+    
 </html>
