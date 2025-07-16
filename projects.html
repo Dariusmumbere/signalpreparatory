@@ -1,635 +1,301 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects - SIGNAL PREPARATORY SCHOOL</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #202A44;
-            --secondary-color: #E67E22;
-            --secondary-dark: #D35400;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
-            --white: #ffffff;
-            --dark-blue: #0a0f44;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --section-padding: 80px 5%;
-        }
+Thanks for the great work,  do the same for this; <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIGNAL PREPARATORY SCHOOL</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+        <style>
+            /* Parallax Effect */
+            .parallax {
+        background-image: url('blend.jpg'); /* Replace with your image path */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 500px; /* Adjust the height as needed */
+        width: 100%;
+        position: relative; /* Required for text positioning */
+        display: flex;
+        align-items: center; /* Center text vertically */
+        justify-content: center; /* Center text horizontally */
+        color: white; /* Text color */
+        font-size: 48px; /* Text size */
+        font-weight: bold; /* Text weight */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+    }
+
+            .projects-wrapper {
+                max-width: 1200px;
+                margin: auto;
+            }
+            .projects-header {
+                margin-bottom: 40px;
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text-color);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-        
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Navbar styles */
-        .navbar {
+            }
+            .projects-header h1 {
+                color: #003366;
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+            .projects-header p {
+                color: #555;
+                font-size: 18px;
+            }
+            .project-card {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: #fff;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .project-image {
+                width: 400px;
+                height: 400px;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+            .project-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .project-details {
+                width: 50%;
+                text-align: left;
+            }
+            .project-details h2 {
+                color: #003366;
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+            .project-details p {
+                color: #555;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            .project-card:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+            @media (max-width: 768px) {
+                .project-card {
+                    flex-direction: column !important;
+                    text-align: center;
+                }
+                .project-details {
+                    width: 100%;
+                }
+                .project-image {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+            .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--primary-color);
-            padding: 15px 5%;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            background: #202A44;
+            padding: 15px 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: var(--transition);
         }
-        
-        .navbar.scrolled {
-            padding: 10px 5%;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
-        }
-        
         .logo-container {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        
         .logo {
             width: 50px;
             height: auto;
-            transition: var(--transition);
         }
-        
         .logo-text {
             font-size: 22px;
-            font-weight: 700;
-            color: var(--secondary-color);
-            line-height: 1.2;
+            font-weight: bold;
+            color: #E67E22;
         }
-        
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 35px;
             margin: 0;
             padding: 0;
-            transition: var(--transition);
         }
-        
         .nav-links li {
             position: relative;
         }
-        
         .nav-item {
             text-decoration: none;
-            color: var(--white);
+            color: white;
             font-size: 16px;
             font-weight: 500;
-            padding: 8px 0;
-            transition: var(--transition);
-            position: relative;
+            padding: 10px;
+            transition: color 0.3s;
         }
-        
         .nav-item:hover {
-            color: var(--secondary-color);
+            color: #E67E22;
         }
-        
         .nav-item::after {
             content: "";
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: -5px;
             width: 100%;
-            height: 2px;
-            background: var(--secondary-color);
+            height: 3px;
+            background: #E67E22;
             transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+            transition: transform 0.3s;
         }
-        
         .nav-item:hover::after {
             transform: scaleX(1);
-            transform-origin: left;
         }
         
         .donate-btn {
-            background: var(--secondary-color);
-            color: var(--white);
-            padding: 10px 25px;
+            background: #E67E22;
+            color: white;
+            padding: 12px 25px;
             border: none;
             border-radius: 30px;
             cursor: pointer;
             font-size: 16px;
             font-weight: 600;
-            transition: var(--transition);
-            box-shadow: 0px 4px 15px rgba(230, 126, 34, 0.3);
+            transition: background 0.3s;
+            box-shadow: 0px 4px 8px rgba(230, 126, 34, 0.3);
         }
-        
         .donate-btn:hover {
-            background: var(--secondary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0px 6px 20px rgba(230, 126, 34, 0.4);
+            background: #D35400;
+        }
+        .hero {
+            background: url('background.JPG') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            text-align: left;
+            color: white;
+            flex-direction: column;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            align-items: right;
+            text-align: right;
+            margin-right: 30px;
+        }
+        .hero-content h2{
+            font-size: 34px;
+        }
+        .hero-content p{
+            color: #E67E22;
+            font-size: 14px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.4em;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+        .hero-button{
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #D35400;
+            font-size: 18px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .hero-button:hover{
+            background-color: #202A44;
         }
         
-        /* Modern hamburger menu */
+        /* Hamburger menu styles */
         .hamburger {
             display: none;
             cursor: pointer;
             padding: 10px;
-            z-index: 1001;
-            transition: var(--transition);
         }
-        
         .hamburger span {
             display: block;
             width: 30px;
             height: 3px;
-            background-color: var(--white);
-            margin: 6px 0;
-            transition: var(--transition);
-            transform-origin: center;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-        }
-        
-        /* Parallax Effect */
-        .parallax {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('blend.jpg') no-repeat center center/cover;
-            background-attachment: fixed;
-            height: 60vh;
-            width: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 3.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            margin-top: 80px;
-            animation: fadeIn 1s ease-out;
-        }
-        
-        /* Projects Section */
-        .projects-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--section-padding);
-        }
-        
-        .projects-header {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-        
-        .projects-header h1 {
-            color: var(--primary-color);
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .projects-header h1::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -15px;
-            width: 80px;
-            height: 4px;
-            background: var(--secondary-color);
-            border-radius: 2px;
-        }
-        
-        .projects-header p {
-            color: var(--text-color);
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .project-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: var(--white);
-            padding: 40px;
-            margin-bottom: 50px;
-            border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .project-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-        
-        .project-image {
-            width: 450px;
-            height: 450px;
-            border-radius: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
-            border: 10px solid var(--white);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-        
-        .project-card:hover .project-image {
-            transform: scale(1.05);
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-        
-        .project-image:hover img {
-            transform: scale(1.1);
-        }
-        
-        .project-details {
-            width: 50%;
-            padding: 0 30px;
-        }
-        
-        .project-details h2 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .project-details h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 60px;
-            height: 3px;
-            background: var(--secondary-color);
-        }
-        
-        .project-details p {
-            color: var(--text-color);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        
-        .project-details ol {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .project-details li {
-            margin-bottom: 10px;
-            color: var(--text-color);
-            font-size: 1.1rem;
-        }
-        
-        .project-card:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 80px 5% 30px;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .logo-column {
-            max-width: 350px;
-        }
-        
-        .footer-logo {
-            width: 60px;
-            height: auto;
-            margin-bottom: 15px;
-            transition: var(--transition);
-        }
-        
-        .footer-logo:hover {
-            transform: rotate(15deg);
-        }
-        
-        .footer-logo-text {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        
-        .footer-text {
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-        
-        .footer-heading {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: var(--secondary-color);
-            position: relative;
-        }
-        
-        .footer-heading::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 40px;
-            height: 2px;
-            background: var(--secondary-color);
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-link {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            opacity: 0.9;
-            position: relative;
-        }
-        
-        .footer-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 0;
-            height: 1px;
-            background: var(--secondary-color);
-            transition: width 0.3s ease;
-        }
-        
-        .footer-link:hover {
-            color: var(--secondary-color);
-            opacity: 1;
-        }
-        
-        .footer-link:hover::after {
-            width: 100%;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            border-radius: 50%;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        
-        .social-icon:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .footer-copyright {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .designer-credit {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 10px;
-        }
-        
-        .designer-link {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .designer-link:hover {
-            color: var(--secondary-dark);
-            text-decoration: underline;
-        }
-        
-        /* Admin link */
-        .admin-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .admin-link:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            background-color: white;
+            margin: 5px 0;
+            transition: all 0.3s;
         }
         
         /* Responsive styles */
-        @media (max-width: 1200px) {
-            .project-image {
-                width: 400px;
-                height: 400px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .project-card {
-                flex-direction: column !important;
-                text-align: center;
-                padding: 30px;
-            }
-            
-            .project-details {
-                width: 100%;
-                padding: 30px 0 0 0;
-            }
-            
-            .project-details h2::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .project-image {
-                width: 350px;
-                height: 350px;
-                margin-bottom: 30px;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .parallax {
-                font-size: 2.5rem;
-                height: 50vh;
-            }
-            
-            .projects-header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .projects-header p {
-                font-size: 1rem;
-            }
-            
             .navbar {
-                padding: 15px 5%;
+                padding: 15px 20px;
+                flex-wrap: wrap;
             }
             
             .nav-links {
                 position: fixed;
-                top: 0;
+                top: 80px;
                 left: 0;
                 width: 100%;
-                height: 100vh;
-                background: var(--primary-color);
+                background: #202A44;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
-                gap: 30px;
-                clip-path: circle(0% at 90% 5%);
-                transition: clip-path 0.8s ease-in-out;
-                z-index: 1000;
+                gap: 20px;
+                padding: 20px 0;
+                display: none;
+                z-index: 999;
             }
             
             .nav-links.active {
-                clip-path: circle(150% at 90% 5%);
+                display: flex;
             }
             
             .hamburger {
                 display: block;
-                z-index: 1001;
             }
             
-            .project-image {
-                width: 300px;
-                height: 300px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .parallax {
-                font-size: 2rem;
+            .nav-links li {
+                margin: 10px 0;
             }
             
-            .project-image {
-                width: 250px;
-                height: 250px;
+            .donate-btn {
+                margin-right: 0;
+                margin-top: 10px;
             }
             
-            .project-details h2 {
-                font-size: 1.5rem;
-            }
-            
-            .project-details p, .project-details li {
-                font-size: 1rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar" id="navbar">
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
         <div class="logo-container">
             <img src="logo.png" alt="Logo" class="logo">
             <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
         </div>
         
-        <!-- Modern Hamburger Menu -->
-        <div class="hamburger" id="hamburger">
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger" onclick="toggleNav()">
             <span></span>
             <span></span>
             <span></span>
@@ -641,226 +307,167 @@
             <li><a href="about.html" class="nav-item">About</a></li>
             <li><a href="projects.html" class="nav-item">Projects</a></li>
             <li><a href="address.html" class="nav-item">Contacts</a></li>
-            <li><a href="donate.html" class="nav-item"><button class="donate-btn">Donate</button></a></li>
+            <li><a href="donate.html"><button class="donate-btn">Donate</button></a></li>
         </ul>
     </nav>
-    
-    <!-- Parallax Image Section -->
-    <div class="parallax">
-        Our Projects
-    </div>
 
-    <div class="projects-wrapper">
-        <div class="projects-header">
-            <h1>Our Projects</h1>
-            <p>Explore our impactful projects aimed at fostering growth, skills, and community connections.</p>
+        <!-- Parallax Image Section -->
+        <div class="parallax">
+            Our projects
         </div>
-        
-        <div class="project-card">
-            <div class="project-image">
-                <img src="juice.jpg" alt="Cub Scouts Juice Party">
+
+        <div class="projects-wrapper">
+            <div class="projects-header">
+                <center><h1>Our Projects</h1></center>
+                <center><p>Explore our impactful projects aimed at fostering growth, skills, and community connections.</p></center>
             </div>
-            <div class="project-details">
-                <h2>Cub Scouts Juice Party</h2>
-                <p>This was a success. Cub scouts did 80% of the juice blending process as the 20% was done by their care givers. The site preparation, washing, peeling, slicing, blending and serving was all done by the Cubs themselves.</p>
-                <h2>Achievements attained.</h2>
-                <ol>
-                    <li>Juice Processing skills was developed</li>
-                    <li>Sharing Skills</li>
-                    <li>Team working</li>
-                    <li>Patience during serving</li>
-                    <li>Smartness and good order was achieved.</li>
-                </ol>
-                <h2>Appreciation</h2>
-                <p>The School Management thanks all the sponsors and team that was behind this achievement. We are indeed great full.</p>
-            </div>
-        </div>
-        
-        <div class="project-card">
-            <div class="project-image">
-                <img src="waste.jpeg" alt="Child Art / Waste Management Mural">
-            </div>
-            <div class="project-details">
-                <h2>Child Art / Waste Management Mural</h2>
-                <p>The Skill Development Initiative is designed to provide customized training and mentorship programs to empower individuals with practical skills. 3/4 of our Pupils pack Juice in different plastic bottles everyday. This leads to poor disposal and littering the school compound. Upon realizing this, a two months intensive sensitization about plastic waste management in our school and community. The 5 R's of waste management were emphasized. These included the; REUSE, RECYCLE, REDUCE, RETURN and REFUSE. After the intensive communication, the school Child Art worked with the Child waste Management team. They thought of recycling their bottle tops. Hence the idea of the Signal School Child Art/waste management mural. Parents and community well wishers participated in this mural.</p>
-                <h2>Key Outcomes</h2>
-                <ul>
-                    <li>Improved environmental awareness among students</li>
-                    <li>Creative reuse of waste materials</li>
-                    <li>Community involvement in school projects</li>
-                    <li>Beautiful artwork that educates about recycling</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="project-card">
-            <div class="project-image">
-                <img src="mdd.webp" alt="Music Dance and Drama">
-            </div>
-            <div class="project-details">
-                <h2>Music Dance and Drama</h2>
-                <p>"Mind set change is more achieved when children and young adults take a leading role in achieving it".</p>
-                <p>After our community history and family backgrounds, 70% of our pupils are candidates of lost hope. The good news is that you can't change the beginning. But, you can start from where you are to change the end.</p>
-                <p>At Signal School, this gossiple is spread through MDD.</p>
-                <h2>Program Highlights</h2>
-                <ul>
-                    <li>Annual cultural performances showcasing local traditions</li>
-                    <li>Drama skits addressing social issues</li>
-                    <li>Music training in both traditional and modern styles</li>
-                    <li>Confidence-building through public performances</li>
-                </ul>
-                <h2>Impact</h2>
-                <p>Our MDD program has helped students develop confidence, teamwork skills, and a positive outlook on life. Many students who were previously withdrawn have found their voice through artistic expression.</p>
-            </div>
-        </div>
-        
-        <div class="project-card">
-            <div class="project-image">
-                <img src="https://via.placeholder.com/450x450" alt="School Garden Project">
-            </div>
-            <div class="project-details">
-                <h2>School Garden Project</h2>
-                <p>Our sustainable agriculture program teaches students practical farming skills while providing fresh produce for school meals.</p>
-                <h2>Features</h2>
-                <ul>
-                    <li>Organic vegetable garden maintained by students</li>
-                    <li>Composting system for food waste</li>
-                    <li>Rainwater harvesting for irrigation</li>
-                    <li>Practical lessons in biology and environmental science</li>
-                </ul>
-                <h2>Benefits</h2>
-                <p>The garden provides hands-on learning opportunities while improving nutrition for our students. Surplus produce is sold to support school programs.</p>
-            </div>
-        </div>
-    </div>
-    
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Logo and School Name -->
-            <div class="footer-column logo-column">
-                <div class="logo-container">
-                    <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo">
-                    <div class="footer-logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="juice.jpg" alt="Project Image">
                 </div>
-                <p class="footer-text">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/signal.arts.5" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.youtube.com/@signalarts85" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.tiktok.com/@henry.signal.arts" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <div class="project-details">
+                    <h2>Cub Scouts Juice Party</h2>
+                    <p>This was a success. Cub scouts did 80% of the juice blending process as the 20% was done by their care givers. The site preparation, washing, peeling, slicing, blending and serving was all done by the Cubs themselves.</p>
+                    <h2>Achievements attained.</h2>
+                    <ol>
+                        <li>Juice Processing skills was developed</li>
+                        <li>Sharing Skills</li>
+                        <li>Team working</li>
+                        <li>Patience during serving</li>
+                        <li>Smartness and good order was achieved.</li>
+                    </ol>
+                    <h2>Appreciation</h2>
+                    <p>The School Management thanks all the sponsors and team that was behind this achievement. We are indeed great full.</p>
                 </div>
             </div>
-    
-            <!-- Quick Links -->
-            <div class="footer-column">
-                <h3 class="footer-heading">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="about.html" class="footer-link">About</a></li>
-                    <li><a href="projects.html" class="footer-link">Projects</a></li>
-                    <li><a href="address.html" class="footer-link">Contacts</a></li>
-                </ul>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="waste.jpeg" alt="Project Image">
+                </div>
+                <div class="project-details">
+                    <h2>Child Art / Waste Management Mural</h2>
+                    <p>The Skill Development Initiative is designed to provide customized training and mentorship programs to empower individuals with practical skills.3/4 of our Pupils pack Juice in different plastic bottles everyday. This leads to poor disposal and littering the school compound. Upon realizing this, a two months intensive sensitization about plastic waste management in our school and community. The 5 R’s of waste management were emphasized .These included the; REUSE, RECYCLE, REDUCE, RETURN and REFUSE. After the intensive communication, the school Child Art worked with the Child waste Management team. They thought of recycling their bottle tops. Hence the idea of the Signal School Child Art/waste management mural. Parents and community well wishers participated in this mural.</p>
+                </div>
             </div>
-    
-            <!-- Contact Information -->
-            <div class="footer-column">
-                <h3 class="footer-heading">Contact Us</h3>
-                <p class="footer-text">Email: signalarts1@gmail.com</p>
-                <p class="footer-text">Phone: +256 775413318</p>
-                <p class="footer-text">Phone: +256754406992</p>
-                <p class="footer-text">Address: Bwera, Kasese, Uganda</p>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="mdd.webp" alt="Project Image">
+                </div>
+                <div class="project-details">
+                    <h2>Music Dance and Drama</h2>
+                    <p>“Mind set change is more achieved when children and young adults take a leading role in achieving it”.</p>
+                    <p>After our community history and family backgrounds, 70% of our pupils are candidates of lost hope. The good news is that you can’t change the beginning. But, you can start from where you are to change the end.</p>
+                    <p>At Signal School, this gossiple is spread through MDD.</p>
+                </div>
             </div>
         </div>
-    
-        <!-- Footer Bottom Section -->
-        <div class="footer-bottom">
-            <p class="footer-copyright">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
-            <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
-            <a href="/admin/" class="admin-link">Admin Login</a>
-        </div>
-    </footer>
-
-    <script>
-        // Modern toggle menu with animation
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Logo and School Name -->
+                <div class="footer-column logo-column">
+                    <div class="logo-container">
+                        <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo">
+                        <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+                    </div>
+                    <p class="footer-text">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
+                </div>
         
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="address.html" class="footer-link">Address</a></li>
+                        <li><a href="projects.html" class="footer-link">Completed Projects</a></li>
+                        <li><a href="contacts.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Contact Information -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <p class="footer-text">Email: signalarts1@gmail.com</p>
+                    <p class="footer-text">Phone: +256 775413318</p>
+                    <p class="footer-text">Phone: +256754406992</p>
+                    <p class="footer-text">Address: Bwera, Kasese, Uganda</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/signal.arts.5" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@signalarts85" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@henry.signal.arts" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Footer Bottom Section -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
+                <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
+            </div>
+        </footer>
+        <script>
+        function toggleNav() {
+            const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
             
-            // Toggle body scroll when menu is open
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
+            const hamburger = document.querySelector('.hamburger');
+            hamburger.classList.toggle('active');
+        }
+
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
         
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-item').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
+        function showSlide(n) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.classList.add('fade-out');
             });
-        });
+            
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            slides[currentSlide].classList.remove('fade-out');
+        }
         
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Counter animation
+        const counters = document.querySelectorAll('.count');
+        const speed = 200;
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if(count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        // Start counter animation when counters are in view
+        window.addEventListener('scroll', function() {
+            const counterSection = document.querySelector('.kindergarten-counter-section');
+            const sectionTop = counterSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if(sectionTop < windowHeight - 100) {
+                animateCounters();
+                // Remove the event listener after first trigger
+                window.removeEventListener('scroll', arguments.callee);
             }
         });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navLinks.classList.contains('active')) {
-                        hamburger.classList.remove('active');
-                        navLinks.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                }
-            });
-        });
-        
-        // Animation on scroll for project cards
-        const animateProjectsOnScroll = () => {
-            const projectCards = document.querySelectorAll('.project-card');
-            
-            projectCards.forEach((card, index) => {
-                const cardPosition = card.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (cardPosition < screenPosition) {
-                    // Add delay based on index for staggered animation
-                    card.style.transition = `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`;
-                    card.classList.add('visible');
-                }
-            });
-        };
-        
-        // Set initial styles for animation
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-        });
-        
-        window.addEventListener('scroll', animateProjectsOnScroll);
-        window.addEventListener('load', animateProjectsOnScroll);
     </script>
-</body>
+    </body>
 </html>
