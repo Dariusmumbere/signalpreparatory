@@ -357,43 +357,40 @@
             margin: 0;
         }
         
-        /* Parallax Section */
+        /* Parallax Section - Fixed */
         .parallax-section {
             position: relative;
             height: 400px;
             overflow: hidden;
             margin: 60px 0;
             border-radius: 15px;
-        }
-        
-        .parallax-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('donate.jpg') no-repeat center center/cover;
-            z-index: -1;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('donate.jpg');
         }
         
         .parallax-content {
-            position: relative;
-            z-index: 2;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background: rgba(255, 255, 255, 0.9);
             padding: 40px;
             border-radius: 15px;
             max-width: 800px;
-            margin: 0 auto;
+            width: 90%;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             opacity: 0;
-            transform: translateY(30px);
+            transform: translate(-50%, calc(-50% + 30px));
             transition: var(--transition);
         }
         
         .parallax-content.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate(-50%, -50%);
         }
         
         .parallax-content h2 {
@@ -673,6 +670,11 @@
                 flex: 1 1 100%;
                 max-width: 100%;
             }
+
+            .parallax-section {
+                height: 300px;
+                background-attachment: scroll;
+            }
         }
         
         @media (max-width: 480px) {
@@ -781,9 +783,8 @@
             </div>
         </div>
 
-        <!-- Parallax Section -->
+        <!-- Parallax Section - Fixed -->
         <div class="parallax-section">
-            <div class="parallax-image"></div>
             <div class="parallax-content">
                 <h2>Together We Can Make a Difference</h2>
                 <p>Your support helps us create a better future for everyone. Join us in our mission to bring positive change to our community through education and empowerment.</p>
@@ -887,7 +888,9 @@
         // Set initial styles for animation
         document.querySelectorAll('.why-donate, .donate-via, .parallax-content').forEach(section => {
             section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
+            section.style.transform = section.classList.contains('parallax-content') 
+                ? 'translate(-50%, calc(-50% + 30px))' 
+                : 'translateY(30px)';
         });
         
         window.addEventListener('scroll', animateOnScroll);
