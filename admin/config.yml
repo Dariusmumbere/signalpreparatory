@@ -6,17 +6,130 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "content"
-    label: "Content"
+  - name: "site_content"
+    label: "Site Content"
     files:
-      - name: "site_content"
-        label: "Site Content"
+      - name: "content"
+        label: "Content"
         file: "src/data/content.json"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "School Name", name: "school_name", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+          - { label: "Secondary Logo", name: "secondary_logo", widget: "image", required: false }
+          - { label: "Footer Logo", name: "footer_logo", widget: "image", required: false }
+          - { label: "Footer School Name", name: "footer_school_name", widget: "string" }
+          
+          # Hero Section
           - { label: "Hero Heading", name: "hero_heading", widget: "string" }
           - { label: "Hero Text", name: "hero_text", widget: "text" }
           - { label: "Hero Button Text", name: "hero_button_text", widget: "string" }
+          
+          # About Section
+          - { label: "About Image", name: "about_image", widget: "image", required: false }
           - { label: "About Heading", name: "about_heading", widget: "string" }
           - { label: "About Text", name: "about_text", widget: "markdown" }
+          - { label: "Learn More Text", name: "learn_more_text", widget: "string" }
+          
+          # Vision Section
+          - { label: "Vision Image", name: "vision_image", widget: "image", required: false }
+          - { label: "Vision Heading", name: "vision_heading", widget: "string" }
           - { label: "Vision Text", name: "vision_text", widget: "markdown" }
+          - { label: "Donate Button Text", name: "donate_button_text", widget: "string" }
+          
+          # Headteacher Section
+          - { label: "Headteacher Heading", name: "headteacher_heading", widget: "string" }
+          - { label: "Headteacher Message", name: "headteacher_message", widget: "text" }
+          
+          # Visit Section
+          - { label: "Visit Heading", name: "visit_heading", widget: "string" }
+          - { label: "Visit Text", name: "visit_text", widget: "text" }
+          - { label: "Visit Text Continued", name: "visit_text_continued", widget: "text" }
+          - { label: "Visit Button Text", name: "visit_button_text", widget: "string" }
+          
+          # Ethos Section
+          - { label: "Ethos Heading", name: "ethos_heading", widget: "string" }
+          - { label: "Ethos Text", name: "ethos_text", widget: "text" }
+          - { label: "Ethos Text Continued", name: "ethos_text_continued", widget: "text" }
+          - { label: "Ethos Text Conclusion", name: "ethos_text_conclusion", widget: "text" }
+          - { label: "Ethos Image", name: "ethos_image", widget: "image", required: false }
+          - { label: "Read More Text", name: "read_more_text", widget: "string" }
+          
+          # Programs Section
+          - label: "Join Heading"
+            name: "join_heading"
+            widget: "string"
+          - label: "Thematic Heading"
+            name: "thematic_heading"
+            widget: "string"
+          - label: "Programs"
+            name: "programs"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Description", name: "description", widget: "text" }
+          
+          # Alternate Sections
+          - label: "Academic Section"
+            name: "academic"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+          
+          - label: "Happy Section"
+            name: "happy"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+          
+          - { label: "Read More Button Text", name: "read_more_button", widget: "string" }
+          
+          # Counter Section
+          - { label: "Student Count", name: "student_count", widget: "number" }
+          - { label: "Student Label", name: "student_label", widget: "string" }
+          - { label: "Alumni Count", name: "alumni_count", widget: "number" }
+          - { label: "Alumni Label", name: "alumni_label", widget: "string" }
+          - { label: "Activities Count", name: "activities_count", widget: "number" }
+          - { label: "Activities Label", name: "activities_label", widget: "string" }
+          
+          # Footer
+          - { label: "Footer Tagline", name: "footer_tagline", widget: "text" }
+          
+          - label: "Social Links"
+            name: "social_links"
+            widget: "list"
+            fields:
+              - { label: "Platform", name: "platform", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          
+          - label: "Footer Links"
+            name: "footer_links"
+            widget: "list"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          
+          - { label: "Contact Heading", name: "contact_heading", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone 1", name: "phone1", widget: "string" }
+          - { label: "Phone 2", name: "phone2", widget: "string" }
+          - { label: "Address", name: "address", widget: "string" }
+          
+          - { label: "Copyright Text", name: "copyright_text", widget: "string" }
+          - { label: "Designer Text", name: "designer_text", widget: "string" }
+          - { label: "Designer Link", name: "designer_link", widget: "string" }
+          - { label: "Designer Name", name: "designer_name", widget: "string" }
+          - { label: "Admin Text", name: "admin_text", widget: "string" }
+          
+          # Slideshow Images
+          - label: "Slideshow Images"
+            name: "slideshow_images"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
