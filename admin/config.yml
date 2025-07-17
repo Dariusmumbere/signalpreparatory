@@ -134,7 +134,6 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt", widget: "string" }
 
-  - name: "About_signalprep_content"
     label: "About Page Content"
     files:
       - name: "about"
@@ -227,7 +226,7 @@ collections:
           - { label: "Designer Name", name: "designer_name", widget: "string" }
           - { label: "Admin Text", name: "admin_text", widget: "string" }
 
-      - name: "projects_content"
+    
     label: "Projects Page Content"
     files:
       - name: "projects"
