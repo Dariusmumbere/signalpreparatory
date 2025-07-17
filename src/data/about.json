@@ -1,1 +1,124 @@
-
+{
+  "mission_text": "Mentoring a Coexisting generation with high levels of creativity, innovation, world awareness and respect for environmental conservation in children and Young Adults.",
+  "empower_heading": "Empowering a Generation: Shaping Creative Minds for a Better Tomorrow",
+  "team_heading": "Meet Our Team",
+  "designer_text": "Designed by Mumbere Darius",
+  "empower_text_1": "Everyone has a role to play in mentoring an all round generation equipped with high creativity, problem solving and interpersonal skills ready to make Mother Earth a better place for everyone to live in.\n\n",
+  "life_text_1": "Life at our School is Just fun. Play is considered a spice that drives our teaching learning process.\n\n\n\n",
+  "empower_text_2": "In this, every single action matters. Be the change you want to see in the world.",
+  "life_text_2": "The more we play is the more we learn and the more we learn is the more we play",
+  "phone1": "+256 775413318",
+  "contact_heading": "Contact us",
+  "life_text_3": "A concussive learning environment is set and meaningful plays are inspired to promote self discovery, awareness,team working, problem solving among others in our children.",
+  "phone2": "+256754406992",
+  "team_subheading": "Our passionate professionals are dedicated to excellence and innovation. Discover the faces behind our success.",
+  "vision_text": "A generation where every child and young adult commits to coexistence, personal management and respect for environmental conservation.",
+  "about_hero_title": "About Us",
+  "copyright_text": "© 2025 Signal Preparatory School. All Rights Reserved.",
+  "values_heading": "CORE VALUES",
+  "social_links": [
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/signal.arts.5"
+    },
+    {
+      "url": "https://www.youtube.com/@signalarts85",
+      "platform": "Youtube"
+    },
+    {
+      "platform": "https://www.tiktok.com/@henry.signal.arts",
+      "url": "Tiktok"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ=="
+    }
+  ],
+  "mission_image": "/images/uploads/circle.jpeg",
+  "aim_heading": "Our Aim",
+  "values_text": "Discipline, Creativity, Coexistence, Conservation.",
+  "footer_tagline": "Mentoring a coexisting generation with creativity, innovation, and environmental respect.",
+  "vision_heading": "OUR VISION",
+  "designer_link": "https://dariusmumbere.github.io/personal",
+  "footer_logo": "/images/uploads/logo.png",
+  "about_section_image": "/images/uploads/seccc.jpg",
+  "mission_heading": "OUR MISSION",
+  "about_heading": "About s",
+  "about_text_1": "Signal Preparatory is a school with a mission to mentor and inspire. It focuses on nurturing a generation with high levels of creativity and innovation. The school promotes world awareness and respects environmental conservation in children and young adults.\n\n\n",
+  "about_text_2": "It was registered in 2018 with the Ministry of Education and sports (MoES) under Registration Number ED/N/22/MoES/2018.\n",
+  "footer_school_name": "Signal Preparatory School",
+  "about_text_3": "It's every one's responsibility to work with and mentor a generation. This generation will work towards playing a part in making the world a better place for everyone to live in.",
+  "address": "Bwera, Kasese, Uganda",
+  "footer_links": [
+    {
+      "text": "Home",
+      "url": "https://signalpreparatoryschool.com/index.html"
+    },
+    {
+      "text": "About",
+      "url": "https://signalpreparatoryschool.com/about.html"
+    },
+    {
+      "text": "Address",
+      "url": "https://signalpreparatoryschool.com/address.html"
+    },
+    {
+      "text": "Completed Projects",
+      "url": "https://signalpreparatoryschool.com/projects.html"
+    },
+    {
+      "text": "Donate",
+      "url": "https://signalpreparatoryschool.com/donate.html"
+    }
+  ],
+  "team_members": [
+    {
+      "name": "Bwambale Henry",
+      "position": "Director Signal Preparatory School",
+      "image": "/images/uploads/bwambale.webp"
+    },
+    {
+      "name": "Enter Name",
+      "position": "Chairperson Board",
+      "image": "/images/uploads/dep.jpeg"
+    },
+    {
+      "name": "Biira Alice",
+      "position": "Headteacher",
+      "image": "/images/uploads/headteacher.webp"
+    },
+    {
+      "position": "Academic affairs",
+      "name": "Enter name",
+      "image": "/images/uploads/affairs.jpeg"
+    },
+    {
+      "position": "Assistant Team leader",
+      "name": "Enter name",
+      "image": "/images/uploads/ass.jpeg"
+    },
+    {
+      "position": "Daycare Team leader",
+      "name": "Enter name",
+      "image": "/images/uploads/daycare.jpeg"
+    },
+    {
+      "position": "Domestic Affairs",
+      "name": "Enter name",
+      "image": "/images/uploads/domestic.jpeg"
+    },
+    {
+      "position": "Sports and entertainment master",
+      "name": "Enter name",
+      "image": "/images/uploads/sportsandent.jpeg"
+    }
+  ],
+  "aim_text_1": "We aim at grooming a coexisting generation with high levels of creativity, innovations, world awareness and respect for environmental conservation in children and Young adults.\n",
+  "empower_image": "/images/uploads/change.webp",
+  "about_page_title": "About Us",
+  "aim_text_2": "SIGNAL is an Acronym for Strategic Initiative for Grooming Natives into Active Art Learners. In this, we define Art as a spiced way of doing something. It is the value we add to whatever we do in life.",
+  "email": "signalarts1@gmail.com",
+  "admin_text": "Admin login",
+  "designer_name": "Mumbere Darius",
+  "life_heading": "Life at Signal School"
+}
