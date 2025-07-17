@@ -126,7 +126,15 @@ collections:
           - { label: "Designer Name", name: "designer_name", widget: "string" }
           - { label: "Admin Text", name: "admin_text", widget: "string" }
           
-         
+          # Slideshow Images
+          - label: "Slideshow Images"
+            name: "slideshow_images"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
+
+  - name: "about_content"
     label: "About Page Content"
     files:
       - name: "about"
@@ -218,8 +226,3 @@ collections:
           - { label: "Designer Link", name: "designer_link", widget: "string" }
           - { label: "Designer Name", name: "designer_name", widget: "string" }
           - { label: "Admin Text", name: "admin_text", widget: "string" }
-
-
-
-
-            
