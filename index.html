@@ -1,3 +1,12 @@
+---
+title: Testinggg
+hero_heading: Testing
+hero_text: Testing CMS
+hero_button_text: Read more
+about_heading: This is just testing
+about_text: S﻿ignal preparatory
+vision_text: o﻿ur vision
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,9 +75,9 @@
             <img src="image10.jpg" class="slide" alt="School facilities">
         </div>
         <div class="hero-content">
-            <h2>Signal Preparatory is a school aiming at mentoring a coexisting generation...</h2>
-            <p>Good foundation, better future</p>
-            <button class="hero-button">Explore More</button>
+            <h2 id="hero-heading">Signal Preparatory is a school aiming at mentoring a coexisting generation...</h2>
+            <p id="hero-text">Good foundation, better future</p>
+            <button class="hero-button" id="hero-button">Explore More</button>
         </div>
     </section>
 
@@ -78,15 +87,17 @@
                 <img src="about-image.jpg" alt="About Signal Preparatory">
             </div>
             <div class="about-content">
-                <h2>About Us</h2>
-                <p>
-                    Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of 
-                    creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults. 
-                </p>
-                <p>
-                    Fostering creative thinking, problem-solving, and interdependence skills in children and young adults is a 
-                    core responsibility that everyone needs to play in making the world a better place for all.
-                </p>
+                <h2 id="about-heading">About Us</h2>
+                <div id="about-text">
+                    <p>
+                        Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of 
+                        creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults. 
+                    </p>
+                    <p>
+                        Fostering creative thinking, problem-solving, and interdependence skills in children and young adults is a 
+                        core responsibility that everyone needs to play in making the world a better place for all.
+                    </p>
+                </div>
                 <a href="#" class="learn-more-btn">Learn More</a>
             </div>
         </div>
@@ -98,9 +109,11 @@
         </div>
         <div class="vision-content">
             <h2>Our Vision</h2>
-            <p>
-                Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in.
-            </p>
+            <div id="vision-text">
+                <p>
+                    Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in.
+                </p>
+            </div>
             <a href="#" class="btn">Donate Now</a>
         </div>
     </section>
@@ -252,178 +265,226 @@
         </div>
     </footer>
 
-    <script>
-        // Modern toggle menu with animation
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            
-            // Toggle body scroll when menu is open
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-item').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-        
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Slideshow functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        
-        function showSlide(n) {
-            slides.forEach(slide => {
-                slide.classList.remove('active');
-                slide.classList.add('fade-out');
-            });
-            
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-            slides[currentSlide].classList.remove('fade-out');
-        }
-        
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-        
-        // Change slide every 5 seconds
-        const slideInterval = setInterval(nextSlide, 5000);
-        
-        // Pause slideshow when user hovers over it
-        const slideshow = document.querySelector('.slideshow');
-        slideshow.addEventListener('mouseenter', () => {
-            clearInterval(slideInterval);
-        });
-        
-        slideshow.addEventListener('mouseleave', () => {
-            setInterval(nextSlide, 5000);
-        });
-        
-        // Counter animation with Intersection Observer
-        const counterSection = document.querySelector('.kindergarten-counter-section');
-        const counters = document.querySelectorAll('.count');
-        let animated = false;
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !animated) {
-                    animateCounters();
-                    animated = true;
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        observer.observe(counterSection);
-        
-        function animateCounters() {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const duration = 2000; // Animation duration in ms
-                const startTime = performance.now();
-                
-                const updateCount = (currentTime) => {
-                    const elapsedTime = currentTime - startTime;
-                    const progress = Math.min(elapsedTime / duration, 1);
-                    const value = Math.floor(progress * target);
-                    
-                    counter.textContent = value.toLocaleString();
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCount);
-                    }
-                };
-                
-                requestAnimationFrame(updateCount);
-            });
-        }
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Netlify Identity and CMS Integration
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
-            
-            // Check if user is logged in
-            const currentUser = netlifyIdentity.currentUser();
-            if (currentUser) {
-                document.getElementById('cmsAdminBtn').style.display = 'flex';
-            }
-            
-            // Listen for login events
-            netlifyIdentity.on('login', user => {
-                document.getElementById('cmsAdminBtn').style.display = 'flex';
-                closeModal();
-            });
-            
-            // Listen for logout events
-            netlifyIdentity.on('logout', () => {
-                document.getElementById('cmsAdminBtn').style.display = 'none';
-            });
-        }
-        
-        // Modal functions
-        function openModal() {
-            document.getElementById('cmsModal').style.display = 'flex';
-        }
-        
-        function closeModal() {
-            document.getElementById('cmsModal').style.display = 'none';
-        }
-        
-        // Admin link click handler
-        document.querySelector('.admin-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            openModal();
-        });
-        
-        // Close modal when clicking outside
-        document.getElementById('cmsModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-       
-    </script>
+    <!-- Marked.js for markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="cms-integration.js"></script>
+    
+    <!-- CMS Integration Script -->
+    <script>
+        // CMS Content Injection
+        document.addEventListener('DOMContentLoaded', function() {
+            // Skip if in admin interface
+            if (window.location.pathname.includes('/admin/')) return;
+
+            // Parse frontmatter from the HTML content
+            function parseFrontmatter() {
+                const frontmatter = {};
+                const metaTags = document.querySelectorAll('meta[name^="cms-"]');
+                
+                metaTags.forEach(tag => {
+                    const name = tag.getAttribute('name').replace('cms-', '');
+                    const content = tag.getAttribute('content');
+                    frontmatter[name] = content;
+                });
+
+                return Object.keys(frontmatter).length ? frontmatter : null;
+            }
+
+            // Inject CMS content into the page
+            function injectCmsContent(data) {
+                // Hero Section
+                if (data.hero_heading) {
+                    const el = document.getElementById('hero-heading');
+                    if (el) el.textContent = data.hero_heading;
+                }
+                
+                if (data.hero_text) {
+                    const el = document.getElementById('hero-text');
+                    if (el) el.textContent = data.hero_text;
+                }
+                
+                if (data.hero_button_text) {
+                    const el = document.getElementById('hero-button');
+                    if (el) el.textContent = data.hero_button_text;
+                }
+                
+                // About Section
+                if (data.about_heading) {
+                    const el = document.getElementById('about-heading');
+                    if (el) el.textContent = data.about_heading;
+                }
+                
+                if (data.about_text) {
+                    const el = document.getElementById('about-text');
+                    if (el) el.innerHTML = marked.parse(data.about_text);
+                }
+                
+                // Vision Section
+                if (data.vision_text) {
+                    const el = document.getElementById('vision-text');
+                    if (el) el.innerHTML = marked.parse(data.vision_text);
+                }
+                
+                // Update page title
+                if (data.title) {
+                    document.title = data.title;
+                }
+            }
+
+            // Try to get frontmatter data
+            const cmsData = parseFrontmatter();
+            if (cmsData) {
+                injectCmsContent(cmsData);
+            }
+
+            // Modern toggle menu with animation
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-item').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Slideshow functionality
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+            
+            function showSlide(n) {
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                    slide.classList.add('fade-out');
+                });
+                
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                slides[currentSlide].classList.remove('fade-out');
+            }
+            
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+            
+            // Change slide every 5 seconds
+            const slideInterval = setInterval(nextSlide, 5000);
+            
+            // Pause slideshow when user hovers over it
+            const slideshow = document.querySelector('.slideshow');
+            slideshow.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            slideshow.addEventListener('mouseleave', () => {
+                setInterval(nextSlide, 5000);
+            });
+            
+            // Counter animation with Intersection Observer
+            const counterSection = document.querySelector('.kindergarten-counter-section');
+            const counters = document.querySelectorAll('.count');
+            let animated = false;
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animated) {
+                        animateCounters();
+                        animated = true;
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(counterSection);
+            
+            function animateCounters() {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000;
+                    const startTime = performance.now();
+                    
+                    const updateCount = (currentTime) => {
+                        const elapsedTime = currentTime - startTime;
+                        const progress = Math.min(elapsedTime / duration, 1);
+                        const value = Math.floor(progress * target);
+                        
+                        counter.textContent = value.toLocaleString();
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCount);
+                        }
+                    };
+                    
+                    requestAnimationFrame(updateCount);
+                });
+            }
+            
+            // Netlify Identity and CMS Integration
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", user => {
+                    if (!user) {
+                        window.netlifyIdentity.on("login", () => {
+                            document.location.href = "/admin/";
+                        });
+                    }
+                });
+                
+                // Check if user is logged in
+                const currentUser = netlifyIdentity.currentUser();
+                if (currentUser) {
+                    document.getElementById('cmsAdminBtn').style.display = 'flex';
+                }
+                
+                // Listen for login events
+                netlifyIdentity.on('login', user => {
+                    document.getElementById('cmsAdminBtn').style.display = 'flex';
+                    closeModal();
+                });
+                
+                // Listen for logout events
+                netlifyIdentity.on('logout', () => {
+                    document.getElementById('cmsAdminBtn').style.display = 'none';
+                });
+            }
+            
+            // Modal functions
+            function openModal() {
+                document.getElementById('cmsModal').style.display = 'flex';
+            }
+            
+            function closeModal() {
+                document.getElementById('cmsModal').style.display = 'none';
+            }
+            
+            // Admin link click handler
+            document.querySelector('.admin-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal();
+            });
+            
+            // Close modal when clicking outside
+            document.getElementById('cmsModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
