@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Include the script that builds the page and power Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <!-- Include the script that builds the page and powers Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script>
+        // Fix for Netlify CMS markdown editor not showing existing content
+        CMS.registerEventListener({
+            name: 'preSave',
+            handler: ({ entry }) => {
+                const data = entry.get('data');
+                // Ensure markdown fields are properly handled
+                if (data.get('about_text')) {
+                    data.set('about_text', data.get('about_text').replace(/\\/g, ''));
+                }
+                if (data.get('vision_text')) {
+                    data.set('vision_text', data.get('vision_text').replace(/\\/g, ''));
+                }
+                return data;
+            }
+        });
+    </script>
 </body>
 </html>
