@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGNAL PREPARATORY SCHOOL</title>
+    <title id="site-title">SIGNAL PREPARATORY SCHOOL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 <body>
     <!-- CMS Admin Button (visible when logged in) -->
     <a href="/admin/" class="cms-admin-btn" id="cmsAdminBtn" style="display: none;">
-        <i class="fas fa-cog"></i> CMS Admin
+        <i class="fas fa-cog"></i> <span id="admin-btn-text">CMS Admin</span>
     </a>
     
     <!-- CMS Login Modal -->
@@ -29,8 +29,8 @@
 
     <nav class="navbar" id="navbar">
         <div class="logo-container">
-            <img src="logo.png" alt="Logo" class="logo">
-            <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+            <img src="logo.png" alt="Logo" class="logo" id="main-logo">
+            <div class="logo-text" id="school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
         </div>
         
         <!-- Modern Hamburger Menu -->
@@ -52,17 +52,8 @@
     
     <section class="hero">
         <div class="hero-overlay"></div>
-        <div class="slideshow">
-            <img src="image1.jpg" class="slide active" alt="School building">
-            <img src="image2.jpg" class="slide" alt="Students learning">
-            <img src="image3.jpg" class="slide" alt="Classroom activities">
-            <img src="image4.jpg" class="slide" alt="School event">
-            <img src="image5.jpg" class="slide" alt="Students playing">
-            <img src="image6.jpg" class="slide" alt="Artwork">
-            <img src="image7.jpg" class="slide" alt="School garden">
-            <img src="image8.jpg" class="slide" alt="Teachers and students">
-            <img src="image9.jpg" class="slide" alt="School performance">
-            <img src="image10.jpg" class="slide" alt="School facilities">
+        <div class="slideshow" id="slideshow-container">
+            <!-- Slides will be dynamically inserted here -->
         </div>
         <div class="hero-content">
             <h2 id="hero-heading">Loading content...</h2>
@@ -74,128 +65,109 @@
     <section class="about-section">
         <div class="about-container">
             <div class="about-image">
-                <img src="about-image.jpg" alt="About Signal Preparatory">
+                <img src="about-image.jpg" alt="About Signal Preparatory" id="about-section-image">
             </div>
             <div class="about-content">
                 <h2 id="about-heading">Loading...</h2>
                 <div id="about-text">
                     <p>Loading content...</p>
                 </div>
-                <a href="#" class="learn-more-btn">Learn More</a>
+                <a href="#" class="learn-more-btn" id="learn-more-btn">Learn More</a>
             </div>
         </div>
     </section>
 
     <section class="vision-section">
         <div class="vision-image">
-            <img src="your-image.jpg" alt="Signal Preparatory school">
+            <img src="your-image.jpg" alt="Signal Preparatory school" id="vision-image">
         </div>
         <div class="vision-content">
-            <h2>Our Vision</h2>
+            <h2 id="vision-heading">Our Vision</h2>
             <div id="vision-text">
                 <p>Loading content...</p>
             </div>
-            <a href="#" class="btn">Donate Now</a>
+            <a href="#" class="btn" id="donate-btn-1">Donate Now</a>
         </div>
     </section>
 
     <div class="container">
         <div class="card">
-            <h2>Welcome from the Headteacher</h2>
-            <p>At Signal School, our guiding principle is 'Aim High, Be Kind, and Dare to save mother earth'. This is deeply rooted at our core and combined with exceptional teaching.</p>
+            <h2 id="headteacher-heading">Welcome from the Headteacher</h2>
+            <p id="headteacher-message">At Signal School, our guiding principle is 'Aim High, Be Kind, and Dare to save mother earth'. This is deeply rooted at our core and combined with exceptional teaching.</p>
         </div>
         <div class="card">
-            <h2>Visit Signal School</h2>
-            <p>Experience firsthand hospitality, creativity, and a child-based culture in the teaching/learning process.</p>
-            <p>Be part of our movement. Visit and leave a mark of Peace, Love, and Kindness that our generation in the making shall celebrate your visit for life.</p>
-            <a href="#" class="btn">Arrange a Visit</a>
+            <h2 id="visit-heading">Visit Signal School</h2>
+            <p id="visit-text">Experience firsthand hospitality, creativity, and a child-based culture in the teaching/learning process.</p>
+            <p id="visit-text-continued">Be part of our movement. Visit and leave a mark of Peace, Love, and Kindness that our generation in the making shall celebrate your visit for life.</p>
+            <a href="#" class="btn" id="visit-btn">Arrange a Visit</a>
         </div>
         <div class="card logo-card">
-            <img src="logo.png" alt="School Logo">
+            <img src="logo.png" alt="School Logo" id="secondary-logo">
         </div>
     </div>
 
     <section class="section">
         <div class="content">
-            <h2>The Ethos and the Environment</h2>
-            <p>At Signal Preparatory School, our ethos goes beyond academia. We believe in nurturing the whole child, promoting coexistence, creativity, and global awareness.</p>
-            <p>Child Art, Child Waste Management, Child Kitchen Gardening, and Child Sports are key in our teaching-learning process.</p>
-            <p>Signal Preparatory School offers an environment where pupils are daily inspired both by the lessons in the classroom and the serenity outside.</p>
-            <a href="#" class="read-more">Read More</a>
+            <h2 id="ethos-heading">The Ethos and the Environment</h2>
+            <p id="ethos-text">At Signal Preparatory School, our ethos goes beyond academia. We believe in nurturing the whole child, promoting coexistence, creativity, and global awareness.</p>
+            <p id="ethos-text-continued">Child Art, Child Waste Management, Child Kitchen Gardening, and Child Sports are key in our teaching-learning process.</p>
+            <p id="ethos-text-conclusion">Signal Preparatory School offers an environment where pupils are daily inspired both by the lessons in the classroom and the serenity outside.</p>
+            <a href="#" class="read-more" id="read-more-link">Read More</a>
         </div>
         <div class="image-container">
-            <img src="secc.jpg" alt="Children with an art project">
+            <img src="secc.jpg" alt="Children with an art project" id="ethos-image">
         </div>
     </section>
 
-    <h1 class="section-title">Join us and play your part</h1>
-    <h2 class="sub-title">Our thematic areas</h2>
+    <h1 class="section-title" id="join-heading">Join us and play your part</h1>
+    <h2 class="sub-title" id="thematic-heading">Our thematic areas</h2>
     
-    <div class="programs-container">
-        <div class="program">
-            <img src="child.jpeg" alt="Signal Preparatory child art">
-            <h3 class="program-title">Child Art</h3>
-            <p class="program-description">Art is a unique style of bringing an imagination to reality. At Signal Preparatory School, we equip pupils with child art skills to spark their creativity and team working abilities.</p>
-        </div>
-        <div class="program">
-            <img src="waste.jpeg" alt="Signal Preparatory waste management">
-            <h3 class="program-title">Child Waste Management</h3>
-            <p class="program-description">With the adopted slogan, "Waste is Waste if Wasted", at Signal School, we equip learners with the art of managing waste. We emphasize the 5R's of waste management to our pupils. We aim to empower ambassadors who will make Mother Earth a better place to live in.</p>
-        </div>
-        <div class="program">
-            <img src="sports.jpeg" alt="Signal Preparatory waste management">
-            <h3 class="program-title">Child Sports</h3>
-            <p class="program-description">Children learn much more through play. The more they play is the more they learn. And the more they learn is the more they play. This improves their problem solving skills, collaboration and creativity.</p>
-        </div>
-        <div class="program">
-            <img src="music.webp" alt="Signal Preparatory waste management">
-            <h3 class="program-title">Music, Dance and drama</h3>
-            <p class="program-description">Music is the language of the soul. At Signal School, Music Dance and Drama drives the mood of learning. It improves the confidence and communication skills, creativity, team working, positive competition among others.</p>
-        </div>
+    <div class="programs-container" id="programs-container">
+        <!-- Programs will be dynamically inserted here -->
     </div>
 
     <div class="alternate-container">
         <!-- First Row -->
         <div class="alternate-row">
             <div class="alternate-image-container">
-                <img src="academic.jpg" alt="Children Learning">
+                <img src="academic.jpg" alt="Children Learning" id="academic-image">
             </div>
             <div class="alternate-text-container">
-                <h2>Academic Excellence</h2>
-                <p>
+                <h2 id="academic-heading">Academic Excellence</h2>
+                <p id="academic-text">
                     Dynamic instruction at Signal School fosters intellectual curiosity, autonomy, and self-assurance. We inspire girls and boys to cultivate distinctiveness in character and innovative thought. This has made our Pupils icons of community transformation.
                 </p>
-                <button class="alternate-read-more">Read More</button>
+                <button class="alternate-read-more" id="read-more-btn-1">Read More</button>
             </div>
         </div>
 
         <!-- Second Row (Alternated) -->
         <div class="alternate-row">
             <div class="alternate-image-container">
-                <img src="happy.jpg" alt="Children Engaging in Activities">
+                <img src="happy.jpg" alt="Children Engaging in Activities" id="happy-image">
             </div>
             <div class="alternate-text-container">
-                <h2>A happy Learning Environment</h2>
-                <p>
+                <h2 id="happy-heading">A happy Learning Environment</h2>
+                <p id="happy-text">
                     Our objective is to ignite a lifelong passion for learning. By challenging the advanced and uplifting the less assured, we ensure each pupil realizes their unique academic potential that can help him be an inspiration the world needs.
                 </p>
-                <button class="alternate-read-more">Read More</button>
+                <button class="alternate-read-more" id="read-more-btn-2">Read More</button>
             </div>
         </div>
     </div>
 
     <div class="kindergarten-counter-section">
         <div class="counter-box students">
-            <h2 class="count" data-target="150">0</h2>
-            <p>Total pupils at Signal preparatory</p>
+            <h2 class="count" id="student-count" data-target="150">0</h2>
+            <p id="student-label">Total pupils at Signal preparatory</p>
         </div>
         <div class="counter-box teachers">
-            <h2 class="count" data-target="600">0</h2>
-            <p>School alumni</p>
+            <h2 class="count" id="alumni-count" data-target="600">0</h2>
+            <p id="alumni-label">School alumni</p>
         </div>
         <div class="counter-box activities">
-            <h2 class="count" data-target="300">0</h2>
-            <p>Fun Activities Completed</p>
+            <h2 class="count" id="activities-count" data-target="300">0</h2>
+            <p id="activities-label">Fun Activities Completed</p>
         </div>
     </div>
 
@@ -204,45 +176,38 @@
             <!-- Logo and School Name -->
             <div class="footer-column logo-column">
                 <div class="logo-container">
-                    <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo">
-                    <div class="footer-logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+                    <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo" id="footer-logo">
+                    <div class="footer-logo-text" id="footer-school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
                 </div>
-                <p class="footer-text">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/signal.arts.5" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.youtube.com/@signalarts85" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.tiktok.com/@henry.signal.arts" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <p class="footer-text" id="footer-tagline">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
+                <div class="social-icons" id="social-icons-container">
+                    <!-- Social icons will be dynamically inserted here -->
                 </div>
             </div>
     
             <!-- Quick Links -->
             <div class="footer-column">
-                <h3 class="footer-heading">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#" class="footer-link">Home</a></li>
-                    <li><a href="#" class="footer-link">About</a></li>
-                    <li><a href="#" class="footer-link">Address</a></li>
-                    <li><a href="#" class="footer-link">Completed Projects</a></li>
-                    <li><a href="#" class="footer-link">Contact</a></li>
+                <h3 class="footer-heading" id="footer-links-heading">Quick Links</h3>
+                <ul class="footer-links" id="footer-links-container">
+                    <!-- Footer links will be dynamically inserted here -->
                 </ul>
             </div>
     
             <!-- Contact Information -->
             <div class="footer-column">
-                <h3 class="footer-heading">Contact Us</h3>
-                <p class="footer-text">Email: signalarts1@gmail.com</p>
-                <p class="footer-text">Phone: +256 775413318</p>
-                <p class="footer-text">Phone: +256754406992</p>
-                <p class="footer-text">Address: Bwera, Kasese, Uganda</p>
+                <h3 class="footer-heading" id="contact-heading">Contact Us</h3>
+                <p class="footer-text" id="footer-email">Email: signalarts1@gmail.com</p>
+                <p class="footer-text" id="footer-phone1">Phone: +256 775413318</p>
+                <p class="footer-text" id="footer-phone2">Phone: +256754406992</p>
+                <p class="footer-text" id="footer-address">Address: Bwera, Kasese, Uganda</p>
             </div>
         </div>
     
         <!-- Footer Bottom Section -->
         <div class="footer-bottom">
-            <p class="footer-copyright">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
-            <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
-            <a href="/admin/" class="admin-link">Admin Login</a>
+            <p class="footer-copyright" id="copyright-text">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
+            <p class="designer-credit" id="designer-credit">Designed by <a href="#" class="designer-link" id="designer-link">Mumbere Darius</a></p>
+            <a href="/admin/" class="admin-link" id="admin-link-text">Admin Login</a>
         </div>
     </footer>
 
@@ -264,7 +229,31 @@
                     return response.json();
                 })
                 .then(data => {
-                    // Inject content into the page
+                    // Site-wide content
+                    if (data.title) {
+                        document.getElementById('site-title').textContent = data.title;
+                        document.title = data.title;
+                    }
+                    if (data.school_name) {
+                        document.getElementById('school-name').textContent = data.school_name;
+                    }
+                    if (data.logo) {
+                        document.getElementById('main-logo').src = data.logo;
+                    }
+                    if (data.secondary_logo) {
+                        document.getElementById('secondary-logo').src = data.secondary_logo;
+                    }
+                    if (data.footer_logo) {
+                        document.getElementById('footer-logo').src = data.footer_logo;
+                    }
+                    if (data.footer_school_name) {
+                        document.getElementById('footer-school-name').textContent = data.footer_school_name;
+                    }
+                    if (data.admin_text) {
+                        document.getElementById('admin-btn-text').textContent = data.admin_text;
+                    }
+
+                    // Hero Section
                     if (data.hero_heading) {
                         document.getElementById('hero-heading').textContent = data.hero_heading;
                     }
@@ -274,36 +263,314 @@
                     if (data.hero_button_text) {
                         document.getElementById('hero-button').textContent = data.hero_button_text;
                     }
+
+                    // About Section
+                    if (data.about_image) {
+                        document.getElementById('about-section-image').src = data.about_image;
+                    }
                     if (data.about_heading) {
                         document.getElementById('about-heading').textContent = data.about_heading;
                     }
                     if (data.about_text) {
                         document.getElementById('about-text').innerHTML = marked.parse(data.about_text);
                     }
+                    if (data.learn_more_text) {
+                        document.getElementById('learn-more-btn').textContent = data.learn_more_text;
+                    }
+
+                    // Vision Section
+                    if (data.vision_image) {
+                        document.getElementById('vision-image').src = data.vision_image;
+                    }
+                    if (data.vision_heading) {
+                        document.getElementById('vision-heading').textContent = data.vision_heading;
+                    }
                     if (data.vision_text) {
                         document.getElementById('vision-text').innerHTML = marked.parse(data.vision_text);
                     }
-                    if (data.title) {
-                        document.title = data.title;
+                    if (data.donate_button_text) {
+                        document.getElementById('donate-btn-1').textContent = data.donate_button_text;
+                    }
+
+                    // Headteacher Section
+                    if (data.headteacher_heading) {
+                        document.getElementById('headteacher-heading').textContent = data.headteacher_heading;
+                    }
+                    if (data.headteacher_message) {
+                        document.getElementById('headteacher-message').textContent = data.headteacher_message;
+                    }
+
+                    // Visit Section
+                    if (data.visit_heading) {
+                        document.getElementById('visit-heading').textContent = data.visit_heading;
+                    }
+                    if (data.visit_text) {
+                        document.getElementById('visit-text').textContent = data.visit_text;
+                    }
+                    if (data.visit_text_continued) {
+                        document.getElementById('visit-text-continued').textContent = data.visit_text_continued;
+                    }
+                    if (data.visit_button_text) {
+                        document.getElementById('visit-btn').textContent = data.visit_button_text;
+                    }
+
+                    // Ethos Section
+                    if (data.ethos_heading) {
+                        document.getElementById('ethos-heading').textContent = data.ethos_heading;
+                    }
+                    if (data.ethos_text) {
+                        document.getElementById('ethos-text').textContent = data.ethos_text;
+                    }
+                    if (data.ethos_text_continued) {
+                        document.getElementById('ethos-text-continued').textContent = data.ethos_text_continued;
+                    }
+                    if (data.ethos_text_conclusion) {
+                        document.getElementById('ethos-text-conclusion').textContent = data.ethos_text_conclusion;
+                    }
+                    if (data.ethos_image) {
+                        document.getElementById('ethos-image').src = data.ethos_image;
+                    }
+                    if (data.read_more_text) {
+                        document.getElementById('read-more-link').textContent = data.read_more_text;
+                    }
+
+                    // Join and Thematic Areas
+                    if (data.join_heading) {
+                        document.getElementById('join-heading').textContent = data.join_heading;
+                    }
+                    if (data.thematic_heading) {
+                        document.getElementById('thematic-heading').textContent = data.thematic_heading;
+                    }
+
+                    // Programs Section
+                    if (data.programs && Array.isArray(data.programs)) {
+                        const programsContainer = document.getElementById('programs-container');
+                        programsContainer.innerHTML = '';
+                        
+                        data.programs.forEach(program => {
+                            const programHTML = `
+                                <div class="program">
+                                    <img src="${program.image}" alt="${program.title}">
+                                    <h3 class="program-title">${program.title}</h3>
+                                    <p class="program-description">${program.description}</p>
+                                </div>
+                            `;
+                            programsContainer.innerHTML += programHTML;
+                        });
+                    }
+
+                    // Academic Section
+                    if (data.academic) {
+                        if (data.academic.heading) {
+                            document.getElementById('academic-heading').textContent = data.academic.heading;
+                        }
+                        if (data.academic.text) {
+                            document.getElementById('academic-text').textContent = data.academic.text;
+                        }
+                        if (data.academic.image) {
+                            document.getElementById('academic-image').src = data.academic.image;
+                        }
+                    }
+
+                    // Happy Section
+                    if (data.happy) {
+                        if (data.happy.heading) {
+                            document.getElementById('happy-heading').textContent = data.happy.heading;
+                        }
+                        if (data.happy.text) {
+                            document.getElementById('happy-text').textContent = data.happy.text;
+                        }
+                        if (data.happy.image) {
+                            document.getElementById('happy-image').src = data.happy.image;
+                        }
+                    }
+
+                    if (data.read_more_button) {
+                        document.getElementById('read-more-btn-1').textContent = data.read_more_button;
+                        document.getElementById('read-more-btn-2').textContent = data.read_more_button;
+                    }
+
+                    // Counter Section
+                    if (data.student_count) {
+                        document.getElementById('student-count').textContent = data.student_count;
+                        document.getElementById('student-count').setAttribute('data-target', data.student_count);
+                    }
+                    if (data.student_label) {
+                        document.getElementById('student-label').textContent = data.student_label;
+                    }
+                    if (data.alumni_count) {
+                        document.getElementById('alumni-count').textContent = data.alumni_count;
+                        document.getElementById('alumni-count').setAttribute('data-target', data.alumni_count);
+                    }
+                    if (data.alumni_label) {
+                        document.getElementById('alumni-label').textContent = data.alumni_label;
+                    }
+                    if (data.activities_count) {
+                        document.getElementById('activities-count').textContent = data.activities_count;
+                        document.getElementById('activities-count').setAttribute('data-target', data.activities_count);
+                    }
+                    if (data.activities_label) {
+                        document.getElementById('activities-label').textContent = data.activities_label;
+                    }
+
+                    // Footer Section
+                    if (data.footer_tagline) {
+                        document.getElementById('footer-tagline').textContent = data.footer_tagline;
+                    }
+
+                    // Social Links
+                    if (data.social_links && Array.isArray(data.social_links)) {
+                        const socialContainer = document.getElementById('social-icons-container');
+                        socialContainer.innerHTML = '';
+                        
+                        data.social_links.forEach(link => {
+                            const iconClass = getSocialIconClass(link.platform);
+                            if (iconClass) {
+                                const socialHTML = `
+                                    <a href="${link.url}" target="_blank" class="social-icon"><i class="${iconClass}"></i></a>
+                                `;
+                                socialContainer.innerHTML += socialHTML;
+                            }
+                        });
+                    }
+
+                    // Footer Links
+                    if (data.footer_links && Array.isArray(data.footer_links)) {
+                        const footerLinksContainer = document.getElementById('footer-links-container');
+                        footerLinksContainer.innerHTML = '';
+                        
+                        data.footer_links.forEach(link => {
+                            const linkHTML = `
+                                <li><a href="${link.url}" class="footer-link">${link.text}</a></li>
+                            `;
+                            footerLinksContainer.innerHTML += linkHTML;
+                        });
+                    }
+
+                    if (data.contact_heading) {
+                        document.getElementById('contact-heading').textContent = data.contact_heading;
+                    }
+                    if (data.email) {
+                        document.getElementById('footer-email').textContent = `Email: ${data.email}`;
+                    }
+                    if (data.phone1) {
+                        document.getElementById('footer-phone1').textContent = `Phone: ${data.phone1}`;
+                    }
+                    if (data.phone2) {
+                        document.getElementById('footer-phone2').textContent = `Phone: ${data.phone2}`;
+                    }
+                    if (data.address) {
+                        document.getElementById('footer-address').textContent = `Address: ${data.address}`;
+                    }
+
+                    if (data.copyright_text) {
+                        document.getElementById('copyright-text').textContent = data.copyright_text;
+                    }
+                    if (data.designer_text) {
+                        document.getElementById('designer-credit').textContent = data.designer_text;
+                    }
+                    if (data.designer_link) {
+                        document.getElementById('designer-link').href = data.designer_link;
+                    }
+                    if (data.designer_name) {
+                        document.getElementById('designer-link').textContent = data.designer_name;
+                    }
+                    if (data.admin_text) {
+                        document.getElementById('admin-link-text').textContent = data.admin_text;
+                    }
+
+                    // Slideshow Images
+                    if (data.slideshow_images && Array.isArray(data.slideshow_images)) {
+                        const slideshowContainer = document.getElementById('slideshow-container');
+                        slideshowContainer.innerHTML = '';
+                        
+                        data.slideshow_images.forEach((slide, index) => {
+                            const slideHTML = `
+                                <img src="${slide.image}" class="slide ${index === 0 ? 'active' : ''}" alt="${slide.alt || 'Slide image'}">
+                            `;
+                            slideshowContainer.innerHTML += slideHTML;
+                        });
+
+                        // Initialize slideshow if there are images
+                        if (data.slideshow_images.length > 0) {
+                            initializeSlideshow();
+                        }
                     }
                 })
                 .catch(error => {
                     console.error('Error loading content:', error);
-                    // Fallback content
-                    document.getElementById('hero-heading').textContent = 'Signal Preparatory is a school aiming at mentoring a coexisting generation...';
-                    document.getElementById('hero-text').textContent = 'Good foundation, better future';
-                    document.getElementById('hero-button').textContent = 'Explore More';
-                    document.getElementById('about-heading').textContent = 'About Us';
-                    document.getElementById('about-text').innerHTML = `
-                        <p>Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of 
-                        creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults.</p>
-                        <p>Fostering creative thinking, problem-solving, and interdependence skills in children and young adults is a 
-                        core responsibility that everyone needs to play in making the world a better place for all.</p>
-                    `;
-                    document.getElementById('vision-text').innerHTML = `
-                        <p>Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in.</p>
-                    `;
+                    loadFallbackContent();
                 });
+
+            function getSocialIconClass(platform) {
+                const platformLower = platform.toLowerCase();
+                if (platformLower.includes('facebook')) return 'fab fa-facebook-f';
+                if (platformLower.includes('twitter')) return 'fab fa-twitter';
+                if (platformLower.includes('instagram')) return 'fab fa-instagram';
+                if (platformLower.includes('youtube')) return 'fab fa-youtube';
+                if (platformLower.includes('linkedin')) return 'fab fa-linkedin';
+                if (platformLower.includes('tiktok')) return 'fab fa-tiktok';
+                return 'fas fa-share-alt'; // default icon
+            }
+
+            function initializeSlideshow() {
+                let currentSlide = 0;
+                const slides = document.querySelectorAll('.slide');
+                
+                function showSlide(n) {
+                    slides.forEach(slide => {
+                        slide.classList.remove('active');
+                        slide.classList.add('fade-out');
+                    });
+                    
+                    currentSlide = (n + slides.length) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                    slides[currentSlide].classList.remove('fade-out');
+                }
+                
+                function nextSlide() {
+                    showSlide(currentSlide + 1);
+                }
+                
+                // Change slide every 5 seconds
+                const slideInterval = setInterval(nextSlide, 5000);
+                
+                // Pause slideshow when user hovers over it
+                const slideshow = document.querySelector('.slideshow');
+                slideshow.addEventListener('mouseenter', () => {
+                    clearInterval(slideInterval);
+                });
+                
+                slideshow.addEventListener('mouseleave', () => {
+                    setInterval(nextSlide, 5000);
+                });
+            }
+
+            function loadFallbackContent() {
+                // Fallback content for all sections
+                document.getElementById('hero-heading').textContent = 'Signal Preparatory is a school aiming at mentoring a coexisting generation...';
+                document.getElementById('hero-text').textContent = 'Good foundation, better future';
+                document.getElementById('hero-button').textContent = 'Explore More';
+                document.getElementById('about-heading').textContent = 'About Us';
+                document.getElementById('about-text').innerHTML = `
+                    <p>Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of 
+                    creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults.</p>
+                    <p>Fostering creative thinking, problem-solving, and interdependence skills in children and young adults is a 
+                    core responsibility that everyone needs to play in making the world a better place for all.</p>
+                `;
+                document.getElementById('vision-text').innerHTML = `
+                    <p>Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in.</p>
+                `;
+                
+                // Initialize slideshow with default images
+                const slideshowContainer = document.getElementById('slideshow-container');
+                slideshowContainer.innerHTML = `
+                    <img src="image1.jpg" class="slide active" alt="School building">
+                    <img src="image2.jpg" class="slide" alt="Students learning">
+                    <img src="image3.jpg" class="slide" alt="Classroom activities">
+                `;
+                initializeSlideshow();
+            }
 
             // Modern toggle menu with animation
             const hamburger = document.getElementById('hamburger');
@@ -332,38 +599,6 @@
                 } else {
                     navbar.classList.remove('scrolled');
                 }
-            });
-            
-            // Slideshow functionality
-            let currentSlide = 0;
-            const slides = document.querySelectorAll('.slide');
-            
-            function showSlide(n) {
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                    slide.classList.add('fade-out');
-                });
-                
-                currentSlide = (n + slides.length) % slides.length;
-                slides[currentSlide].classList.add('active');
-                slides[currentSlide].classList.remove('fade-out');
-            }
-            
-            function nextSlide() {
-                showSlide(currentSlide + 1);
-            }
-            
-            // Change slide every 5 seconds
-            const slideInterval = setInterval(nextSlide, 5000);
-            
-            // Pause slideshow when user hovers over it
-            const slideshow = document.querySelector('.slideshow');
-            slideshow.addEventListener('mouseenter', () => {
-                clearInterval(slideInterval);
-            });
-            
-            slideshow.addEventListener('mouseleave', () => {
-                setInterval(nextSlide, 5000);
             });
             
             // Counter animation with Intersection Observer
