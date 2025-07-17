@@ -7,10 +7,10 @@ public_folder: "/images/uploads"
 
 collections:
   - name: "site_content"
-    label: "Site Content"
+    label: "Home_Page"
     files:
       - name: "content"
-        label: "Content"
+        label: "Home_Content"
         file: "src/data/content.json"
         fields:
           - { label: "Site Title", name: "title", widget: "string" }
