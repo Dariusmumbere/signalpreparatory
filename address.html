@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="site-title">Contact Us - SIGNAL PREPARATORY SCHOOL</title>
+    <title id="site-title">{{title_contact}} - {{school_name_contact}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,13 @@
 <body>
     <!-- CMS Admin Button (visible when logged in) -->
     <a href="/admin/" class="cms-admin-btn" id="cmsAdminBtn" style="display: none;">
-        <i class="fas fa-cog"></i> <span id="admin-btn-text">CMS Admin</span>
+        <i class="fas fa-cog"></i> <span id="admin-btn-text">{{admin_text_contact}}</span>
     </a>
     
     <nav class="navbar" id="navbar">
         <div class="logo-container">
             <img src="logo.png" alt="Logo" class="logo" id="main-logo">
-            <div class="logo-text" id="school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
+            <div class="logo-text" id="school-name">{{school_name_contact}}</div>
         </div>
         
         <!-- Modern Hamburger Menu -->
@@ -42,8 +42,8 @@
     
     <main class="contact-container">
         <div class="contact-header">
-            <h1 id="contact-page-heading">Contact Us</h1>
-            <p id="contact-page-subheading">We'd love to hear from you! Reach out to us for any inquiries or feedback.</p>
+            <h1 id="contact-page-heading">{{contact_page_heading}}</h1>
+            <p id="contact-page-subheading">{{contact_page_subheading}}</p>
         </div>
 
         <div class="contact-content">
@@ -51,30 +51,30 @@
             <div class="contact-info">
                 <div class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <h3 id="contact-section-heading">Our Office</h3>
-                    <p id="office-address">Loading address...</p>
+                    <h3 id="contact-section-heading">{{contact_heading_contact}}</h3>
+                    <p id="office-address">{{address_contact}}</p>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-phone-alt"></i>
                     <h3>Call Us</h3>
-                    <p id="phone1">Loading phone...</p>
-                    <p id="phone2">Loading phone...</p>
+                    <p id="phone1">{{phone1_contact}}</p>
+                    <p id="phone2">{{phone2_contact}}</p>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-envelope"></i>
                     <h3>Email Us</h3>
-                    <p id="email">Loading email...</p>
+                    <p id="email">{{email_contact}}</p>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-clock"></i>
                     <h3>Working Hours</h3>
-                    <p id="working-hours">Loading hours...</p>
+                    <p id="working-hours">{{working_hours}}</p>
                 </div>
             </div>
 
             <!-- Contact Form -->
             <div class="contact-form">
-                <h2 id="form-heading">Send Us a Message</h2>
+                <h2 id="form-heading">{{form_heading}}</h2>
                 <form action="#" method="post" netlify>
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
@@ -95,8 +95,8 @@
 
         <!-- Map Section -->
         <div class="map-section">
-            <h2 id="map-heading">Find Us on the Map</h2>
-            <iframe id="google-map" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <h2 id="map-heading">{{map_heading}}</h2>
+            <iframe id="google-map" src="{{google_maps_url}}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </main>
     
@@ -106,9 +106,9 @@
             <div class="footer-column logo-column">
                 <div class="logo-container">
                     <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo" id="footer-logo">
-                    <div class="footer-logo-text" id="footer-school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
+                    <div class="footer-logo-text" id="footer-school-name">{{footer_school_name_contact}}</div>
                 </div>
-                <p class="footer-text" id="footer-tagline">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
+                <p class="footer-text" id="footer-tagline">{{footer_tagline_contact}}</p>
                 <div class="social-icons" id="social-icons-container">
                     <!-- Social icons will be dynamically inserted here -->
                 </div>
@@ -116,7 +116,7 @@
 
             <!-- Quick Links -->
             <div class="footer-column">
-                <h3 class="footer-heading" id="footer-links-heading">Quick Links</h3>
+                <h3 class="footer-heading">Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="index.html" class="footer-link">Home</a></li>
                     <li><a href="about.html" class="footer-link">About</a></li>
@@ -127,19 +127,19 @@
 
             <!-- Contact Information -->
             <div class="footer-column">
-                <h3 class="footer-heading" id="contact-heading">Contact Us</h3>
-                <p class="footer-text" id="footer-email">Email: loading...</p>
-                <p class="footer-text" id="footer-phone1">Phone: loading...</p>
-                <p class="footer-text" id="footer-phone2">Phone: loading...</p>
-                <p class="footer-text" id="footer-address">Address: loading...</p>
+                <h3 class="footer-heading">{{contact_heading_contact}}</h3>
+                <p class="footer-text" id="footer-email">Email: {{email_footer_contact}}</p>
+                <p class="footer-text" id="footer-phone1">Phone: {{phone1_footer_contact}}</p>
+                <p class="footer-text" id="footer-phone2">Phone: {{phone2_footer_contact}}</p>
+                <p class="footer-text" id="footer-address">Address: {{address_contact}}</p>
             </div>
         </div>
 
         <!-- Footer Bottom Section -->
         <div class="footer-bottom">
-            <p class="footer-copyright" id="copyright-text">© 2025 Signal Preparatory School. All Rights Reserved.</p>
-            <p class="designer-credit" id="designer-credit">Designed by <a href="#" class="designer-link" id="designer-link">Mumbere Darius</a></p>
-            <a href="/admin/" class="admin-link" id="admin-link-text">Admin Login</a>
+            <p class="footer-copyright" id="copyright-text">{{copyright_text_contact}}</p>
+            <p class="designer-credit" id="designer-credit">{{designer_text_contact}} <a href="{{designer_link_contact}}" class="designer-link" id="designer-link">{{designer_name_contact}}</a></p>
+            <a href="/admin/" class="admin-link" id="admin-link-text">{{admin_text_contact}}</a>
         </div>
     </footer>
 
@@ -159,21 +159,17 @@
                 })
                 .then(data => {
                     // Site-wide content
-                    if (data.title) {
-                        document.title = data.title;
-                        document.getElementById('site-title').textContent = data.title;
+                    if (data.title_contact) {
+                        document.title = data.title_contact;
+                        document.getElementById('site-title').textContent = data.title_contact;
                     }
-                    if (data.school_name) {
-                        document.getElementById('school-name').textContent = data.school_name;
-                        document.getElementById('footer-school-name').textContent = data.school_name;
+                    if (data.school_name_contact) {
+                        document.getElementById('school-name').textContent = data.school_name_contact;
+                        document.getElementById('footer-school-name').textContent = data.school_name_contact;
                     }
-                    if (data.logo) {
-                        document.getElementById('main-logo').src = data.logo;
-                        document.getElementById('footer-logo').src = data.logo;
-                    }
-                    if (data.admin_text) {
-                        document.getElementById('admin-btn-text').textContent = data.admin_text;
-                        document.getElementById('admin-link-text').textContent = data.admin_text;
+                    if (data.admin_text_contact) {
+                        document.getElementById('admin-btn-text').textContent = data.admin_text_contact;
+                        document.getElementById('admin-link-text').textContent = data.admin_text_contact;
                     }
 
                     // Contact Page Header
@@ -185,23 +181,25 @@
                     }
 
                     // Contact Information
-                    if (data.contact_section_heading) {
-                        document.getElementById('contact-section-heading').textContent = data.contact_section_heading;
+                    if (data.contact_heading_contact) {
+                        document.getElementById('contact-section-heading').textContent = data.contact_heading_contact;
+                        document.querySelector('.footer-column:nth-child(3) .footer-heading').textContent = data.contact_heading_contact;
                     }
-                    if (data.office_address) {
-                        document.getElementById('office-address').textContent = data.office_address;
+                    if (data.address_contact) {
+                        document.getElementById('office-address').textContent = data.address_contact;
+                        document.getElementById('footer-address').textContent = `Address: ${data.address_contact}`;
                     }
-                    if (data.phone1) {
-                        document.getElementById('phone1').textContent = data.phone1;
-                        document.getElementById('footer-phone1').textContent = `Phone: ${data.phone1}`;
+                    if (data.phone1_contact) {
+                        document.getElementById('phone1').textContent = data.phone1_contact;
+                        document.getElementById('footer-phone1').textContent = `Phone: ${data.phone1_contact}`;
                     }
-                    if (data.phone2) {
-                        document.getElementById('phone2').textContent = data.phone2;
-                        document.getElementById('footer-phone2').textContent = `Phone: ${data.phone2}`;
+                    if (data.phone2_contact) {
+                        document.getElementById('phone2').textContent = data.phone2_contact;
+                        document.getElementById('footer-phone2').textContent = `Phone: ${data.phone2_contact}`;
                     }
-                    if (data.email) {
-                        document.getElementById('email').textContent = data.email;
-                        document.getElementById('footer-email').textContent = `Email: ${data.email}`;
+                    if (data.email_contact) {
+                        document.getElementById('email').textContent = data.email_contact;
+                        document.getElementById('footer-email').textContent = `Email: ${data.email_contact}`;
                     }
                     if (data.working_hours) {
                         document.getElementById('working-hours').textContent = data.working_hours;
@@ -221,16 +219,16 @@
                     }
 
                     // Footer Section
-                    if (data.footer_tagline) {
-                        document.getElementById('footer-tagline').textContent = data.footer_tagline;
+                    if (data.footer_tagline_contact) {
+                        document.getElementById('footer-tagline').textContent = data.footer_tagline_contact;
                     }
 
                     // Social Links
-                    if (data.social_links && Array.isArray(data.social_links)) {
+                    if (data.social_links_contact && Array.isArray(data.social_links_contact)) {
                         const socialContainer = document.getElementById('social-icons-container');
                         socialContainer.innerHTML = '';
                         
-                        data.social_links.forEach(link => {
+                        data.social_links_contact.forEach(link => {
                             const iconClass = getSocialIconClass(link.platform);
                             if (iconClass) {
                                 const socialHTML = `
@@ -243,26 +241,18 @@
                         });
                     }
 
-                    // Contact Information
-                    if (data.contact_heading) {
-                        document.getElementById('contact-heading').textContent = data.contact_heading;
-                    }
-                    if (data.address) {
-                        document.getElementById('footer-address').textContent = `Address: ${data.address}`;
-                    }
-
                     // Footer Bottom
-                    if (data.copyright_text) {
-                        document.getElementById('copyright-text').textContent = data.copyright_text;
+                    if (data.copyright_text_contact) {
+                        document.getElementById('copyright-text').textContent = data.copyright_text_contact;
                     }
-                    if (data.designer_text) {
-                        document.getElementById('designer-credit').textContent = data.designer_text;
+                    if (data.designer_text_contact) {
+                        document.getElementById('designer-credit').textContent = data.designer_text_contact;
                     }
-                    if (data.designer_link) {
-                        document.getElementById('designer-link').href = data.designer_link;
+                    if (data.designer_link_contact) {
+                        document.getElementById('designer-link').href = data.designer_link_contact;
                     }
-                    if (data.designer_name) {
-                        document.getElementById('designer-link').textContent = data.designer_name;
+                    if (data.designer_name_contact) {
+                        document.getElementById('designer-link').textContent = data.designer_name_contact;
                     }
                 })
                 .catch(error => {
@@ -287,28 +277,57 @@
                 const fallbackData = {
                     contact_page_heading: "Contact Us",
                     contact_page_subheading: "We'd love to hear from you! Reach out to us for any inquiries or feedback.",
-                    contact_section_heading: "Our Office",
-                    office_address: "Bwera, Kasese, Uganda",
-                    phone1: "+256 775413318",
-                    phone2: "+256 754406992",
-                    email: "signalarts1@gmail.com",
+                    contact_heading_contact: "Contact Us",
+                    address_contact: "Bwera, Kasese, Uganda",
+                    phone1_contact: "+256 775413318",
+                    phone2_contact: "+256 754406992",
+                    email_contact: "signalarts1@gmail.com",
                     working_hours: "Mon - Fri: 8:00 AM - 6:00 PM",
                     map_heading: "Find Us on the Map",
                     google_maps_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.270490960082!2d29.752027881283723!3d0.03388170730054174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1761de4b94e8e959%3A0x746f3e2d97d78604!2sBwera!5e0!3m2!1sen!2sug!4v1742633850042!5m2!1sen!2sug",
-                    form_heading: "Send Us a Message"
+                    form_heading: "Send Us a Message",
+                    school_name_contact: "SIGNAL PREPARATORY SCHOOL",
+                    footer_school_name_contact: "SIGNAL PREPARATORY SCHOOL",
+                    footer_tagline_contact: "Signal Preparatory school",
+                    copyright_text_contact: "© 2025 Signal Preparatory School. All Rights Reserved.",
+                    designer_text_contact: "Designed by",
+                    designer_name_contact: "Mumbere Darius",
+                    designer_link_contact: "https://dariusmumbere.github.io/personal",
+                    admin_text_contact: "Admin login",
+                    email_footer_contact: "signalarts1@gmail.com",
+                    phone1_footer_contact: "+256 775413318",
+                    phone2_footer_contact: "+256 754406992",
+                    title_contact: "Contact US"
                 };
 
+                // Apply fallback data to all elements
+                document.title = fallbackData.title_contact;
+                document.getElementById('site-title').textContent = fallbackData.title_contact;
+                document.getElementById('school-name').textContent = fallbackData.school_name_contact;
+                document.getElementById('footer-school-name').textContent = fallbackData.footer_school_name_contact;
+                document.getElementById('admin-btn-text').textContent = fallbackData.admin_text_contact;
+                document.getElementById('admin-link-text').textContent = fallbackData.admin_text_contact;
                 document.getElementById('contact-page-heading').textContent = fallbackData.contact_page_heading;
                 document.getElementById('contact-page-subheading').textContent = fallbackData.contact_page_subheading;
-                document.getElementById('contact-section-heading').textContent = fallbackData.contact_section_heading;
-                document.getElementById('office-address').textContent = fallbackData.office_address;
-                document.getElementById('phone1').textContent = fallbackData.phone1;
-                document.getElementById('phone2').textContent = fallbackData.phone2;
-                document.getElementById('email').textContent = fallbackData.email;
+                document.getElementById('contact-section-heading').textContent = fallbackData.contact_heading_contact;
+                document.querySelector('.footer-column:nth-child(3) .footer-heading').textContent = fallbackData.contact_heading_contact;
+                document.getElementById('office-address').textContent = fallbackData.address_contact;
+                document.getElementById('footer-address').textContent = `Address: ${fallbackData.address_contact}`;
+                document.getElementById('phone1').textContent = fallbackData.phone1_contact;
+                document.getElementById('footer-phone1').textContent = `Phone: ${fallbackData.phone1_contact}`;
+                document.getElementById('phone2').textContent = fallbackData.phone2_contact;
+                document.getElementById('footer-phone2').textContent = `Phone: ${fallbackData.phone2_contact}`;
+                document.getElementById('email').textContent = fallbackData.email_contact;
+                document.getElementById('footer-email').textContent = `Email: ${fallbackData.email_contact}`;
                 document.getElementById('working-hours').textContent = fallbackData.working_hours;
                 document.getElementById('map-heading').textContent = fallbackData.map_heading;
                 document.getElementById('google-map').src = fallbackData.google_maps_url;
                 document.getElementById('form-heading').textContent = fallbackData.form_heading;
+                document.getElementById('footer-tagline').textContent = fallbackData.footer_tagline_contact;
+                document.getElementById('copyright-text').textContent = fallbackData.copyright_text_contact;
+                document.getElementById('designer-credit').textContent = fallbackData.designer_text_contact;
+                document.getElementById('designer-link').href = fallbackData.designer_link_contact;
+                document.getElementById('designer-link').textContent = fallbackData.designer_name_contact;
             }
 
             // Modern toggle menu with animation
