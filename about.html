@@ -3,18 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - SIGNAL PREPARATORY SCHOOL</title>
+    <title id="about-page-title">About Us - SIGNAL PREPARATORY SCHOOL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheets" href="about.css">
+    <link rel="stylesheet" href="about.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+    <!-- CMS Admin Button (visible when logged in) -->
+    <a href="/admin/" class="cms-admin-btn" id="cmsAdminBtn" style="display: none;">
+        <i class="fas fa-cog"></i> <span id="admin-btn-text">CMS Admin</span>
+    </a>
+    
+    <!-- CMS Login Modal -->
+    <div class="cms-modal" id="cmsModal">
+        <div class="cms-modal-content">
+            <h2>Website Administration</h2>
+            <p>To access the content management system, please log in with your administrator credentials.</p>
+            <button class="cms-modal-btn" onclick="window.location.href='/admin/'">Go to Admin</button>
+            <button class="cms-modal-btn cms-modal-close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
     <nav class="navbar" id="navbar">
         <div class="logo-container">
-            <img src="logo.png" alt="Logo" class="logo">
-            <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+            <img src="logo.png" alt="Logo" class="logo" id="main-logo">
+            <div class="logo-text" id="school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
         </div>
         
         <!-- Modern Hamburger Menu -->
@@ -34,136 +50,74 @@
         </ul>
     </nav>
     
-    <div class="heroo">About Us</div>
+    <div class="heroo" id="about-hero-title">About Us</div>
     
     <section class="mission-section">
         <div class="mission-image">
-            <img src="circle.jpeg" alt="Community Image">
+            <img src="circle.jpeg" alt="Community Image" id="mission-image">
         </div>
         <div class="mission-content">
-            <h2>Our Aim</h2>
-            <p>We aim at grooming a coexisting generation with high levels of creativity, innovations, world awareness and respect for environmental conservation in children and Young adults.</p>
-            <p>SIGNAL is an Acronym for Strategic Initiative for Grooming Natives into Active Art Learners. In this, we define Art as a spiced way of doing something. It is the value we add to whatever we do in life.</p>
+            <h2 id="aim-heading">Our Aim</h2>
+            <p id="aim-text-1">We aim at grooming a coexisting generation with high levels of creativity, innovations, world awareness and respect for environmental conservation in children and Young adults.</p>
+            <p id="aim-text-2">SIGNAL is an Acronym for Strategic Initiative for Grooming Natives into Active Art Learners. In this, we define Art as a spiced way of doing something. It is the value we add to whatever we do in life.</p>
         </div>
     </section>
     
     <section class="section">
         <div class="content">
-            <h2>About Us</h2>
-            <p>Signal Preparatory is a school with a mission to mentor and inspire. It focuses on nurturing a generation with high levels of creativity and innovation. The school promotes world awareness and respects environmental conservation in children and young adults.</p>
-            <p>It was registered in 2018 with the Ministry of Education and sports (MoES) under Registration Number ED/N/22/MoES/2018.</p>
-            <p>It's every one's responsibility to work with and mentor a generation. This generation will work towards playing a part in making the world a better place for everyone to live in.</p>
+            <h2 id="about-heading">About Us</h2>
+            <p id="about-text-1">Signal Preparatory is a school with a mission to mentor and inspire. It focuses on nurturing a generation with high levels of creativity and innovation. The school promotes world awareness and respects environmental conservation in children and young adults.</p>
+            <p id="about-text-2">It was registered in 2018 with the Ministry of Education and sports (MoES) under Registration Number ED/N/22/MoES/2018.</p>
+            <p id="about-text-3">It's every one's responsibility to work with and mentor a generation. This generation will work towards playing a part in making the world a better place for everyone to live in.</p>
         </div>
         <div class="image-container">
-            <img src="seccc.jpg" alt="Signal preparatory school">
+            <img src="seccc.jpg" alt="Signal preparatory school" id="about-section-image">
         </div>
     </section>
     
     <section class="full-width-section">
         <div class="column left">
-            <h2>OUR MISSION</h2>
-            <p>Mentoring a Coexisting generation with high levels of creativity, innovation, world awareness and respect for environmental conservation in children and Young Adults.</p>
+            <h2 id="mission-heading">OUR MISSION</h2>
+            <p id="mission-text">Mentoring a Coexisting generation with high levels of creativity, innovation, world awareness and respect for environmental conservation in children and Young Adults.</p>
         </div>
         <div class="column center">
-            <h2>OUR VISION</h2>
-            <p>A generation where every child and young adult commits to coexistence, personal management and respect for environmental conservation.</p>
+            <h2 id="vision-heading">OUR VISION</h2>
+            <p id="vision-text">A generation where every child and young adult commits to coexistence, personal management and respect for environmental conservation.</p>
         </div>
         <div class="column right">
-            <h2>CORE VALUES</h2>
-            <p>Discipline, Creativity, Coexistence, Conservation.</p>
+            <h2 id="values-heading">CORE VALUES</h2>
+            <p id="values-text">Discipline, Creativity, Coexistence, Conservation.</p>
         </div>
     </section>
     
     <section class="team-section">
-        <h2>Meet Our Team</h2>
-        <p>Our passionate professionals are dedicated to excellence and innovation. Discover the faces behind our success.</p>
-        <div class="team-grid">
-            <div class="team-card">
-                <img src="bwambale.webp" alt="Staff Member 1">
-                <h3>Bwambale Henry</h3>
-                <p>Director Signal Preparatory School</p>
-            </div>
-            <div class="team-card">
-                <img src="dep.jpeg" alt="Staff Member 2">
-                <h3>Name of Staff</h3>
-                <p>Chairperson Board</p>
-            </div>
-            <div class="team-card">
-                <img src="headteacher.webp" alt="Staff Member 3">
-                <h3>Biira Alice</h3>
-                <p>Headteacher</p>
-            </div>
-            <div class="team-card">
-                <img src="affairs.jpeg" alt="Staff Member 4">
-                <h3>Name</h3>
-                <p>Academic affairs</p>
-            </div>
-            <div class="team-card">
-                <img src="ass.jpeg" alt="Staff Member 5">
-                <h3>Name</h3>
-                <p>Assistant Team leader</p>
-            </div>
-            <div class="team-card">
-                <img src="daycare.jpeg" alt="Staff Member 6">
-                <h3>Name</h3>
-                <p>Daycare Team leader</p>
-            </div>
-            <div class="team-card">
-                <img src="domestic.jpeg" alt="Staff Member 7">
-                <h3>Name</h3>
-                <p>Domestic Affairs</p>
-            </div>
-            <div class="team-card">
-                <img src="sportsandent.jpeg" alt="Staff Member 8">
-                <h3>Name</h3>
-                <p>Sports and entertainment master</p>
-            </div>
+        <h2 id="team-heading">Meet Our Team</h2>
+        <p id="team-subheading">Our passionate professionals are dedicated to excellence and innovation. Discover the faces behind our success.</p>
+        <div class="team-grid" id="team-members-container">
+            <!-- Team members will be dynamically inserted here -->
         </div>
     </section>
     
     <section class="image-text-section">
         <div class="text-content">
-            <h2>Empowering a Generation: Shaping Creative Minds for a Better Tomorrow</h2>
-            <p>Everyone has a role to play in mentoring an all round generation equipped with high creativity, problem solving and interpersonal skills ready to make Mother Earth a better place for everyone to live in.</p>
-            <p>In this, every single action matters. Be the change you want to see in the world.</p>
+            <h2 id="empower-heading">Empowering a Generation: Shaping Creative Minds for a Better Tomorrow</h2>
+            <p id="empower-text-1">Everyone has a role to play in mentoring an all round generation equipped with high creativity, problem solving and interpersonal skills ready to make Mother Earth a better place for everyone to live in.</p>
+            <p id="empower-text-2">In this, every single action matters. Be the change you want to see in the world.</p>
         </div>
         <div class="image-container">
-            <img src="change.webp" alt="Our Mission">
+            <img src="change.webp" alt="Our Mission" id="empower-image">
         </div>
     </section>
     
     <div class="text-section">
-        <h3>Life at Signal School</h3>
-        <p>Life at our School is Just fun. Play is considered a spice that drives our teaching learning process.</p>
-        <p>The more we play is the more we learn and the more we learn is the more we play</p>
-        <p>A concussive learning environment is set and meaningful plays are inspired to promote self discovery, awareness,team working, problem solving among others in our children.</p>
+        <h3 id="life-heading">Life at Signal School</h3>
+        <p id="life-text-1">Life at our School is Just fun. Play is considered a spice that drives our teaching learning process.</p>
+        <p id="life-text-2">The more we play is the more we learn and the more we learn is the more we play</p>
+        <p id="life-text-3">A concussive learning environment is set and meaningful plays are inspired to promote self discovery, awareness,team working, problem solving among others in our children.</p>
     </div>
     
-    <div class="gallery">
-        <img src="g1.webp" alt="Gallery Image 1">
-        <img src="g2.webp" alt="Gallery Image 2">
-        <img src="g3.webp" alt="Gallery Image 3">
-        <img src="g5.webp" alt="Gallery Image 5">
-        <img src="g6.webp" alt="Gallery Image 6">
-        <img src="g7.webp" alt="Gallery Image 7">
-        <img src="g8.webp" alt="Gallery Image 8">
-        <img src="g9.webp" alt="Gallery Image 9">
-        <img src="g10.webp" alt="Gallery Image 10">
-        <img src="g11.webp" alt="Gallery Image 11">
-        <img src="g12.webp" alt="Gallery Image 12">
-        <img src="g13.webp" alt="Gallery Image 13">
-        <img src="g14.webp" alt="Gallery Image 14">
-        <img src="g15.webp" alt="Gallery Image 15">
-        <img src="g23.webp" alt="Gallery Image 23">
-        <img src="g24.webp" alt="Gallery Image 24">
-        <img src="g25.webp" alt="Gallery Image 25">
-        <img src="g16.webp" alt="Gallery Image 16">
-        <img src="g17.webp" alt="Gallery Image 17">
-        <img src="g18.webp" alt="Gallery Image 18">
-        <img src="g19.webp" alt="Gallery Image 19">
-        <img src="g20.webp" alt="Gallery Image 20">
-        <img src="g21.webp" alt="Gallery Image 21">
-        <img src="g22.webp" alt="Gallery Image 22">
+    <div class="gallery" id="gallery-container">
+        <!-- Gallery images will be dynamically inserted here -->
     </div>
     
     <footer class="footer">
@@ -171,128 +125,401 @@
             <!-- Logo and School Name -->
             <div class="footer-column logo-column">
                 <div class="logo-container">
-                    <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo">
-                    <div class="footer-logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+                    <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo" id="footer-logo">
+                    <div class="footer-logo-text" id="footer-school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
                 </div>
-                <p class="footer-text">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/signal.arts.5" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.youtube.com/@signalarts85" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.tiktok.com/@henry.signal.arts" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <p class="footer-text" id="footer-tagline">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
+                <div class="social-icons" id="social-icons-container">
+                    <!-- Social icons will be dynamically inserted here -->
                 </div>
             </div>
     
             <!-- Quick Links -->
             <div class="footer-column">
-                <h3 class="footer-heading">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="about.html" class="footer-link">About</a></li>
-                    <li><a href="projects.html" class="footer-link">Projects</a></li>
-                    <li><a href="address.html" class="footer-link">Contacts</a></li>
+                <h3 class="footer-heading" id="footer-links-heading">Quick Links</h3>
+                <ul class="footer-links" id="footer-links-container">
+                    <!-- Footer links will be dynamically inserted here -->
                 </ul>
             </div>
     
             <!-- Contact Information -->
             <div class="footer-column">
-                <h3 class="footer-heading">Contact Us</h3>
-                <p class="footer-text">Email: signalarts1@gmail.com</p>
-                <p class="footer-text">Phone: +256 775413318</p>
-                <p class="footer-text">Phone: +256754406992</p>
-                <p class="footer-text">Address: Bwera, Kasese, Uganda</p>
+                <h3 class="footer-heading" id="contact-heading">Contact Us</h3>
+                <p class="footer-text" id="footer-email">Email: signalarts1@gmail.com</p>
+                <p class="footer-text" id="footer-phone1">Phone: +256 775413318</p>
+                <p class="footer-text" id="footer-phone2">Phone: +256754406992</p>
+                <p class="footer-text" id="footer-address">Address: Bwera, Kasese, Uganda</p>
             </div>
         </div>
     
         <!-- Footer Bottom Section -->
         <div class="footer-bottom">
-            <p class="footer-copyright">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
-            <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
-            <a href="/admin/" class="admin-link">Admin Login</a>
+            <p class="footer-copyright" id="copyright-text">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
+            <p class="designer-credit" id="designer-credit">Designed by <a href="#" class="designer-link" id="designer-link">Mumbere Darius</a></p>
+            <a href="/admin/" class="admin-link" id="admin-link-text">Admin Login</a>
         </div>
     </footer>
 
     <script>
-        // Modern toggle menu with animation
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            
-            // Toggle body scroll when menu is open
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-item').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-        
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navLinks.classList.contains('active')) {
-                        hamburger.classList.remove('active');
-                        navLinks.classList.remove('active');
-                        document.body.style.overflow = '';
+        document.addEventListener('DOMContentLoaded', function() {
+            // Skip if in admin interface
+            if (window.location.pathname.includes('/admin/')) return;
+
+            // Load content from JSON
+            fetch('/src/data/about.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
                     }
-                }
-            });
-        });
-        
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.mission-section, .section, .full-width-section, .team-section, .image-text-section, .text-section');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
+                    return response.json();
+                })
+                .then(data => {
+                    // Page title
+                    if (data.about_page_title) {
+                        document.getElementById('about-page-title').textContent = data.about_page_title;
+                        document.title = data.about_page_title;
+                    }
+
+                    // Hero section
+                    if (data.about_hero_title) {
+                        document.getElementById('about-hero-title').textContent = data.about_hero_title;
+                    }
+
+                    // Mission/Aim section
+                    if (data.aim_heading) {
+                        document.getElementById('aim-heading').textContent = data.aim_heading;
+                    }
+                    if (data.aim_text_1) {
+                        document.getElementById('aim-text-1').textContent = data.aim_text_1;
+                    }
+                    if (data.aim_text_2) {
+                        document.getElementById('aim-text-2').textContent = data.aim_text_2;
+                    }
+                    if (data.mission_image) {
+                        document.getElementById('mission-image').src = data.mission_image;
+                    }
+
+                    // About section
+                    if (data.about_heading) {
+                        document.getElementById('about-heading').textContent = data.about_heading;
+                    }
+                    if (data.about_text_1) {
+                        document.getElementById('about-text-1').textContent = data.about_text_1;
+                    }
+                    if (data.about_text_2) {
+                        document.getElementById('about-text-2').textContent = data.about_text_2;
+                    }
+                    if (data.about_text_3) {
+                        document.getElementById('about-text-3').textContent = data.about_text_3;
+                    }
+                    if (data.about_section_image) {
+                        document.getElementById('about-section-image').src = data.about_section_image;
+                    }
+
+                    // Mission/Vision/Values section
+                    if (data.mission_heading) {
+                        document.getElementById('mission-heading').textContent = data.mission_heading;
+                    }
+                    if (data.mission_text) {
+                        document.getElementById('mission-text').textContent = data.mission_text;
+                    }
+                    if (data.vision_heading) {
+                        document.getElementById('vision-heading').textContent = data.vision_heading;
+                    }
+                    if (data.vision_text) {
+                        document.getElementById('vision-text').textContent = data.vision_text;
+                    }
+                    if (data.values_heading) {
+                        document.getElementById('values-heading').textContent = data.values_heading;
+                    }
+                    if (data.values_text) {
+                        document.getElementById('values-text').textContent = data.values_text;
+                    }
+
+                    // Team section
+                    if (data.team_heading) {
+                        document.getElementById('team-heading').textContent = data.team_heading;
+                    }
+                    if (data.team_subheading) {
+                        document.getElementById('team-subheading').textContent = data.team_subheading;
+                    }
+                    if (data.team_members && Array.isArray(data.team_members)) {
+                        const teamContainer = document.getElementById('team-members-container');
+                        teamContainer.innerHTML = '';
+                        
+                        data.team_members.forEach(member => {
+                            const memberHTML = `
+                                <div class="team-card">
+                                    <img src="${member.image}" alt="${member.name}">
+                                    <h3>${member.name}</h3>
+                                    <p>${member.position}</p>
+                                </div>
+                            `;
+                            teamContainer.innerHTML += memberHTML;
+                        });
+                    }
+
+                    // Empower section
+                    if (data.empower_heading) {
+                        document.getElementById('empower-heading').textContent = data.empower_heading;
+                    }
+                    if (data.empower_text_1) {
+                        document.getElementById('empower-text-1').textContent = data.empower_text_1;
+                    }
+                    if (data.empower_text_2) {
+                        document.getElementById('empower-text-2').textContent = data.empower_text_2;
+                    }
+                    if (data.empower_image) {
+                        document.getElementById('empower-image').src = data.empower_image;
+                    }
+
+                    // Life at school section
+                    if (data.life_heading) {
+                        document.getElementById('life-heading').textContent = data.life_heading;
+                    }
+                    if (data.life_text_1) {
+                        document.getElementById('life-text-1').textContent = data.life_text_1;
+                    }
+                    if (data.life_text_2) {
+                        document.getElementById('life-text-2').textContent = data.life_text_2;
+                    }
+                    if (data.life_text_3) {
+                        document.getElementById('life-text-3').textContent = data.life_text_3;
+                    }
+
+                    // Gallery
+                    if (data.gallery_images && Array.isArray(data.gallery_images)) {
+                        const galleryContainer = document.getElementById('gallery-container');
+                        galleryContainer.innerHTML = '';
+                        
+                        data.gallery_images.forEach(image => {
+                            const imageHTML = `
+                                <img src="${image.url}" alt="${image.alt || 'Gallery image'}">
+                            `;
+                            galleryContainer.innerHTML += imageHTML;
+                        });
+                    }
+
+                    // Footer content (shared with index.html)
+                    if (data.footer_logo) {
+                        document.getElementById('footer-logo').src = data.footer_logo;
+                    }
+                    if (data.footer_school_name) {
+                        document.getElementById('footer-school-name').textContent = data.footer_school_name;
+                    }
+                    if (data.footer_tagline) {
+                        document.getElementById('footer-tagline').textContent = data.footer_tagline;
+                    }
+                    if (data.social_links && Array.isArray(data.social_links)) {
+                        const socialContainer = document.getElementById('social-icons-container');
+                        socialContainer.innerHTML = '';
+                        
+                        data.social_links.forEach(link => {
+                            const iconClass = getSocialIconClass(link.platform);
+                            if (iconClass) {
+                                const socialHTML = `
+                                    <a href="${link.url}" target="_blank" class="social-icon"><i class="${iconClass}"></i></a>
+                                `;
+                                socialContainer.innerHTML += socialHTML;
+                            }
+                        });
+                    }
+                    if (data.footer_links && Array.isArray(data.footer_links)) {
+                        const footerLinksContainer = document.getElementById('footer-links-container');
+                        footerLinksContainer.innerHTML = '';
+                        
+                        data.footer_links.forEach(link => {
+                            const linkHTML = `
+                                <li><a href="${link.url}" class="footer-link">${link.text}</a></li>
+                            `;
+                            footerLinksContainer.innerHTML += linkHTML;
+                        });
+                    }
+                    if (data.contact_heading) {
+                        document.getElementById('contact-heading').textContent = data.contact_heading;
+                    }
+                    if (data.email) {
+                        document.getElementById('footer-email').textContent = `Email: ${data.email}`;
+                    }
+                    if (data.phone1) {
+                        document.getElementById('footer-phone1').textContent = `Phone: ${data.phone1}`;
+                    }
+                    if (data.phone2) {
+                        document.getElementById('footer-phone2').textContent = `Phone: ${data.phone2}`;
+                    }
+                    if (data.address) {
+                        document.getElementById('footer-address').textContent = `Address: ${data.address}`;
+                    }
+                    if (data.copyright_text) {
+                        document.getElementById('copyright-text').textContent = data.copyright_text;
+                    }
+                    if (data.designer_text) {
+                        document.getElementById('designer-credit').textContent = data.designer_text;
+                    }
+                    if (data.designer_link) {
+                        document.getElementById('designer-link').href = data.designer_link;
+                    }
+                    if (data.designer_name) {
+                        document.getElementById('designer-link').textContent = data.designer_name;
+                    }
+                    if (data.admin_text) {
+                        document.getElementById('admin-link-text').textContent = data.admin_text;
+                    }
+                    if (data.admin_text) {
+                        document.getElementById('admin-btn-text').textContent = data.admin_text;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading about page content:', error);
+                    loadFallbackContent();
+                });
+
+            function getSocialIconClass(platform) {
+                const platformLower = platform.toLowerCase();
+                if (platformLower.includes('facebook')) return 'fab fa-facebook-f';
+                if (platformLower.includes('twitter')) return 'fab fa-twitter';
+                if (platformLower.includes('instagram')) return 'fab fa-instagram';
+                if (platformLower.includes('youtube')) return 'fab fa-youtube';
+                if (platformLower.includes('linkedin')) return 'fab fa-linkedin';
+                if (platformLower.includes('tiktok')) return 'fab fa-tiktok';
+                return 'fas fa-share-alt'; // default icon
+            }
+
+            function loadFallbackContent() {
+                // Fallback content for all sections
+                document.getElementById('about-hero-title').textContent = 'About Us';
+                document.getElementById('aim-heading').textContent = 'Our Aim';
+                document.getElementById('aim-text-1').textContent = 'We aim at grooming a coexisting generation with high levels of creativity, innovations, world awareness and respect for environmental conservation in children and Young adults.';
+                document.getElementById('aim-text-2').textContent = 'SIGNAL is an Acronym for Strategic Initiative for Grooming Natives into Active Art Learners. In this, we define Art as a spiced way of doing something. It is the value we add to whatever we do in life.';
                 
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
+                // Initialize team members with fallback data
+                const teamContainer = document.getElementById('team-members-container');
+                teamContainer.innerHTML = `
+                    <div class="team-card">
+                        <img src="bwambale.webp" alt="Bwambale Henry">
+                        <h3>Bwambale Henry</h3>
+                        <p>Director Signal Preparatory School</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="dep.jpeg" alt="Staff Member">
+                        <h3>Name of Staff</h3>
+                        <p>Chairperson Board</p>
+                    </div>
+                `;
+                
+                // Initialize gallery with fallback images
+                const galleryContainer = document.getElementById('gallery-container');
+                galleryContainer.innerHTML = `
+                    <img src="g1.webp" alt="Gallery Image 1">
+                    <img src="g2.webp" alt="Gallery Image 2">
+                    <img src="g3.webp" alt="Gallery Image 3">
+                `;
+            }
+
+            // Modern toggle menu with animation
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-item').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
                 }
             });
-        };
-        
-        // Set initial styles for animation
-        document.querySelectorAll('.mission-section, .section, .full-width-section, .team-section, .image-text-section, .text-section').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+
+            // Animation on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.mission-section, .section, .full-width-section, .team-section, .image-text-section, .text-section');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial styles for animation
+            document.querySelectorAll('.mission-section, .section, .full-width-section, .team-section, .image-text-section, .text-section').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll);
+
+            // Netlify Identity and CMS Integration
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", user => {
+                    if (!user) {
+                        window.netlifyIdentity.on("login", () => {
+                            document.location.href = "/admin/";
+                        });
+                    }
+                });
+                
+                // Check if user is logged in
+                const currentUser = netlifyIdentity.currentUser();
+                if (currentUser) {
+                    document.getElementById('cmsAdminBtn').style.display = 'flex';
+                }
+                
+                // Listen for login events
+                netlifyIdentity.on('login', user => {
+                    document.getElementById('cmsAdminBtn').style.display = 'flex';
+                    closeModal();
+                });
+                
+                // Listen for logout events
+                netlifyIdentity.on('logout', () => {
+                    document.getElementById('cmsAdminBtn').style.display = 'none';
+                });
+            }
+            
+            // Modal functions
+            function openModal() {
+                document.getElementById('cmsModal').style.display = 'flex';
+            }
+            
+            function closeModal() {
+                document.getElementById('cmsModal').style.display = 'none';
+            }
+            
+            // Admin link click handler
+            document.querySelector('.admin-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal();
+            });
+            
+            // Close modal when clicking outside
+            document.getElementById('cmsModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
         });
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
