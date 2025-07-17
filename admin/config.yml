@@ -5,6 +5,8 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
+local_backend: true
+
 collections:
   - name: "pages"
     label: "Pages"
@@ -12,9 +14,7 @@ collections:
       - name: "home"
         label: "Home Page"
         file: "index.html"
-        # Tell Netlify this is HTML, not Markdown
-        format: "html"
-        frontmatter_delimiter: ["---", "---"]
+        format: html
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Hero Heading", name: "hero_heading", widget: "string" }
