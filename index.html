@@ -1,36 +1,29 @@
----
-title: dfghjkl
-hero_heading: rtyuio
-hero_text: ertgyhjkl
-hero_button_text: zxcvbnm,.
-about_heading: rtyuiop
-about_text: z﻿xcvbnm,
-vision_text: q﻿wertyuiop
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CMS Frontmatter Storage -->
-    <meta name="cms-title" content="">
-    <meta name="cms-hero_heading" content="">
-    <meta name="cms-hero_text" content="">
-    <meta name="cms-hero_button_text" content="">
-    <meta name="cms-about_heading" content="">
-    <meta name="cms-about_text" content="">
-    <meta name="cms-vision_text" content="">
-    
-    <title>Signal Preparatory School</title>
+    <title>SIGNAL PREPARATORY SCHOOL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link rel="stylesheet" href="home.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
 <body>
-    <!-- CMS Admin Button -->
+    ---
+    title: Testinggg
+    hero_heading: Testing
+    hero_text: Testing CMS
+    hero_button_text: Read more
+    about_heading: This is just testing
+    about_text: S\u00a0ignal preparatory
+    vision_text: o\u00a0ur vision
+    ---
+    <!-- CMS Admin Button (visible when logged in) -->
     <a href="/admin/" class="cms-admin-btn" id="cmsAdminBtn" style="display: none;">
         <i class="fas fa-cog"></i> CMS Admin
     </a>
@@ -51,12 +44,14 @@ vision_text: q﻿wertyuiop
             <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
         </div>
         
+        <!-- Modern Hamburger Menu -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
+        <!-- Navbar Links -->
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html" class="nav-item">Home</a></li>
             <li><a href="about.html" class="nav-item">About</a></li>
@@ -81,9 +76,9 @@ vision_text: q﻿wertyuiop
             <img src="image10.jpg" class="slide" alt="School facilities">
         </div>
         <div class="hero-content">
-            <h2 class="cms-content" data-cms-field="hero_heading">Signal Preparatory is a school aiming at mentoring a coexisting generation...</h2>
-            <p class="cms-content" data-cms-field="hero_text">Good foundation, better future</p>
-            <button class="hero-button cms-content" data-cms-field="hero_button_text">Explore More</button>
+            <h2 id="hero-heading">Signal Preparatory is a school aiming at mentoring a coexisting generation...</h2>
+            <p id="hero-text">Good foundation, better future</p>
+            <button class="hero-button" id="hero-button">Explore More</button>
         </div>
     </section>
 
@@ -93,8 +88,8 @@ vision_text: q﻿wertyuiop
                 <img src="about-image.jpg" alt="About Signal Preparatory">
             </div>
             <div class="about-content">
-                <h2 class="cms-content" data-cms-field="about_heading">About Us</h2>
-                <div class="cms-content" data-cms-field="about_text">
+                <h2 id="about-heading">About Us</h2>
+                <div id="about-text">
                     <p>
                         Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of 
                         creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults. 
@@ -115,7 +110,7 @@ vision_text: q﻿wertyuiop
         </div>
         <div class="vision-content">
             <h2>Our Vision</h2>
-            <div class="cms-content" data-cms-field="vision_text">
+            <div id="vision-text">
                 <p>
                     Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in.
                 </p>
@@ -180,6 +175,7 @@ vision_text: q﻿wertyuiop
     </div>
 
     <div class="alternate-container">
+        <!-- First Row -->
         <div class="alternate-row">
             <div class="alternate-image-container">
                 <img src="academic.jpg" alt="Children Learning">
@@ -193,6 +189,7 @@ vision_text: q﻿wertyuiop
             </div>
         </div>
 
+        <!-- Second Row (Alternated) -->
         <div class="alternate-row">
             <div class="alternate-image-container">
                 <img src="happy.jpg" alt="Children Engaging in Activities">
@@ -224,6 +221,7 @@ vision_text: q﻿wertyuiop
 
     <footer class="footer">
         <div class="footer-container">
+            <!-- Logo and School Name -->
             <div class="footer-column logo-column">
                 <div class="logo-container">
                     <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo">
@@ -238,6 +236,7 @@ vision_text: q﻿wertyuiop
                 </div>
             </div>
     
+            <!-- Quick Links -->
             <div class="footer-column">
                 <h3 class="footer-heading">Quick Links</h3>
                 <ul class="footer-links">
@@ -249,6 +248,7 @@ vision_text: q﻿wertyuiop
                 </ul>
             </div>
     
+            <!-- Contact Information -->
             <div class="footer-column">
                 <h3 class="footer-heading">Contact Us</h3>
                 <p class="footer-text">Email: signalarts1@gmail.com</p>
@@ -258,6 +258,7 @@ vision_text: q﻿wertyuiop
             </div>
         </div>
     
+        <!-- Footer Bottom Section -->
         <div class="footer-bottom">
             <p class="footer-copyright">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
             <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
@@ -265,14 +266,17 @@ vision_text: q﻿wertyuiop
         </div>
     </footer>
 
+    <!-- Marked.js for markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
+    <!-- CMS Integration Script -->
     <script>
+        // CMS Content Injection
         document.addEventListener('DOMContentLoaded', function() {
             // Skip if in admin interface
             if (window.location.pathname.includes('/admin/')) return;
 
-            // Parse frontmatter from meta tags
+            // Parse frontmatter from the HTML content
             function parseFrontmatter() {
                 const frontmatter = {};
                 const metaTags = document.querySelectorAll('meta[name^="cms-"]');
@@ -286,34 +290,54 @@ vision_text: q﻿wertyuiop
                 return Object.keys(frontmatter).length ? frontmatter : null;
             }
 
-            // Inject CMS content into specific elements
+            // Inject CMS content into the page
             function injectCmsContent(data) {
-                // Update page title
-                if (data.title) {
-                    document.title = data.title || document.title;
+                // Hero Section
+                if (data.hero_heading) {
+                    const el = document.getElementById('hero-heading');
+                    if (el) el.textContent = data.hero_heading;
                 }
                 
-                // Find all CMS content elements and update them
-                const cmsElements = document.querySelectorAll('.cms-content');
-                cmsElements.forEach(element => {
-                    const field = element.getAttribute('data-cms-field');
-                    if (field && data[field]) {
-                        if (element.tagName === 'DIV' || element.tagName === 'P') {
-                            element.innerHTML = marked.parse(data[field]);
-                        } else {
-                            element.textContent = data[field];
-                        }
-                    }
-                });
+                if (data.hero_text) {
+                    const el = document.getElementById('hero-text');
+                    if (el) el.textContent = data.hero_text;
+                }
+                
+                if (data.hero_button_text) {
+                    const el = document.getElementById('hero-button');
+                    if (el) el.textContent = data.hero_button_text;
+                }
+                
+                // About Section
+                if (data.about_heading) {
+                    const el = document.getElementById('about-heading');
+                    if (el) el.textContent = data.about_heading;
+                }
+                
+                if (data.about_text) {
+                    const el = document.getElementById('about-text');
+                    if (el) el.innerHTML = marked.parse(data.about_text);
+                }
+                
+                // Vision Section
+                if (data.vision_text) {
+                    const el = document.getElementById('vision-text');
+                    if (el) el.innerHTML = marked.parse(data.vision_text);
+                }
+                
+                // Update page title
+                if (data.title) {
+                    document.title = data.title;
+                }
             }
 
-            // Get frontmatter data and inject it
+            // Try to get frontmatter data
             const cmsData = parseFrontmatter();
             if (cmsData) {
                 injectCmsContent(cmsData);
             }
 
-            // Navigation toggle
+            // Modern toggle menu with animation
             const hamburger = document.getElementById('hamburger');
             const navLinks = document.getElementById('navLinks');
             
@@ -374,7 +398,7 @@ vision_text: q﻿wertyuiop
                 setInterval(nextSlide, 5000);
             });
             
-            // Counter animation
+            // Counter animation with Intersection Observer
             const counterSection = document.querySelector('.kindergarten-counter-section');
             const counters = document.querySelectorAll('.count');
             let animated = false;
@@ -412,7 +436,7 @@ vision_text: q﻿wertyuiop
                 });
             }
             
-            // Netlify Identity Integration
+            // Netlify Identity and CMS Integration
             if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
                     if (!user) {
@@ -422,25 +446,97 @@ vision_text: q﻿wertyuiop
                     }
                 });
                 
+                // Check if user is logged in
                 const currentUser = netlifyIdentity.currentUser();
                 if (currentUser) {
                     document.getElementById('cmsAdminBtn').style.display = 'flex';
                 }
                 
+                // Listen for login events
                 netlifyIdentity.on('login', user => {
                     document.getElementById('cmsAdminBtn').style.display = 'flex';
                     closeModal();
                 });
                 
+                // Listen for logout events
                 netlifyIdentity.on('logout', () => {
                     document.getElementById('cmsAdminBtn').style.display = 'none';
                 });
             }
             
+            // Modal functions
+            function openModal() {
+                document.getElementById('cmsModal').style.display = 'flex';
+            }
+            
             function closeModal() {
                 document.getElementById('cmsModal').style.display = 'none';
             }
+            
+            // Admin link click handler
+            document.querySelector('.admin-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal();
+            });
+            
+            // Close modal when clicking outside
+            document.getElementById('cmsModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
         });
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Extract frontmatter from raw HTML
+    function parseFrontmatterFromHTML() {
+        const html = document.documentElement.innerHTML;
+        const match = html.match(/---\s*([\s\S]*?)\s*---/);
+        if (match) {
+            try {
+                const frontmatterYAML = match[1];
+                const parsed = jsyaml.load(frontmatterYAML);
+                return parsed;
+            } catch (e) {
+                console.error("Error parsing frontmatter:", e);
+            }
+        }
+        return null;
+    }
+
+    function injectCmsContent(data) {
+        if (data.hero_heading) {
+            const el = document.getElementById('hero-heading');
+            if (el) el.textContent = data.hero_heading;
+        }
+        if (data.hero_text) {
+            const el = document.getElementById('hero-text');
+            if (el) el.textContent = data.hero_text;
+        }
+        if (data.hero_button_text) {
+            const el = document.getElementById('hero-button');
+            if (el) el.textContent = data.hero_button_text;
+        }
+        if (data.about_heading) {
+            const el = document.getElementById('about-heading');
+            if (el) el.textContent = data.about_heading;
+        }
+        if (data.about_text) {
+            const el = document.getElementById('about-text');
+            if (el) el.innerHTML = marked.parse(data.about_text);
+        }
+        if (data.vision_text) {
+            const el = document.getElementById('vision-text');
+            if (el) el.innerHTML = marked.parse(data.vision_text);
+        }
+        if (data.title) {
+            document.title = data.title;
+        }
+    }
+
+    const cmsData = parseFrontmatterFromHTML();
+    if (cmsData) injectCmsContent(cmsData);
+});
+</script>
 </body>
-</html>
