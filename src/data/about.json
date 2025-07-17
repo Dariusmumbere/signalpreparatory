@@ -13,6 +13,23 @@
   "phone2": "+256754406992",
   "team_subheading": "Our passionate professionals are dedicated to excellence and innovation. Discover the faces behind our success.",
   "vision_text": "A generation where every child and young adult commits to coexistence, personal management and respect for environmental conservation.",
+  "gallery_images": [
+    {
+      "url": "/images/uploads/g5.webp"
+    },
+    {
+      "url": "/images/uploads/g6.webp"
+    },
+    {
+      "url": "/images/uploads/g8.webp"
+    },
+    {
+      "url": "/images/uploads/g9.webp"
+    },
+    {
+      "url": "/images/uploads/circle.jpeg"
+    }
+  ],
   "about_hero_title": "About Us",
   "copyright_text": "© 2025 Signal Preparatory School. All Rights Reserved.",
   "values_heading": "CORE VALUES",
