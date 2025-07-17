@@ -226,3 +226,67 @@ collections:
           - { label: "Designer Link", name: "designer_link", widget: "string" }
           - { label: "Designer Name", name: "designer_name", widget: "string" }
           - { label: "Admin Text", name: "admin_text", widget: "string" }
+
+      - name: "projects_content"
+    label: "Projects Page Content"
+    files:
+      - name: "projects"
+        label: "Projects Page"
+        file: "src/data/projects.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "School Name", name: "school_name", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+          - { label: "Footer Logo", name: "footer_logo", widget: "image", required: false }
+          - { label: "Footer School Name", name: "footer_school_name", widget: "string" }
+          - { label: "Admin Text", name: "admin_text", widget: "string" }
+          
+          # Parallax Section
+          - { label: "Parallax Title", name: "parallax_title", widget: "string" }
+          
+          # Projects Header
+          - { label: "Projects Heading", name: "projects_heading", widget: "string" }
+          - { label: "Projects Subheading", name: "projects_subheading", widget: "text" }
+          
+          # Projects
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Description", name: "description", widget: "markdown" }
+              - label: "Achievements"
+                name: "achievements"
+                widget: "list"
+                required: false
+                field: { label: "Achievement", name: "item", widget: "string" }
+              - { label: "Appreciation Text", name: "appreciation", widget: "text", required: false }
+          
+          # Footer
+          - { label: "Footer Tagline", name: "footer_tagline", widget: "text" }
+          
+          - label: "Social Links"
+            name: "social_links"
+            widget: "list"
+            fields:
+              - { label: "Platform", name: "platform", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          
+          - label: "Footer Links"
+            name: "footer_links"
+            widget: "list"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          
+          - { label: "Contact Heading", name: "contact_heading", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone 1", name: "phone1", widget: "string" }
+          - { label: "Phone 2", name: "phone2", widget: "string" }
+          - { label: "Address", name: "address", widget: "string" }
+          
+          - { label: "Copyright Text", name: "copyright_text", widget: "string" }
+          - { label: "Designer Text", name: "designer_text", widget: "string" }
+          - { label: "Designer Link", name: "designer_link", widget: "string" }
+          - { label: "Designer Name", name: "designer_name", widget: "string" }
