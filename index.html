@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site_content.title || 'SIGNAL PREPARATORY SCHOOL' }}</title>
+    <title>SIGNAL PREPARATORY SCHOOL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,8 +29,8 @@
 
     <nav class="navbar" id="navbar">
         <div class="logo-container">
-            <img src="{{ site_content.logo || 'logo.png' }}" alt="Logo" class="logo">
-            <div class="logo-text">{{ site_content.school_name || 'SIGNAL PREPARATORY<br>SCHOOL' }}</div>
+            <img src="logo.png" alt="Logo" class="logo">
+            <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
         </div>
         
         <!-- Modern Hamburger Menu -->
@@ -53,129 +53,149 @@
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="slideshow">
-            {% for image in site_content.slideshow_images %}
-            <img src="{{ image.image }}" class="slide {% if forloop.first %}active{% endif %}" alt="{{ image.alt }}">
-            {% endfor %}
+            <img src="image1.jpg" class="slide active" alt="School building">
+            <img src="image2.jpg" class="slide" alt="Students learning">
+            <img src="image3.jpg" class="slide" alt="Classroom activities">
+            <img src="image4.jpg" class="slide" alt="School event">
+            <img src="image5.jpg" class="slide" alt="Students playing">
+            <img src="image6.jpg" class="slide" alt="Artwork">
+            <img src="image7.jpg" class="slide" alt="School garden">
+            <img src="image8.jpg" class="slide" alt="Teachers and students">
+            <img src="image9.jpg" class="slide" alt="School performance">
+            <img src="image10.jpg" class="slide" alt="School facilities">
         </div>
         <div class="hero-content">
-            <h2>{{ site_content.hero_heading }}</h2>
-            <p>{{ site_content.hero_text }}</p>
-            <button class="hero-button">{{ site_content.hero_button_text }}</button>
+            <h2 id="hero-heading">Loading content...</h2>
+            <p id="hero-text">Loading content...</p>
+            <button class="hero-button" id="hero-button">Loading...</button>
         </div>
     </section>
 
     <section class="about-section">
         <div class="about-container">
             <div class="about-image">
-                <img src="{{ site_content.about_image || 'about-image.jpg' }}" alt="About Signal Preparatory">
+                <img src="about-image.jpg" alt="About Signal Preparatory">
             </div>
             <div class="about-content">
-                <h2>{{ site_content.about_heading }}</h2>
-                <div>
-                    {{ site_content.about_text | markdownify }}
+                <h2 id="about-heading">Loading...</h2>
+                <div id="about-text">
+                    <p>Loading content...</p>
                 </div>
-                <a href="#" class="learn-more-btn">{{ site_content.learn_more_text || 'Learn More' }}</a>
+                <a href="#" class="learn-more-btn">Learn More</a>
             </div>
         </div>
     </section>
 
     <section class="vision-section">
         <div class="vision-image">
-            <img src="{{ site_content.vision_image || 'your-image.jpg' }}" alt="Signal Preparatory school">
+            <img src="your-image.jpg" alt="Signal Preparatory school">
         </div>
         <div class="vision-content">
-            <h2>{{ site_content.vision_heading || 'Our Vision' }}</h2>
-            <div>
-                {{ site_content.vision_text | markdownify }}
+            <h2>Our Vision</h2>
+            <div id="vision-text">
+                <p>Loading content...</p>
             </div>
-            <a href="#" class="btn">{{ site_content.donate_button_text || 'Donate Now' }}</a>
+            <a href="#" class="btn">Donate Now</a>
         </div>
     </section>
 
     <div class="container">
         <div class="card">
-            <h2>{{ site_content.headteacher_heading || 'Welcome from the Headteacher' }}</h2>
-            <p>{{ site_content.headteacher_message || 'At Signal School, our guiding principle is "Aim High, Be Kind, and Dare to save mother earth". This is deeply rooted at our core and combined with exceptional teaching.' }}</p>
+            <h2>Welcome from the Headteacher</h2>
+            <p>At Signal School, our guiding principle is 'Aim High, Be Kind, and Dare to save mother earth'. This is deeply rooted at our core and combined with exceptional teaching.</p>
         </div>
         <div class="card">
-            <h2>{{ site_content.visit_heading || 'Visit Signal School' }}</h2>
-            <p>{{ site_content.visit_text || 'Experience firsthand hospitality, creativity, and a child-based culture in the teaching/learning process.' }}</p>
-            <p>{{ site_content.visit_text_continued || 'Be part of our movement. Visit and leave a mark of Peace, Love, and Kindness that our generation in the making shall celebrate your visit for life.' }}</p>
-            <a href="#" class="btn">{{ site_content.visit_button_text || 'Arrange a Visit' }}</a>
+            <h2>Visit Signal School</h2>
+            <p>Experience firsthand hospitality, creativity, and a child-based culture in the teaching/learning process.</p>
+            <p>Be part of our movement. Visit and leave a mark of Peace, Love, and Kindness that our generation in the making shall celebrate your visit for life.</p>
+            <a href="#" class="btn">Arrange a Visit</a>
         </div>
         <div class="card logo-card">
-            <img src="{{ site_content.secondary_logo || 'logo.png' }}" alt="School Logo">
+            <img src="logo.png" alt="School Logo">
         </div>
     </div>
 
     <section class="section">
         <div class="content">
-            <h2>{{ site_content.ethos_heading || 'The Ethos and the Environment' }}</h2>
-            <p>{{ site_content.ethos_text || 'At Signal Preparatory School, our ethos goes beyond academia. We believe in nurturing the whole child, promoting coexistence, creativity, and global awareness.' }}</p>
-            <p>{{ site_content.ethos_text_continued || 'Child Art, Child Waste Management, Child Kitchen Gardening, and Child Sports are key in our teaching-learning process.' }}</p>
-            <p>{{ site_content.ethos_text_conclusion || 'Signal Preparatory School offers an environment where pupils are daily inspired both by the lessons in the classroom and the serenity outside.' }}</p>
-            <a href="#" class="read-more">{{ site_content.read_more_text || 'Read More' }}</a>
+            <h2>The Ethos and the Environment</h2>
+            <p>At Signal Preparatory School, our ethos goes beyond academia. We believe in nurturing the whole child, promoting coexistence, creativity, and global awareness.</p>
+            <p>Child Art, Child Waste Management, Child Kitchen Gardening, and Child Sports are key in our teaching-learning process.</p>
+            <p>Signal Preparatory School offers an environment where pupils are daily inspired both by the lessons in the classroom and the serenity outside.</p>
+            <a href="#" class="read-more">Read More</a>
         </div>
         <div class="image-container">
-            <img src="{{ site_content.ethos_image || 'secc.jpg' }}" alt="Children with an art project">
+            <img src="secc.jpg" alt="Children with an art project">
         </div>
     </section>
 
-    <h1 class="section-title">{{ site_content.join_heading || 'Join us and play your part' }}</h1>
-    <h2 class="sub-title">{{ site_content.thematic_heading || 'Our thematic areas' }}</h2>
+    <h1 class="section-title">Join us and play your part</h1>
+    <h2 class="sub-title">Our thematic areas</h2>
     
     <div class="programs-container">
-        {% for program in site_content.programs %}
         <div class="program">
-            <img src="{{ program.image }}" alt="{{ program.title }}">
-            <h3 class="program-title">{{ program.title }}</h3>
-            <p class="program-description">{{ program.description }}</p>
+            <img src="child.jpeg" alt="Signal Preparatory child art">
+            <h3 class="program-title">Child Art</h3>
+            <p class="program-description">Art is a unique style of bringing an imagination to reality. At Signal Preparatory School, we equip pupils with child art skills to spark their creativity and team working abilities.</p>
         </div>
-        {% endfor %}
+        <div class="program">
+            <img src="waste.jpeg" alt="Signal Preparatory waste management">
+            <h3 class="program-title">Child Waste Management</h3>
+            <p class="program-description">With the adopted slogan, "Waste is Waste if Wasted", at Signal School, we equip learners with the art of managing waste. We emphasize the 5R's of waste management to our pupils. We aim to empower ambassadors who will make Mother Earth a better place to live in.</p>
+        </div>
+        <div class="program">
+            <img src="sports.jpeg" alt="Signal Preparatory waste management">
+            <h3 class="program-title">Child Sports</h3>
+            <p class="program-description">Children learn much more through play. The more they play is the more they learn. And the more they learn is the more they play. This improves their problem solving skills, collaboration and creativity.</p>
+        </div>
+        <div class="program">
+            <img src="music.webp" alt="Signal Preparatory waste management">
+            <h3 class="program-title">Music, Dance and drama</h3>
+            <p class="program-description">Music is the language of the soul. At Signal School, Music Dance and Drama drives the mood of learning. It improves the confidence and communication skills, creativity, team working, positive competition among others.</p>
+        </div>
     </div>
 
     <div class="alternate-container">
         <!-- First Row -->
         <div class="alternate-row">
             <div class="alternate-image-container">
-                <img src="{{ site_content.academic_image || 'academic.jpg' }}" alt="Children Learning">
+                <img src="academic.jpg" alt="Children Learning">
             </div>
             <div class="alternate-text-container">
-                <h2>{{ site_content.academic_heading || 'Academic Excellence' }}</h2>
+                <h2>Academic Excellence</h2>
                 <p>
-                    {{ site_content.academic_text || 'Dynamic instruction at Signal School fosters intellectual curiosity, autonomy, and self-assurance. We inspire girls and boys to cultivate distinctiveness in character and innovative thought. This has made our Pupils icons of community transformation.' }}
+                    Dynamic instruction at Signal School fosters intellectual curiosity, autonomy, and self-assurance. We inspire girls and boys to cultivate distinctiveness in character and innovative thought. This has made our Pupils icons of community transformation.
                 </p>
-                <button class="alternate-read-more">{{ site_content.read_more_button || 'Read More' }}</button>
+                <button class="alternate-read-more">Read More</button>
             </div>
         </div>
 
         <!-- Second Row (Alternated) -->
         <div class="alternate-row">
             <div class="alternate-image-container">
-                <img src="{{ site_content.happy_image || 'happy.jpg' }}" alt="Children Engaging in Activities">
+                <img src="happy.jpg" alt="Children Engaging in Activities">
             </div>
             <div class="alternate-text-container">
-                <h2>{{ site_content.happy_heading || 'A happy Learning Environment' }}</h2>
+                <h2>A happy Learning Environment</h2>
                 <p>
-                    {{ site_content.happy_text || 'Our objective is to ignite a lifelong passion for learning. By challenging the advanced and uplifting the less assured, we ensure each pupil realizes their unique academic potential that can help him be an inspiration the world needs.' }}
+                    Our objective is to ignite a lifelong passion for learning. By challenging the advanced and uplifting the less assured, we ensure each pupil realizes their unique academic potential that can help him be an inspiration the world needs.
                 </p>
-                <button class="alternate-read-more">{{ site_content.read_more_button || 'Read More' }}</button>
+                <button class="alternate-read-more">Read More</button>
             </div>
         </div>
     </div>
 
     <div class="kindergarten-counter-section">
         <div class="counter-box students">
-            <h2 class="count" data-target="{{ site_content.student_count || 150 }}">0</h2>
-            <p>{{ site_content.student_label || 'Total pupils at Signal preparatory' }}</p>
+            <h2 class="count" data-target="150">0</h2>
+            <p>Total pupils at Signal preparatory</p>
         </div>
         <div class="counter-box teachers">
-            <h2 class="count" data-target="{{ site_content.alumni_count || 600 }}">0</h2>
-            <p>{{ site_content.alumni_label || 'School alumni' }}</p>
+            <h2 class="count" data-target="600">0</h2>
+            <p>School alumni</p>
         </div>
         <div class="counter-box activities">
-            <h2 class="count" data-target="{{ site_content.activities_count || 300 }}">0</h2>
-            <p>{{ site_content.activities_label || 'Fun Activities Completed' }}</p>
+            <h2 class="count" data-target="300">0</h2>
+            <p>Fun Activities Completed</p>
         </div>
     </div>
 
@@ -184,42 +204,45 @@
             <!-- Logo and School Name -->
             <div class="footer-column logo-column">
                 <div class="logo-container">
-                    <img src="{{ site_content.footer_logo || 'logo.png' }}" alt="Signal Preparatory School Logo" class="footer-logo">
-                    <div class="footer-logo-text">{{ site_content.footer_school_name || 'SIGNAL PREPARATORY<br>SCHOOL' }}</div>
+                    <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo">
+                    <div class="footer-logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
                 </div>
-                <p class="footer-text">{{ site_content.footer_tagline || 'Mentoring a coexisting generation with creativity, innovation, and environmental respect.' }}</p>
+                <p class="footer-text">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
                 <div class="social-icons">
-                    {% for social in site_content.social_links %}
-                    <a href="{{ social.url }}" target="_blank" class="social-icon"><i class="fab fa-{{ social.platform }}"></i></a>
-                    {% endfor %}
+                    <a href="https://www.facebook.com/signal.arts.5" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@signalarts85" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@henry.signal.arts" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
     
             <!-- Quick Links -->
             <div class="footer-column">
-                <h3 class="footer-heading">{{ site_content.quick_links_heading || 'Quick Links' }}</h3>
+                <h3 class="footer-heading">Quick Links</h3>
                 <ul class="footer-links">
-                    {% for link in site_content.footer_links %}
-                    <li><a href="{{ link.url }}" class="footer-link">{{ link.text }}</a></li>
-                    {% endfor %}
+                    <li><a href="#" class="footer-link">Home</a></li>
+                    <li><a href="#" class="footer-link">About</a></li>
+                    <li><a href="#" class="footer-link">Address</a></li>
+                    <li><a href="#" class="footer-link">Completed Projects</a></li>
+                    <li><a href="#" class="footer-link">Contact</a></li>
                 </ul>
             </div>
     
             <!-- Contact Information -->
             <div class="footer-column">
-                <h3 class="footer-heading">{{ site_content.contact_heading || 'Contact Us' }}</h3>
-                <p class="footer-text">{{ site_content.email || 'Email: signalarts1@gmail.com' }}</p>
-                <p class="footer-text">{{ site_content.phone1 || 'Phone: +256 775413318' }}</p>
-                <p class="footer-text">{{ site_content.phone2 || 'Phone: +256754406992' }}</p>
-                <p class="footer-text">{{ site_content.address || 'Address: Bwera, Kasese, Uganda' }}</p>
+                <h3 class="footer-heading">Contact Us</h3>
+                <p class="footer-text">Email: signalarts1@gmail.com</p>
+                <p class="footer-text">Phone: +256 775413318</p>
+                <p class="footer-text">Phone: +256754406992</p>
+                <p class="footer-text">Address: Bwera, Kasese, Uganda</p>
             </div>
         </div>
     
         <!-- Footer Bottom Section -->
         <div class="footer-bottom">
-            <p class="footer-copyright">&copy; {{ 'now' | date: "%Y" }} {{ site_content.copyright_text || 'Signal Preparatory School. All Rights Reserved.' }}</p>
-            <p class="designer-credit">{{ site_content.designer_text || 'Designed by' }} <a href="{{ site_content.designer_link || '#' }}" class="designer-link">{{ site_content.designer_name || 'Mumbere Darius' }}</a></p>
-            <a href="/admin/" class="admin-link">{{ site_content.admin_text || 'Admin Login' }}</a>
+            <p class="footer-copyright">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
+            <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
+            <a href="/admin/" class="admin-link">Admin Login</a>
         </div>
     </footer>
 
@@ -231,6 +254,56 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Skip if in admin interface
             if (window.location.pathname.includes('/admin/')) return;
+
+            // Load content from JSON
+            fetch('/src/data/content.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Inject content into the page
+                    if (data.hero_heading) {
+                        document.getElementById('hero-heading').textContent = data.hero_heading;
+                    }
+                    if (data.hero_text) {
+                        document.getElementById('hero-text').textContent = data.hero_text;
+                    }
+                    if (data.hero_button_text) {
+                        document.getElementById('hero-button').textContent = data.hero_button_text;
+                    }
+                    if (data.about_heading) {
+                        document.getElementById('about-heading').textContent = data.about_heading;
+                    }
+                    if (data.about_text) {
+                        document.getElementById('about-text').innerHTML = marked.parse(data.about_text);
+                    }
+                    if (data.vision_text) {
+                        document.getElementById('vision-text').innerHTML = marked.parse(data.vision_text);
+                    }
+                    if (data.title) {
+                        document.title = data.title;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading content:', error);
+                    // Fallback content
+                    document.getElementById('hero-heading').textContent = 'Signal Preparatory is a school aiming at mentoring a coexisting generation...';
+                    document.getElementById('hero-text').textContent = 'Good foundation, better future';
+                    document.getElementById('hero-button').textContent = 'Explore More';
+                    document.getElementById('about-heading').textContent = 'About Us';
+                    document.getElementById('about-text').innerHTML = `
+                        <p>Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of 
+                        creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults.</p>
+                        <p>Fostering creative thinking, problem-solving, and interdependence skills in children and young adults is a 
+                        core responsibility that everyone needs to play in making the world a better place for all.</p>
+                    `;
+                    document.getElementById('vision-text').innerHTML = `
+                        <p>Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in.</p>
+                    `;
+                });
 
             // Modern toggle menu with animation
             const hamburger = document.getElementById('hamburger');
