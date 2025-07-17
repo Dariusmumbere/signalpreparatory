@@ -1639,5 +1639,53 @@ vision_text: o﻿ur vision
             }
         });
     </script>
+    <script>
+// Parse the frontmatter content
+function parseFrontmatter() {
+  const frontmatter = {};
+  // Get all text between --- delimiters
+  const frontmatterText = document.querySelector('body').textContent
+    .match(/---([\s\S]*?)---/)[1];
+  
+  frontmatterText.split('\n').forEach(line => {
+    if (line.includes(':')) {
+      const [key, value] = line.split(':').map(s => s.trim());
+      if(key && value) frontmatter[key] = value;
+    }
+  });
+  return frontmatter;
+}
+
+// Update DOM with CMS content
+function applyCMSContent() {
+  const content = parseFrontmatter();
+  
+  // Hero Section
+  if(content.hero_heading) {
+    document.querySelector('.hero-content h2').textContent = content.hero_heading;
+  }
+  
+  if(content.hero_text) {
+    document.querySelector('.hero-content p').textContent = content.hero_text;
+  }
+  
+  // About Section
+  if(content.about_heading) {
+    document.querySelector('.about-content h2').textContent = content.about_heading;
+  }
+  
+  if(content.about_text) {
+    document.querySelector('.about-content p').textContent = content.about_text;
+  }
+  
+  // Vision Section
+  if(content.vision_text) {
+    document.querySelector('.vision-content p').textContent = content.vision_text;
+  }
+}
+
+// Run when page loads
+document.addEventListener('DOMContentLoaded', applyCMSContent);
+</script>
 </body>
 </html>
