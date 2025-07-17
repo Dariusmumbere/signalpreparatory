@@ -1,1 +1,45 @@
-
+{
+  "designer_name_contact": "Mumbere Darius",
+  "working_hours": "Mon - Fri: 8:00 AM - 6:00 PM",
+  "designer_text_contact": "Designed by Mumbere Darius.",
+  "phone1_contact": "+256 775413318",
+  "contact_heading_contact": "Contact Us",
+  "phone2_contact": "+256 754406992",
+  "copyright_text_contact": "&copy; 2025 Signal Preparatory School. All Rights Reserved.",
+  "form_heading": "Send Us a Message",
+  "social_links_contact": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/signal.arts.5"
+    },
+    {
+      "url": "https://www.youtube.com/@signalarts85",
+      "platform": "youtube"
+    },
+    {
+      "url": "https://www.tiktok.com/@henry.signal.arts",
+      "platform": "tiktok"
+    },
+    {
+      "url": "https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==",
+      "platform": "instagram"
+    }
+  ],
+  "contact_section_heading": "Send Us a Message",
+  "footer_tagline_contact": "Signal Preparatory school",
+  "google_maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.270490960082!2d29.752027881283723!3d0.03388170730054174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1761de4b94e8e959%3A0x746f3e2d97d78604!2sBwera!5e0!3m2!1sen!2sug!4v1742633850042!5m2!1sen!2sug",
+  "designer_link_contact": "https://dariusmumbere.github.io/personal",
+  "office_address": "Bwera, Kasese, Uganda",
+  "contact_page_heading": "Contact uss",
+  "footer_school_name_contact": "Signal Preparatory school",
+  "contact_page_subheading": "We'd love to hear from you! Reach out to us for any inquiries or feedback.",
+  "address_contact": "Bwera, Kasese, Uganda",
+  "school_name_contact": "SIGNAL PREPARATORY SCHOOL",
+  "phone2_footer_contact": "+256754406992",
+  "phone1_footer_contact": "+256 775413318",
+  "title_contact": "Contact US",
+  "email_contact": "signalarts1@gmail.com",
+  "admin_text_contact": "Admin login",
+  "email_footer_contact": "signalarts1@gmail.com",
+  "map_heading": "Find Us on the Map"
+}
