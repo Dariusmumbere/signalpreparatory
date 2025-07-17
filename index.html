@@ -430,6 +430,46 @@ vision_text: a﻿sdfgh
                 closeModal();
             }
         });
+        // CMS Field Backup System
+document.addEventListener('DOMContentLoaded', function() {
+  const backupContent = {
+    hero_heading: "Signal Preparatory is a school aiming at mentoring a coexisting generation...",
+    hero_text: "Good foundation, better future",
+    about_heading: "About Us",
+    about_text: "Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of creativity...",
+    vision_text: "Fostering creative thinking, problem solving and Interdependence skills in children and Young adults..."
+  };
+  
+  // Get CMS content from the page
+  const cmsContent = {};
+  const frontMatter = document.querySelector('pre')?.textContent;
+  
+  if (frontMatter) {
+    frontMatter.split('\n').forEach(line => {
+      if (line.includes(':')) {
+        const [key, value] = line.split(':').map(s => s.trim());
+        if (key && value) cmsContent[key] = value;
+      }
+    });
+  }
+  
+  // Apply content or fallback to backups
+  function applyContent(selector, contentKey) {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.textContent = cmsContent[contentKey] || backupContent[contentKey] || '';
+    }
+  }
+  
+  applyContent('.hero-content h2', 'hero_heading');
+  applyContent('.hero-content p', 'hero_text');
+  applyContent('.about-content h2', 'about_heading');
+  applyContent('.about-content p:nth-of-type(1)', 'about_text');
+  applyContent('.vision-content p', 'vision_text');
+  
+  // Remove the front matter display if it exists
+  document.querySelector('pre')?.remove();
+});
     </script>
 </body>
 </html>
