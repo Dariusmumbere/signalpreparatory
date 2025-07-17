@@ -12,13 +12,13 @@ collections:
       - name: "home"
         label: "Home Page"
         file: "index.html"
-        format: "html"
+        format: html
         frontmatter_delimiter: ["---", "---"]
         fields:
-          - { label: "Title", name: "title", widget: "string", default: "SIGNAL PREPARATORY SCHOOL" }
-          - { label: "Hero Heading", name: "hero_heading", widget: "string", default: "Signal Preparatory is a school aiming at mentoring a coexisting generation..." }
-          - { label: "Hero Text", name: "hero_text", widget: "text", default: "Good foundation, better future" }
-          - { label: "Hero Button Text", name: "hero_button_text", widget: "string", default: "Read more" }
-          - { label: "About Heading", name: "about_heading", widget: "string", default: "About Us" }
-          - { label: "About Text", name: "about_text", widget: "markdown", default: "Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of creativity..." }
-          - { label: "Vision Text", name: "vision_text", widget: "markdown", default: "Fostering creative thinking, problem solving and Interdependence skills in children and Young adults..." }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Text", name: "hero_text", widget: "text" }
+          - { label: "Hero Button Text", name: "hero_button_text", widget: "string" }
+          - { label: "About Heading", name: "about_heading", widget: "string" }
+          - { label: "About Text", name: "about_text", widget: "markdown" }
+          - { label: "Vision Text", name: "vision_text", widget: "markdown" }
