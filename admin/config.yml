@@ -134,6 +134,7 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt", widget: "string" }
 
+  - name: "About_signalprep_content"
     label: "About Page Content"
     files:
       - name: "about"
@@ -226,11 +227,8 @@ collections:
           - { label: "Designer Name", name: "designer_name", widget: "string" }
           - { label: "Admin Text", name: "admin_text", widget: "string" }
 
-    
-    label: "Projects Page Content"
-    files:
-      - name: "projects"
-        label: "Projects Page"
+      - name: "projects_content"
+        label: "Projects Page Content"
         file: "src/data/projects.json"
         fields:
           - { label: "Page Title", name: "title", widget: "string" }
@@ -262,7 +260,7 @@ collections:
                 field: { label: "Achievement", name: "item", widget: "string" }
               - { label: "Appreciation Text", name: "appreciation", widget: "text", required: false }
           
-          # Foote
+          # Footer
           - { label: "Footer Tagline", name: "footer_tagline", widget: "text" }
           
           - label: "Social Links"
