@@ -1,1 +1,55 @@
-
+{
+  "designer_text": "Designed by Mumbere  Darius",
+  "phone1": "+256 775413318",
+  "contact_heading": "Contact Us",
+  "phone2": "+256754406992",
+  "copyright_text": "© 2025 Signal Preparatory School. All Rights Reserved.",
+  "social_links": [
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/signal.arts.5"
+    },
+    {
+      "url": "https://www.youtube.com/@signalarts85",
+      "platform": "Youtube"
+    },
+    {
+      "url": "https://www.tiktok.com/@henry.signal.arts",
+      "platform": "tiktok"
+    },
+    {
+      "url": "https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==",
+      "platform": "instagram"
+    }
+  ],
+  "projects_subheading": "Explore our impactful projects aimed at fostering growth, skills, and community connections.",
+  "footer_tagline": "SIGNAL PREPARATORY\nSCHOOL",
+  "designer_link": "https://dariusmumbere.github.io/personal",
+  "parallax_title": "Our Projects",
+  "footer_school_name": "Signal Preparatory School",
+  "address": "Bwera, Kasese, Uganda",
+  "school_name": "Signal Preparatory School",
+  "title": "Projects-Signal Preparatory",
+  "projects": [
+    {
+      "title": "Cub Scouts Juice Party",
+      "image": "/images/uploads/juice.jpg",
+      "description": "<!--StartFragment-->\n\nThis was a success. Cub scouts did 80% of the juice blending process as the 20% was done by their care givers. The site preparation, washing, peeling, slicing, blending and serving was all done by the Cubs themselves.\n\n## Achievements attained.\n\n1. Juice Processing skills was developed\n2. Sharing Skills\n3. Team working\n4. Patience during serving\n5. Smartness and good order was achieved.\n\n## Appreciation\n\nThe School Management thanks all the sponsors and team that was behind this achievement. We are indeed great full.\n\n<!--EndFragment-->",
+      "achievements": []
+    },
+    {
+      "title": "Child Art / Waste Management Mural",
+      "description": "<!--StartFragment-->\n\nThe Skill Development Initiative is designed to provide customized training and mentorship programs to empower individuals with practical skills.3/4 of our Pupils pack Juice in different plastic bottles everyday. This leads to poor disposal and littering the school compound. Upon realizing this, a two months intensive sensitization about plastic waste management in our school and community. The 5 R's of waste management were emphasized .These included the; REUSE, RECYCLE, REDUCE, RETURN and REFUSE. After the intensive communication, the school Child Art worked with the Child waste Management team. They thought of recycling their bottle tops. Hence the idea of the Signal School Child Art/waste management mural. Parents and community well wishers participated in this mural.\n\n<!--EndFragment-->",
+      "image": "/images/uploads/waste.jpeg"
+    },
+    {
+      "title": "Music Dance and Drama",
+      "description": "<!--StartFragment-->\n\n\"Mind set change is more achieved when children and young adults take a leading role in achieving it\".\n\nAfter our community history and family backgrounds, 70% of our pupils are candidates of lost hope. The good news is that you can't change the beginning. But, you can start from where you are to change the end.\n\nAt Signal School, this gossiple is spread through MDD.\n\n<!--EndFragment-->",
+      "image": "/images/uploads/mdd.webp"
+    }
+  ],
+  "email": "signalarts1@gmail.com",
+  "admin_text": "Admin Login",
+  "projects_heading": "Our Projects",
+  "designer_name": "Mumbere Darius"
+}
