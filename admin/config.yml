@@ -6,14 +6,12 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "content"
+    label: "Content"
     files:
-      - name: "home"
-        label: "Home Page"
-        file: "index.html"
-        format: html
-        frontmatter_delimiter: ["---", "---"]
+      - name: "site_content"
+        label: "Site Content"
+        file: "src/data/content.json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Hero Heading", name: "hero_heading", widget: "string" }
