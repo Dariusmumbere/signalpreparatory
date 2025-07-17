@@ -1,30 +1,25 @@
 backend:
   name: git-gateway
-  branch: main  # Your default branch (main/master)
+  branch: main
 
-media_folder: "images/uploads"  # Where uploaded images go
-public_folder: "/images/uploads"  # Public path for images
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  # Example: Home Page (editable via CMS)
   - name: "pages"
     label: "Pages"
     files:
       - name: "home"
         label: "Home Page"
-        file: "index.html"  # Path to your HTML file
+        file: "index.html"
+        # Tell Netlify this is HTML, not Markdown
+        format: "html"
+        frontmatter_delimiter: ["---", "---"]
         fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string" }
-          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
-          - { label: "About Section", name: "about_text", widget: "markdown" }
-          - { label: "Featured Image", name: "hero_image", widget: "image" }
-
-  # Example: Blog Posts
-  - name: "blog"
-    label: "Blog"
-    folder: "_posts/blog"  # Creates new markdown files here
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Text", name: "hero_text", widget: "text" }
+          - { label: "Hero Button Text", name: "hero_button_text", widget: "string" }
+          - { label: "About Heading", name: "about_heading", widget: "string" }
+          - { label: "About Text", name: "about_text", widget: "markdown" }
+          - { label: "Vision Text", name: "vision_text", widget: "markdown" }
