@@ -134,7 +134,7 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt", widget: "string" }
 
-  - name: "about_content"
+  - name: "about_contentt"
     label: "About Page Content"
     files:
       - name: "about"
