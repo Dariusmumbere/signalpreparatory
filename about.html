@@ -14,7 +14,7 @@
 <body>
     <!-- CMS Admin Button (visible when logged in) -->
     <a href="/admin/" class="cms-admin-btn" id="cmsAdminBtn" style="display: none;">
-        <i class="fas fa-cog"></i> <span id="admin-btn-text">Admin login</span>
+        <i class="fas fa-cog"></i> <span id="admin-btn-text">CMS Admin</span>
     </a>
     
     <!-- CMS Login Modal -->
@@ -30,7 +30,7 @@
     <nav class="navbar" id="navbar">
         <div class="logo-container">
             <img src="/images/uploads/logo.png" alt="Logo" class="logo" id="main-logo">
-            <div class="logo-text" id="school-name">Signal Preparatory School</div>
+            <div class="logo-text" id="school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
         </div>
         
         <!-- Modern Hamburger Menu -->
@@ -65,7 +65,7 @@
     
     <section class="section">
         <div class="content">
-            <h2 id="about-heading">About s</h2>
+            <h2 id="about-heading">About Us</h2>
             <p id="about-text-1">Signal Preparatory is a school with a mission to mentor and inspire. It focuses on nurturing a generation with high levels of creativity and innovation. The school promotes world awareness and respects environmental conservation in children and young adults.</p>
             <p id="about-text-2">It was registered in 2018 with the Ministry of Education and sports (MoES) under Registration Number ED/N/22/MoES/2018.</p>
             <p id="about-text-3">It's every one's responsibility to work with and mentor a generation. This generation will work towards playing a part in making the world a better place for everyone to live in.</p>
@@ -158,6 +158,9 @@
     
     <div class="gallery" id="gallery-container">
         <!-- Gallery images will be dynamically inserted here -->
+        <img src="g1.webp" alt="Gallery Image 1">
+        <img src="g2.webp" alt="Gallery Image 2">
+        <img src="g3.webp" alt="Gallery Image 3">
     </div>
     
     <footer class="footer">
@@ -166,7 +169,7 @@
             <div class="footer-column logo-column">
                 <div class="logo-container">
                     <img src="/images/uploads/logo.png" alt="Signal Preparatory School Logo" class="footer-logo" id="footer-logo">
-                    <div class="footer-logo-text" id="footer-school-name">Signal Preparatory School</div>
+                    <div class="footer-logo-text" id="footer-school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
                 </div>
                 <p class="footer-text" id="footer-tagline">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
                 <div class="social-icons" id="social-icons-container">
@@ -191,7 +194,7 @@
     
             <!-- Contact Information -->
             <div class="footer-column">
-                <h3 class="footer-heading" id="contact-heading">Contact us</h3>
+                <h3 class="footer-heading" id="contact-heading">Contact Us</h3>
                 <p class="footer-text" id="footer-email">Email: signalarts1@gmail.com</p>
                 <p class="footer-text" id="footer-phone1">Phone: +256 775413318</p>
                 <p class="footer-text" id="footer-phone2">Phone: +256754406992</p>
@@ -201,9 +204,9 @@
     
         <!-- Footer Bottom Section -->
         <div class="footer-bottom">
-            <p class="footer-copyright" id="copyright-text">© 2025 Signal Preparatory School. All Rights Reserved.</p>
+            <p class="footer-copyright" id="copyright-text">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
             <p class="designer-credit" id="designer-credit">Designed by <a href="https://dariusmumbere.github.io/personal" class="designer-link" id="designer-link">Mumbere Darius</a></p>
-            <a href="/admin/" class="admin-link" id="admin-link-text">Admin login</a>
+            <a href="/admin/" class="admin-link" id="admin-link-text">Admin Login</a>
         </div>
     </footer>
 
@@ -221,205 +224,197 @@
                     return response.json();
                 })
                 .then(data => {
-                    // Page title
-                    if (data.about_page_title) {
-                        document.getElementById('about-page-title').textContent = data.about_page_title;
-                        document.title = data.about_page_title;
-                    }
-
-                    // Hero section
-                    if (data.about_hero_title) {
-                        document.getElementById('about-hero-title').textContent = data.about_hero_title;
-                    }
-
-                    // Mission/Aim section
-                    if (data.aim_heading) {
-                        document.getElementById('aim-heading').textContent = data.aim_heading;
-                    }
-                    if (data.aim_text_1) {
-                        document.getElementById('aim-text-1').textContent = data.aim_text_1;
-                    }
-                    if (data.aim_text_2) {
-                        document.getElementById('aim-text-2').textContent = data.aim_text_2;
-                    }
-                    if (data.mission_image) {
-                        document.getElementById('mission-image').src = data.mission_image;
-                    }
-
-                    // About section
-                    if (data.about_heading) {
-                        document.getElementById('about-heading').textContent = data.about_heading;
-                    }
-                    if (data.about_text_1) {
-                        document.getElementById('about-text-1').textContent = data.about_text_1;
-                    }
-                    if (data.about_text_2) {
-                        document.getElementById('about-text-2').textContent = data.about_text_2;
-                    }
-                    if (data.about_text_3) {
-                        document.getElementById('about-text-3').textContent = data.about_text_3;
-                    }
-                    if (data.about_section_image) {
-                        document.getElementById('about-section-image').src = data.about_section_image;
-                    }
-
-                    // Mission/Vision/Values section
-                    if (data.mission_heading) {
-                        document.getElementById('mission-heading').textContent = data.mission_heading;
-                    }
-                    if (data.mission_text) {
-                        document.getElementById('mission-text').textContent = data.mission_text;
-                    }
-                    if (data.vision_heading) {
-                        document.getElementById('vision-heading').textContent = data.vision_heading;
-                    }
-                    if (data.vision_text) {
-                        document.getElementById('vision-text').textContent = data.vision_text;
-                    }
-                    if (data.values_heading) {
-                        document.getElementById('values-heading').textContent = data.values_heading;
-                    }
-                    if (data.values_text) {
-                        document.getElementById('values-text').textContent = data.values_text;
-                    }
-
-                    // Team section
-                    if (data.team_heading) {
-                        document.getElementById('team-heading').textContent = data.team_heading;
-                    }
-                    if (data.team_subheading) {
-                        document.getElementById('team-subheading').textContent = data.team_subheading;
-                    }
-                    if (data.team_members && Array.isArray(data.team_members)) {
-                        const teamContainer = document.getElementById('team-members-container');
-                        teamContainer.innerHTML = '';
-                        
-                        data.team_members.forEach(member => {
-                            const memberHTML = `
-                                <div class="team-card">
-                                    <img src="${member.image}" alt="${member.name}">
-                                    <h3>${member.name}</h3>
-                                    <p>${member.position}</p>
-                                </div>
-                            `;
-                            teamContainer.innerHTML += memberHTML;
-                        });
-                    }
-
-                    // Empower section
-                    if (data.empower_heading) {
-                        document.getElementById('empower-heading').textContent = data.empower_heading;
-                    }
-                    if (data.empower_text_1) {
-                        document.getElementById('empower-text-1').textContent = data.empower_text_1;
-                    }
-                    if (data.empower_text_2) {
-                        document.getElementById('empower-text-2').textContent = data.empower_text_2;
-                    }
-                    if (data.empower_image) {
-                        document.getElementById('empower-image').src = data.empower_image;
-                    }
-
-                    // Life at school section
-                    if (data.life_heading) {
-                        document.getElementById('life-heading').textContent = data.life_heading;
-                    }
-                    if (data.life_text_1) {
-                        document.getElementById('life-text-1').textContent = data.life_text_1;
-                    }
-                    if (data.life_text_2) {
-                        document.getElementById('life-text-2').textContent = data.life_text_2;
-                    }
-                    if (data.life_text_3) {
-                        document.getElementById('life-text-3').textContent = data.life_text_3;
-                    }
-
-                    // Gallery
-                    if (data.gallery_images && Array.isArray(data.gallery_images)) {
-                        const galleryContainer = document.getElementById('gallery-container');
-                        galleryContainer.innerHTML = '';
-                        
-                        data.gallery_images.forEach(image => {
-                            const imageHTML = `
-                                <img src="${image.url}" alt="${image.alt || 'Gallery image'}">
-                            `;
-                            galleryContainer.innerHTML += imageHTML;
-                        });
-                    }
-
-                    // Footer content (shared with index.html)
-                    if (data.footer_logo) {
-                        document.getElementById('footer-logo').src = data.footer_logo;
-                    }
-                    if (data.footer_school_name) {
-                        document.getElementById('footer-school-name').textContent = data.footer_school_name;
-                    }
-                    if (data.footer_tagline) {
-                        document.getElementById('footer-tagline').textContent = data.footer_tagline;
-                    }
-                    if (data.social_links && Array.isArray(data.social_links)) {
-                        const socialContainer = document.getElementById('social-icons-container');
-                        socialContainer.innerHTML = '';
-                        
-                        data.social_links.forEach(link => {
-                            const iconClass = getSocialIconClass(link.platform);
-                            if (iconClass) {
-                                const socialHTML = `
-                                    <a href="${link.url}" target="_blank" class="social-icon"><i class="${iconClass}"></i></a>
-                                `;
-                                socialContainer.innerHTML += socialHTML;
-                            }
-                        });
-                    }
-                    if (data.footer_links && Array.isArray(data.footer_links)) {
-                        const footerLinksContainer = document.getElementById('footer-links-container');
-                        footerLinksContainer.innerHTML = '';
-                        
-                        data.footer_links.forEach(link => {
-                            const linkHTML = `
-                                <li><a href="${link.url}" class="footer-link">${link.text}</a></li>
-                            `;
-                            footerLinksContainer.innerHTML += linkHTML;
-                        });
-                    }
-                    if (data.contact_heading) {
-                        document.getElementById('contact-heading').textContent = data.contact_heading;
-                    }
-                    if (data.email) {
-                        document.getElementById('footer-email').textContent = `Email: ${data.email}`;
-                    }
-                    if (data.phone1) {
-                        document.getElementById('footer-phone1').textContent = `Phone: ${data.phone1}`;
-                    }
-                    if (data.phone2) {
-                        document.getElementById('footer-phone2').textContent = `Phone: ${data.phone2}`;
-                    }
-                    if (data.address) {
-                        document.getElementById('footer-address').textContent = `Address: ${data.address}`;
-                    }
-                    if (data.copyright_text) {
-                        document.getElementById('copyright-text').textContent = data.copyright_text;
-                    }
-                    if (data.designer_text) {
-                        document.getElementById('designer-credit').textContent = data.designer_text;
-                    }
-                    if (data.designer_link) {
-                        document.getElementById('designer-link').href = data.designer_link;
-                    }
-                    if (data.designer_name) {
-                        document.getElementById('designer-link').textContent = data.designer_name;
-                    }
-                    if (data.admin_text) {
-                        document.getElementById('admin-link-text').textContent = data.admin_text;
-                    }
-                    if (data.admin_text) {
-                        document.getElementById('admin-btn-text').textContent = data.admin_text;
-                    }
+                    // Update all elements with JSON data
+                    updateContent(data);
                 })
                 .catch(error => {
                     console.error('Error loading about page content:', error);
-                    loadFallbackContent();
+                    // Fallback content is already in the HTML
                 });
+
+            function updateContent(data) {
+                // Page title
+                if (data.about_page_title) {
+                    document.getElementById('about-page-title').textContent = data.about_page_title;
+                    document.title = data.about_page_title;
+                }
+
+                // Hero section
+                if (data.about_hero_title) {
+                    document.getElementById('about-hero-title').textContent = data.about_hero_title;
+                }
+
+                // Mission/Aim section
+                if (data.aim_heading) {
+                    document.getElementById('aim-heading').textContent = data.aim_heading;
+                }
+                if (data.aim_text_1) {
+                    document.getElementById('aim-text-1').textContent = data.aim_text_1;
+                }
+                if (data.aim_text_2) {
+                    document.getElementById('aim-text-2').textContent = data.aim_text_2;
+                }
+                if (data.mission_image) {
+                    document.getElementById('mission-image').src = data.mission_image;
+                }
+
+                // About section
+                if (data.about_heading) {
+                    document.getElementById('about-heading').textContent = data.about_heading;
+                }
+                if (data.about_text_1) {
+                    document.getElementById('about-text-1').textContent = data.about_text_1;
+                }
+                if (data.about_text_2) {
+                    document.getElementById('about-text-2').textContent = data.about_text_2;
+                }
+                if (data.about_text_3) {
+                    document.getElementById('about-text-3').textContent = data.about_text_3;
+                }
+                if (data.about_section_image) {
+                    document.getElementById('about-section-image').src = data.about_section_image;
+                }
+
+                // Mission/Vision/Values section
+                if (data.mission_heading) {
+                    document.getElementById('mission-heading').textContent = data.mission_heading;
+                }
+                if (data.mission_text) {
+                    document.getElementById('mission-text').textContent = data.mission_text;
+                }
+                if (data.vision_heading) {
+                    document.getElementById('vision-heading').textContent = data.vision_heading;
+                }
+                if (data.vision_text) {
+                    document.getElementById('vision-text').textContent = data.vision_text;
+                }
+                if (data.values_heading) {
+                    document.getElementById('values-heading').textContent = data.values_heading;
+                }
+                if (data.values_text) {
+                    document.getElementById('values-text').textContent = data.values_text;
+                }
+
+                // Team section
+                if (data.team_heading) {
+                    document.getElementById('team-heading').textContent = data.team_heading;
+                }
+                if (data.team_subheading) {
+                    document.getElementById('team-subheading').textContent = data.team_subheading;
+                }
+                if (data.team_members && Array.isArray(data.team_members)) {
+                    const teamContainer = document.getElementById('team-members-container');
+                    teamContainer.innerHTML = '';
+                    
+                    data.team_members.forEach(member => {
+                        const memberHTML = `
+                            <div class="team-card">
+                                <img src="${member.image}" alt="${member.name}">
+                                <h3>${member.name}</h3>
+                                <p>${member.position}</p>
+                            </div>
+                        `;
+                        teamContainer.innerHTML += memberHTML;
+                    });
+                }
+
+                // Empower section
+                if (data.empower_heading) {
+                    document.getElementById('empower-heading').textContent = data.empower_heading;
+                }
+                if (data.empower_text_1) {
+                    document.getElementById('empower-text-1').textContent = data.empower_text_1;
+                }
+                if (data.empower_text_2) {
+                    document.getElementById('empower-text-2').textContent = data.empower_text_2;
+                }
+                if (data.empower_image) {
+                    document.getElementById('empower-image').src = data.empower_image;
+                }
+
+                // Life at school section
+                if (data.life_heading) {
+                    document.getElementById('life-heading').textContent = data.life_heading;
+                }
+                if (data.life_text_1) {
+                    document.getElementById('life-text-1').textContent = data.life_text_1;
+                }
+                if (data.life_text_2) {
+                    document.getElementById('life-text-2').textContent = data.life_text_2;
+                }
+                if (data.life_text_3) {
+                    document.getElementById('life-text-3').textContent = data.life_text_3;
+                }
+
+                // Footer content
+                if (data.footer_logo) {
+                    document.getElementById('footer-logo').src = data.footer_logo;
+                    document.getElementById('main-logo').src = data.footer_logo;
+                }
+                if (data.footer_school_name) {
+                    document.getElementById('footer-school-name').textContent = data.footer_school_name;
+                    document.getElementById('school-name').textContent = data.footer_school_name;
+                }
+                if (data.footer_tagline) {
+                    document.getElementById('footer-tagline').textContent = data.footer_tagline;
+                }
+                if (data.social_links && Array.isArray(data.social_links)) {
+                    const socialContainer = document.getElementById('social-icons-container');
+                    socialContainer.innerHTML = '';
+                    
+                    data.social_links.forEach(link => {
+                        const iconClass = getSocialIconClass(link.platform);
+                        if (iconClass) {
+                            const socialHTML = `
+                                <a href="${link.url}" target="_blank" class="social-icon"><i class="${iconClass}"></i></a>
+                            `;
+                            socialContainer.innerHTML += socialHTML;
+                        }
+                    });
+                }
+                if (data.footer_links && Array.isArray(data.footer_links)) {
+                    const footerLinksContainer = document.getElementById('footer-links-container');
+                    footerLinksContainer.innerHTML = '';
+                    
+                    data.footer_links.forEach(link => {
+                        const linkHTML = `
+                            <li><a href="${link.url}" class="footer-link">${link.text}</a></li>
+                        `;
+                        footerLinksContainer.innerHTML += linkHTML;
+                    });
+                }
+                if (data.contact_heading) {
+                    document.getElementById('contact-heading').textContent = data.contact_heading;
+                }
+                if (data.email) {
+                    document.getElementById('footer-email').textContent = `Email: ${data.email}`;
+                }
+                if (data.phone1) {
+                    document.getElementById('footer-phone1').textContent = `Phone: ${data.phone1}`;
+                }
+                if (data.phone2) {
+                    document.getElementById('footer-phone2').textContent = `Phone: ${data.phone2}`;
+                }
+                if (data.address) {
+                    document.getElementById('footer-address').textContent = `Address: ${data.address}`;
+                }
+                if (data.copyright_text) {
+                    document.getElementById('copyright-text').textContent = data.copyright_text;
+                }
+                if (data.designer_text) {
+                    document.getElementById('designer-credit').textContent = data.designer_text;
+                }
+                if (data.designer_link) {
+                    document.getElementById('designer-link').href = data.designer_link;
+                }
+                if (data.designer_name) {
+                    document.getElementById('designer-link').textContent = data.designer_name;
+                }
+                if (data.admin_text) {
+                    document.getElementById('admin-link-text').textContent = data.admin_text;
+                    document.getElementById('admin-btn-text').textContent = data.admin_text;
+                }
+            }
 
             function getSocialIconClass(platform) {
                 const platformLower = platform.toLowerCase();
@@ -430,37 +425,6 @@
                 if (platformLower.includes('linkedin')) return 'fab fa-linkedin';
                 if (platformLower.includes('tiktok')) return 'fab fa-tiktok';
                 return 'fas fa-share-alt'; // default icon
-            }
-
-            function loadFallbackContent() {
-                // Fallback content for all sections
-                document.getElementById('about-hero-title').textContent = 'About Us';
-                document.getElementById('aim-heading').textContent = 'Our Aim';
-                document.getElementById('aim-text-1').textContent = 'We aim at grooming a coexisting generation with high levels of creativity, innovations, world awareness and respect for environmental conservation in children and Young adults.';
-                document.getElementById('aim-text-2').textContent = 'SIGNAL is an Acronym for Strategic Initiative for Grooming Natives into Active Art Learners. In this, we define Art as a spiced way of doing something. It is the value we add to whatever we do in life.';
-                
-                // Initialize team members with fallback data
-                const teamContainer = document.getElementById('team-members-container');
-                teamContainer.innerHTML = `
-                    <div class="team-card">
-                        <img src="/images/uploads/bwambale.webp" alt="Bwambale Henry">
-                        <h3>Bwambale Henry</h3>
-                        <p>Director Signal Preparatory School</p>
-                    </div>
-                    <div class="team-card">
-                        <img src="/images/uploads/dep.jpeg" alt="Staff Member">
-                        <h3>Name of Staff</h3>
-                        <p>Chairperson Board</p>
-                    </div>
-                `;
-                
-                // Initialize gallery with fallback images
-                const galleryContainer = document.getElementById('gallery-container');
-                galleryContainer.innerHTML = `
-                    <img src="g1.webp" alt="Gallery Image 1">
-                    <img src="g2.webp" alt="Gallery Image 2">
-                    <img src="g3.webp" alt="Gallery Image 3">
-                `;
             }
 
             // Modern toggle menu with animation
