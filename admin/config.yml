@@ -263,7 +263,7 @@ collections:
                 field: { label: "Achievement", name: "item", widget: "string" }
               - { label: "Appreciation Text", name: "appreciation", widget: "text", required: false }
           
-          # Footer
+          # Foote
           - { label: "Footer Tagline", name: "footer_tagline", widget: "text" }
           
           - label: "Social Links"
