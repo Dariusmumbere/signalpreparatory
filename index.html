@@ -1,23 +1,9 @@
----
-title: SIGNAL PREPARATORY SCHOOL
-hero_heading: Signal Preparatory is a school aiming at mentoring a coexisting generation...
-hero_text: Good foundation, better future
-hero_button_text: Read Moreeeee
-about_heading: About Us
-about_text: >-
-  Signal Preparatory is a school aiming at mentoring a coexisting generation
-  with high levels of 
-                      creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults.
-vision_text: Fostering creative thinking, problems solving and Interdependence
-  skills in children and Young adults is a core everyone needs to play in making
-  the world a better place for everyone to live in.
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">SIGNAL PREPARATORY SCHOOL</title>
+    <title>SIGNAL PREPARATORY SCHOOL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,9 +66,9 @@ vision_text: Fostering creative thinking, problems solving and Interdependence
             <img src="image10.jpg" class="slide" alt="School facilities">
         </div>
         <div class="hero-content">
-            <h2 id="hero-heading">Signal Preparatory is a school aiming at mentoring a coexisting generation...</h2>
-            <p id="hero-text">Good foundation, better future</p>
-            <button class="hero-button" id="hero-button-text">Read more</button>
+            <h2 id="cms-hero-heading">Signal Preparatory is a school aiming at mentoring a coexisting generation...</h2>
+            <p id="cms-hero-text">Good foundation, better future</p>
+            <button class="hero-button" id="cms-hero-button">Explore More</button>
         </div>
     </section>
 
@@ -92,8 +78,8 @@ vision_text: Fostering creative thinking, problems solving and Interdependence
                 <img src="about-image.jpg" alt="About Signal Preparatory">
             </div>
             <div class="about-content">
-                <h2 id="about-heading">About Us</h2>
-                <div id="about-text">
+                <h2 id="cms-about-heading">About Us</h2>
+                <div id="cms-about-text">
                     Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of 
                     creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults. 
                 </div>
@@ -108,7 +94,7 @@ vision_text: Fostering creative thinking, problems solving and Interdependence
         </div>
         <div class="vision-content">
             <h2>Our Vision</h2>
-            <div id="vision-text">
+            <div id="cms-vision-text">
                 Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in.
             </div>
             <a href="#" class="btn">Donate Now</a>
@@ -263,211 +249,196 @@ vision_text: Fostering creative thinking, problems solving and Interdependence
     </footer>
 
     <script>
-        // CMS Content Binding
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get CMS data from frontmatter script
-            const cmsData = {};
-            const frontmatterScript = document.querySelector('script[type="text/frontmatter"]');
-            if (frontmatterScript) {
-                try {
-                    Object.assign(cmsData, JSON.parse(frontmatterScript.textContent));
-                } catch (e) {
-                    console.error('Error parsing frontmatter:', e);
+        // Modern toggle menu with animation
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            // Toggle body scroll when menu is open
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.classList.add('fade-out');
+            });
+            
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            slides[currentSlide].classList.remove('fade-out');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Change slide every 5 seconds
+        const slideInterval = setInterval(nextSlide, 5000);
+        
+        // Pause slideshow when user hovers over it
+        const slideshow = document.querySelector('.slideshow');
+        slideshow.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        slideshow.addEventListener('mouseleave', () => {
+            setInterval(nextSlide, 5000);
+        });
+        
+        // Counter animation with Intersection Observer
+        const counterSection = document.querySelector('.kindergarten-counter-section');
+        const counters = document.querySelectorAll('.count');
+        let animated = false;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animateCounters();
+                    animated = true;
                 }
-            }
-
-            // Apply CMS data to elements
-            if (cmsData.title) {
-                document.getElementById('page-title').textContent = cmsData.title;
-                document.title = cmsData.title;
-            }
-            if (cmsData.hero_heading) document.getElementById('hero-heading').textContent = cmsData.hero_heading;
-            if (cmsData.hero_text) document.getElementById('hero-text').textContent = cmsData.hero_text;
-            if (cmsData.hero_button_text) document.getElementById('hero-button-text').textContent = cmsData.hero_button_text;
-            if (cmsData.about_heading) document.getElementById('about-heading').textContent = cmsData.about_heading;
-            if (cmsData.about_text) document.getElementById('about-text').innerHTML = cmsData.about_text;
-            if (cmsData.vision_text) document.getElementById('vision-text').innerHTML = cmsData.vision_text;
-            
-            // Modern toggle menu with animation
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
-            
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
             });
-            
-            // Close menu when clicking on a link
-            document.querySelectorAll('.nav-item').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
-            
-            // Navbar scroll effect
-            const navbar = document.getElementById('navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
-            
-            // Slideshow functionality
-            let currentSlide = 0;
-            const slides = document.querySelectorAll('.slide');
-            
-            function showSlide(n) {
-                slides.forEach(slide => {
-                    slide.classList.remove('active');
-                    slide.classList.add('fade-out');
-                });
+        }, { threshold: 0.5 });
+        
+        observer.observe(counterSection);
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000; // Animation duration in ms
+                const startTime = performance.now();
                 
-                currentSlide = (n + slides.length) % slides.length;
-                slides[currentSlide].classList.add('active');
-                slides[currentSlide].classList.remove('fade-out');
-            }
-            
-            function nextSlide() {
-                showSlide(currentSlide + 1);
-            }
-            
-            // Change slide every 5 seconds
-            const slideInterval = setInterval(nextSlide, 5000);
-            
-            // Pause slideshow when user hovers over it
-            const slideshow = document.querySelector('.slideshow');
-            slideshow.addEventListener('mouseenter', () => {
-                clearInterval(slideInterval);
-            });
-            
-            slideshow.addEventListener('mouseleave', () => {
-                setInterval(nextSlide, 5000);
-            });
-            
-            // Counter animation with Intersection Observer
-            const counterSection = document.querySelector('.kindergarten-counter-section');
-            const counters = document.querySelectorAll('.count');
-            let animated = false;
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !animated) {
-                        animateCounters();
-                        animated = true;
+                const updateCount = (currentTime) => {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / duration, 1);
+                    const value = Math.floor(progress * target);
+                    
+                    counter.textContent = value.toLocaleString();
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
                     }
-                });
-            }, { threshold: 0.5 });
-            
-            observer.observe(counterSection);
-            
-            function animateCounters() {
-                counters.forEach(counter => {
-                    const target = +counter.getAttribute('data-target');
-                    const duration = 2000;
-                    const startTime = performance.now();
-                    
-                    const updateCount = (currentTime) => {
-                        const elapsedTime = currentTime - startTime;
-                        const progress = Math.min(elapsedTime / duration, 1);
-                        const value = Math.floor(progress * target);
-                        
-                        counter.textContent = value.toLocaleString();
-                        
-                        if (progress < 1) {
-                            requestAnimationFrame(updateCount);
-                        }
-                    };
-                    
-                    requestAnimationFrame(updateCount);
-                });
-            }
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
+                };
+                
+                requestAnimationFrame(updateCount);
             });
-            
-            // Netlify Identity and CMS Integration
-            if (window.netlifyIdentity) {
-                window.netlifyIdentity.on("init", user => {
-                    if (!user) {
-                        window.netlifyIdentity.on("login", () => {
-                            document.location.href = "/admin/";
-                        });
-                    }
-                });
-                
-                // Check if user is logged in
-                const currentUser = netlifyIdentity.currentUser();
-                if (currentUser) {
-                    document.getElementById('cmsAdminBtn').style.display = 'flex';
-                }
-                
-                // Listen for login events
-                netlifyIdentity.on('login', user => {
-                    document.getElementById('cmsAdminBtn').style.display = 'flex';
-                    closeModal();
-                });
-                
-                // Listen for logout events
-                netlifyIdentity.on('logout', () => {
-                    document.getElementById('cmsAdminBtn').style.display = 'none';
-                });
-            }
-            
-            // Modal functions
-            function openModal() {
-                document.getElementById('cmsModal').style.display = 'flex';
-            }
-            
-            function closeModal() {
-                document.getElementById('cmsModal').style.display = 'none';
-            }
-            
-            // Admin link click handler
-            document.querySelector('.admin-link').addEventListener('click', function(e) {
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                openModal();
-            });
-            
-            // Close modal when clicking outside
-            document.getElementById('cmsModal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeModal();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
-    </script>
-    
-    <!-- Frontmatter data will be injected here by Netlify CMS -->
-    <script type="text/frontmatter">
-    {
-        "title": "Signal Preparatory School",
-        "hero_heading": "Signal Preparatory is a school aiming at mentoring a coexisting generation...",
-        "hero_text": "Good foundation, better future",
-        "hero_button_text": "Read more",
-        "about_heading": "About Us",
-        "about_text": "Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults.",
-        "vision_text": "Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in."
-    }
+        
+        // Netlify Identity and CMS Integration
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+            
+            // Check if user is logged in
+            const currentUser = netlifyIdentity.currentUser();
+            if (currentUser) {
+                document.getElementById('cmsAdminBtn').style.display = 'flex';
+            }
+            
+            // Listen for login events
+            netlifyIdentity.on('login', user => {
+                document.getElementById('cmsAdminBtn').style.display = 'flex';
+                closeModal();
+            });
+            
+            // Listen for logout events
+            netlifyIdentity.on('logout', () => {
+                document.getElementById('cmsAdminBtn').style.display = 'none';
+            });
+        }
+        
+        // Modal functions
+        function openModal() {
+            document.getElementById('cmsModal').style.display = 'flex';
+        }
+        
+        function closeModal() {
+            document.getElementById('cmsModal').style.display = 'none';
+        }
+        
+        // Admin link click handler
+        document.querySelector('.admin-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal();
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('cmsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // CMS Content Injection
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the frontmatter data if it exists
+            const frontmatterScript = document.querySelector('script[type="text/frontmatter"]');
+            if (frontmatterScript) {
+                try {
+                    const data = JSON.parse(frontmatterScript.textContent);
+                    
+                    // Update elements with CMS data
+                    if (data.hero_heading) document.getElementById('cms-hero-heading').textContent = data.hero_heading;
+                    if (data.hero_text) document.getElementById('cms-hero-text').textContent = data.hero_text;
+                    if (data.hero_button_text) document.getElementById('cms-hero-button').textContent = data.hero_button_text;
+                    if (data.about_heading) document.getElementById('cms-about-heading').textContent = data.about_heading;
+                    if (data.about_text) document.getElementById('cms-about-text').innerHTML = data.about_text;
+                    if (data.vision_text) document.getElementById('cms-vision-text').innerHTML = data.vision_text;
+                    
+                } catch (e) {
+                    console.error('Error parsing frontmatter data:', e);
+                }
+            }
+        });
     </script>
 </body>
 </html>
