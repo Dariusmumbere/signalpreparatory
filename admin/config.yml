@@ -227,8 +227,11 @@ collections:
           - { label: "Designer Name", name: "designer_name", widget: "string" }
           - { label: "Admin Text", name: "admin_text", widget: "string" }
 
-      - name: "projects_content"
-        label: "Projects Page Content"
+  - name: "projects_content"
+    label: "Projects Page Content"
+    files:
+      - name: "projects"
+        label: "Projects Page"
         file: "src/data/projects.json"
         fields:
           - { label: "Page Title", name: "title", widget: "string" }
@@ -257,7 +260,8 @@ collections:
                 name: "achievements"
                 widget: "list"
                 required: false
-                field: { label: "Achievement", name: "item", widget: "string" }
+                fields:
+                  - { label: "Achievement", name: "item", widget: "string" }
               - { label: "Appreciation Text", name: "appreciation", widget: "text", required: false }
           
           # Footer
