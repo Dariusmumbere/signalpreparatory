@@ -1,48 +1,17 @@
----
-title: Signal CMS
-hero_heading: Signal CMS under development
-hero_text: Pending
-hero_button_text: More
-about_heading: About Arts
-about_text: S﻿ignal kindergerten
-vision_text: v﻿ision cms
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SIGNAL PREPARATORY SCHOOL</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="home.css" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNAL PREPARATORY SCHOOL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link rel="stylesheet" href="home.css">
 </head>
-    <script type="text/template" id="frontmatter-template">
----
-title: Testinggg
-hero_heading: Testing
-hero_text: Testing CMS
-hero_button_text: Read more
-about_heading: This is just testing
-about_text: S﻿ignal preparatory
-vision_text: o﻿ur vision
----
-  </script>
 <body>
-    ---
-    title: Testinggg
-    hero_heading: Testing
-    hero_text: Testing CMS
-    hero_button_text: Read more
-    about_heading: This is just testing
-    about_text: S\u00a0ignal preparatory
-    vision_text: o\u00a0ur vision
-    ---
     <!-- CMS Admin Button (visible when logged in) -->
     <a href="/admin/" class="cms-admin-btn" id="cmsAdminBtn" style="display: none;">
         <i class="fas fa-cog"></i> CMS Admin
@@ -96,9 +65,9 @@ vision_text: o﻿ur vision
             <img src="image10.jpg" class="slide" alt="School facilities">
         </div>
         <div class="hero-content">
-            <h2 id="hero-heading">Signal Preparatory is a school aiming at mentoring a coexisting generation...</h2>
-            <p id="hero-text">Good foundation, better future</p>
-            <button class="hero-button" id="hero-button">Explore More</button>
+            <h2 id="hero-heading">Loading content...</h2>
+            <p id="hero-text">Loading content...</p>
+            <button class="hero-button" id="hero-button">Loading...</button>
         </div>
     </section>
 
@@ -108,16 +77,9 @@ vision_text: o﻿ur vision
                 <img src="about-image.jpg" alt="About Signal Preparatory">
             </div>
             <div class="about-content">
-                <h2 id="about-heading">About Us</h2>
+                <h2 id="about-heading">Loading...</h2>
                 <div id="about-text">
-                    <p>
-                        Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of 
-                        creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults. 
-                    </p>
-                    <p>
-                        Fostering creative thinking, problem-solving, and interdependence skills in children and young adults is a 
-                        core responsibility that everyone needs to play in making the world a better place for all.
-                    </p>
+                    <p>Loading content...</p>
                 </div>
                 <a href="#" class="learn-more-btn">Learn More</a>
             </div>
@@ -131,9 +93,7 @@ vision_text: o﻿ur vision
         <div class="vision-content">
             <h2>Our Vision</h2>
             <div id="vision-text">
-                <p>
-                    Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in.
-                </p>
+                <p>Loading content...</p>
             </div>
             <a href="#" class="btn">Donate Now</a>
         </div>
@@ -289,73 +249,61 @@ vision_text: o﻿ur vision
     <!-- Marked.js for markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
-    <!-- CMS Integration Script -->
+    <!-- Content Loading Script -->
     <script>
-        // CMS Content Injection
         document.addEventListener('DOMContentLoaded', function() {
             // Skip if in admin interface
             if (window.location.pathname.includes('/admin/')) return;
 
-            // Parse frontmatter from the HTML content
-            function parseFrontmatter() {
-                const frontmatter = {};
-                const metaTags = document.querySelectorAll('meta[name^="cms-"]');
-                
-                metaTags.forEach(tag => {
-                    const name = tag.getAttribute('name').replace('cms-', '');
-                    const content = tag.getAttribute('content');
-                    frontmatter[name] = content;
+            // Load content from JSON
+            fetch('/src/data/content.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Inject content into the page
+                    if (data.hero_heading) {
+                        document.getElementById('hero-heading').textContent = data.hero_heading;
+                    }
+                    if (data.hero_text) {
+                        document.getElementById('hero-text').textContent = data.hero_text;
+                    }
+                    if (data.hero_button_text) {
+                        document.getElementById('hero-button').textContent = data.hero_button_text;
+                    }
+                    if (data.about_heading) {
+                        document.getElementById('about-heading').textContent = data.about_heading;
+                    }
+                    if (data.about_text) {
+                        document.getElementById('about-text').innerHTML = marked.parse(data.about_text);
+                    }
+                    if (data.vision_text) {
+                        document.getElementById('vision-text').innerHTML = marked.parse(data.vision_text);
+                    }
+                    if (data.title) {
+                        document.title = data.title;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading content:', error);
+                    // Fallback content
+                    document.getElementById('hero-heading').textContent = 'Signal Preparatory is a school aiming at mentoring a coexisting generation...';
+                    document.getElementById('hero-text').textContent = 'Good foundation, better future';
+                    document.getElementById('hero-button').textContent = 'Explore More';
+                    document.getElementById('about-heading').textContent = 'About Us';
+                    document.getElementById('about-text').innerHTML = `
+                        <p>Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of 
+                        creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults.</p>
+                        <p>Fostering creative thinking, problem-solving, and interdependence skills in children and young adults is a 
+                        core responsibility that everyone needs to play in making the world a better place for all.</p>
+                    `;
+                    document.getElementById('vision-text').innerHTML = `
+                        <p>Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in.</p>
+                    `;
                 });
-
-                return Object.keys(frontmatter).length ? frontmatter : null;
-            }
-
-            // Inject CMS content into the page
-            function injectCmsContent(data) {
-                // Hero Section
-                if (data.hero_heading) {
-                    const el = document.getElementById('hero-heading');
-                    if (el) el.textContent = data.hero_heading;
-                }
-                
-                if (data.hero_text) {
-                    const el = document.getElementById('hero-text');
-                    if (el) el.textContent = data.hero_text;
-                }
-                
-                if (data.hero_button_text) {
-                    const el = document.getElementById('hero-button');
-                    if (el) el.textContent = data.hero_button_text;
-                }
-                
-                // About Section
-                if (data.about_heading) {
-                    const el = document.getElementById('about-heading');
-                    if (el) el.textContent = data.about_heading;
-                }
-                
-                if (data.about_text) {
-                    const el = document.getElementById('about-text');
-                    if (el) el.innerHTML = marked.parse(data.about_text);
-                }
-                
-                // Vision Section
-                if (data.vision_text) {
-                    const el = document.getElementById('vision-text');
-                    if (el) el.innerHTML = marked.parse(data.vision_text);
-                }
-                
-                // Update page title
-                if (data.title) {
-                    document.title = data.title;
-                }
-            }
-
-            // Try to get frontmatter data
-            const cmsData = parseFrontmatter();
-            if (cmsData) {
-                injectCmsContent(cmsData);
-            }
 
             // Modern toggle menu with animation
             const hamburger = document.getElementById('hamburger');
@@ -507,56 +455,5 @@ vision_text: o﻿ur vision
             });
         });
     </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      function extractFrontmatter() {
-        const raw = document.getElementById('frontmatter-template').textContent;
-        const match = raw.match(/---[\r\n]+([\s\S]*?)---/);
-        if (!match) return null;
-
-        try {
-          const yamlContent = match[1];
-          return jsyaml.load(yamlContent);
-        } catch (err) {
-          console.error("Error parsing frontmatter:", err);
-          return null;
-        }
-      }
-
-      function injectContent(data) {
-        if (!data) return;
-
-        if (data.hero_heading) {
-          const el = document.getElementById('hero-heading');
-          if (el) el.textContent = data.hero_heading;
-        }
-        if (data.hero_text) {
-          const el = document.getElementById('hero-text');
-          if (el) el.textContent = data.hero_text;
-        }
-        if (data.hero_button_text) {
-          const el = document.getElementById('hero-button');
-          if (el) el.textContent = data.hero_button_text;
-        }
-        if (data.about_heading) {
-          const el = document.getElementById('about-heading');
-          if (el) el.textContent = data.about_heading;
-        }
-        if (data.about_text) {
-          const el = document.getElementById('about-text');
-          if (el) el.innerHTML = marked.parse(data.about_text);
-        }
-        if (data.vision_text) {
-          const el = document.getElementById('vision-text');
-          if (el) el.innerHTML = marked.parse(data.vision_text);
-        }
-        if (data.title) {
-          document.title = data.title;
-        }
-      }
-
-      const content = extractFrontmatter();
-      injectContent(content);
-    });
-  </script>
 </body>
+</html>
