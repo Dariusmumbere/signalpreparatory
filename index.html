@@ -1,12 +1,3 @@
----
-title: dfghjklg
-hero_heading: rtyuio
-hero_text: zxcbvn
-hero_button_text: yuiop
-about_heading: rtyuiop
-about_text: z﻿xcvbnm
-vision_text: o﻿knbvf
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +10,7 @@ vision_text: o﻿knbvf
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- CMS Admin Button (visible when logged in) -->
@@ -75,9 +66,9 @@ vision_text: o﻿knbvf
             <img src="image10.jpg" class="slide" alt="School facilities">
         </div>
         <div class="hero-content">
-            <h2 id="cms-hero-heading">Signal Preparatory is a school aiming at mentoring a coexisting generation...</h2>
-            <p id="cms-hero-text">Good foundation, better future</p>
-            <button class="hero-button" id="cms-hero-button">Explore More</button>
+            <h2>Signal Preparatory is a school aiming at mentoring a coexisting generation...</h2>
+            <p>Good foundation, better future</p>
+            <button class="hero-button">Explore More</button>
         </div>
     </section>
 
@@ -87,11 +78,15 @@ vision_text: o﻿knbvf
                 <img src="about-image.jpg" alt="About Signal Preparatory">
             </div>
             <div class="about-content">
-                <h2 id="cms-about-heading">About Us</h2>
-                <div id="cms-about-text">
+                <h2>About Us</h2>
+                <p>
                     Signal Preparatory is a school aiming at mentoring a coexisting generation with high levels of 
                     creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults. 
-                </div>
+                </p>
+                <p>
+                    Fostering creative thinking, problem-solving, and interdependence skills in children and young adults is a 
+                    core responsibility that everyone needs to play in making the world a better place for all.
+                </p>
                 <a href="#" class="learn-more-btn">Learn More</a>
             </div>
         </div>
@@ -103,9 +98,9 @@ vision_text: o﻿knbvf
         </div>
         <div class="vision-content">
             <h2>Our Vision</h2>
-            <div id="cms-vision-text">
+            <p>
                 Fostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in.
-            </div>
+            </p>
             <a href="#" class="btn">Donate Now</a>
         </div>
     </section>
@@ -424,28 +419,6 @@ vision_text: o﻿knbvf
         document.getElementById('cmsModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
-            }
-        });
-        
-        // CMS Content Injection
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the frontmatter data if it exists
-            const frontmatterScript = document.querySelector('script[type="text/frontmatter"]');
-            if (frontmatterScript) {
-                try {
-                    const data = JSON.parse(frontmatterScript.textContent);
-                    
-                    // Update elements with CMS data
-                    if (data.hero_heading) document.getElementById('cms-hero-heading').textContent = data.hero_heading;
-                    if (data.hero_text) document.getElementById('cms-hero-text').textContent = data.hero_text;
-                    if (data.hero_button_text) document.getElementById('cms-hero-button').textContent = data.hero_button_text;
-                    if (data.about_heading) document.getElementById('cms-about-heading').textContent = data.about_heading;
-                    if (data.about_text) document.getElementById('cms-about-text').innerHTML = data.about_text;
-                    if (data.vision_text) document.getElementById('cms-vision-text').innerHTML = data.vision_text;
-                    
-                } catch (e) {
-                    console.error('Error parsing frontmatter data:', e);
-                }
             }
         });
     </script>
