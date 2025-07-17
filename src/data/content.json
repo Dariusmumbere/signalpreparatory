@@ -1,61 +1,117 @@
 {
-  "ethos_heading": "zxcvbn",
+  "ethos_heading": "The Ethos and the Environment",
   "happy": {
-    "heading": "ertyui",
-    "text": "zxcvbn"
+    "heading": "A happy Learning Environment",
+    "text": "Our objective is to ignite a lifelong passion for learning. By challenging the advanced and uplifting the less assured, we ensure each pupil realizes their unique academic potential that can help him be an inspiration the world needs.",
+    "image": "/images/uploads/happy.jpg"
   },
-  "designer_text": "sdfgbhnm",
-  "visit_text": "rtyuiop;",
-  "activities_label": "wertyui",
-  "phone1": "wsedrfghjk",
-  "contact_heading": "wertyuio",
-  "phone2": "345678",
+  "designer_text": "Designed by Mumbere Darius",
+  "visit_text": "Experience firsthand hospitality, creativity, and a child-based culture in the teaching/learning process.\n",
+  "activities_label": "Fun Activities Completed",
+  "phone1": "+256 775413318",
+  "contact_heading": "Contact Us",
+  "phone2": "+256754406992",
   "vision_text": "<!--StartFragment-->\n\nFostering creative thinking, problems solving and Interdependence skills in children and Young adults is a core everyone needs to play in making the world a better place for everyone to live in\n\n<!--EndFragment-->",
-  "headteacher_heading": "Head Teacher",
-  "copyright_text": "dfghjk,",
-  "visit_button_text": "sdcfvbnm",
-  "social_links": [],
-  "academic": {
-    "heading": "wertyu",
-    "text": "zxcvbnm,"
-  },
-  "donate_button_text": "Donate Now",
-  "headteacher_message": "sdfghjkl;",
-  "footer_tagline": "zxcvbn",
-  "vision_heading": "Our Vision",
-  "student_count": 55,
-  "thematic_heading": "zxcvbn",
-  "ethos_text_continued": "zxcvbn",
-  "join_heading": "wertyu",
-  "read_more_text": "asdfghj",
-  "designer_link": "ertyuikl",
-  "alumni_count": 11,
-  "visit_heading": "sdfghjk",
-  "ethos_text_conclusion": "wertyuio",
-  "programs": [
+  "headteacher_heading": "Welcome from the Headteacher",
+  "copyright_text": " 2025 Signal Preparatory School. All Rights Reserved.",
+  "visit_button_text": "Arrange a Visit",
+  "social_links": [
     {
-      "title": "sdfghjk",
-      "description": "sdfghj",
-      "image": "/images/uploads/herbal00.png"
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/signal.arts.5"
+    },
+    {
+      "url": "https://www.youtube.com/@signalarts85",
+      "platform": "Youtube"
+    },
+    {
+      "platform": "Tiktok",
+      "url": "https://www.tiktok.com/@henry.signal.arts"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ=="
     }
   ],
-  "ethos_text": "ertyuio",
+  "academic": {
+    "heading": "Academic Excellence",
+    "text": "Dynamic instruction at Signal School fosters intellectual curiosity, autonomy, and self-assurance. We inspire girls and boys to cultivate distinctiveness in character and innovative thought. This has made our Pupils icons of community transformation.",
+    "image": "/images/uploads/school.png"
+  },
+  "donate_button_text": "Donate Now",
+  "headteacher_message": "At Signal School, our guiding principle is 'Aim High, Be Kind, and Dare to save mother earth'. This is deeply rooted at our core and combined with exceptional teaching.",
+  "footer_tagline": "Mentoring a coexisting generation with creativity, innovation, and environmental respect.",
+  "vision_heading": "Our Vision",
+  "student_count": 150,
+  "thematic_heading": "Our thematic areas",
+  "ethos_text_continued": "Child Art, Child Waste Management, Child Kitchen Gardening, and Child Sports are key in our teaching-learning process.",
+  "join_heading": "Join us and play your part",
+  "read_more_text": "Read More",
+  "designer_link": "https://dariusmumbere.github.io/personal",
+  "alumni_count": 600,
+  "visit_heading": "Visit Signal School",
+  "ethos_text_conclusion": "Signal Preparatory School offers an environment where pupils are daily inspired both by the lessons in the classroom and the serenity outside.",
+  "programs": [
+    {
+      "title": "Child Art",
+      "description": "Art is a unique style of bringing an imagination to reality. At Signal Preparatory School, we equip pupils with child art skills to spark their creativity and team working abilities.",
+      "image": "/images/uploads/child.jpeg"
+    },
+    {
+      "title": "Child Waste Management",
+      "image": "/images/uploads/waste.jpeg",
+      "description": "With the adopted slogan, \"Waste is Waste if Wasted\", at Signal School, we equip learners with the art of managing waste. We emphasize the 5R's of waste management to our pupils. We aim to empower ambassadors who will make Mother Earth a better place to live in."
+    },
+    {
+      "description": "Children learn much more through play. The more they play is the more they learn. And the more they learn is the more they play. This improves their problem solving skills, collaboration and creativity.",
+      "title": "Child Sports",
+      "image": "/images/uploads/sports.jpeg"
+    },
+    {
+      "title": "Music, Dance and drama",
+      "description": "Music is the language of the soul. At Signal School, Music Dance and Drama drives the mood of learning. It improves the confidence and communication skills, creativity, team working, positive competition among others.",
+      "image": "/images/uploads/music.webp"
+    }
+  ],
+  "ethos_text": "At Signal Preparatory School, our ethos goes beyond academia. We believe in nurturing the whole child, promoting coexistence, creativity, and global awareness.\n\n\n",
   "about_heading": "About Signal Preparatory",
-  "student_label": "88",
+  "student_label": "Total pupils at Signal preparatory",
   "hero_text": "Good foundation, better future",
   "footer_school_name": "Signal Preparatory School",
-  "alumni_label": "dfghjk",
-  "read_more_button": "asdfghj",
-  "address": "sdfghj",
+  "alumni_label": "School alumni",
+  "read_more_button": "Read More",
+  "address": "Bwera, Kasese, Uganda",
+  "footer_links": [
+    {
+      "text": "Home",
+      "url": "https://signalpreparatoryschool.com/index.html"
+    },
+    {
+      "text": "About",
+      "url": "https://signalpreparatoryschool.com/about.html"
+    },
+    {
+      "text": "Address",
+      "url": "https://signalpreparatoryschool.com/address.html"
+    },
+    {
+      "text": "Completed Projects",
+      "url": "https://signalpreparatoryschool.com/projects.html"
+    },
+    {
+      "text": "Contact",
+      "url": "https://signalpreparatoryschool.com/contact.html"
+    }
+  ],
   "hero_button_text": "Explore More",
   "school_name": "Signal Preparatory School",
   "title": "Signal Preparatory",
-  "email": "dfghjk",
+  "email": "signalarts1@gmail.com",
   "learn_more_text": "Learn More",
-  "admin_text": "wertyuk",
-  "activities_count": 5665,
+  "admin_text": "Admin Login",
+  "activities_count": 300,
   "hero_heading": "Signal Preparatory is a school aiming at mentoring a coexisting generation...",
-  "visit_text_continued": "wretyiu",
+  "visit_text_continued": "Be part of our movement. Visit and leave a mark of Peace, Love, and Kindness that our generation in the making shall celebrate your visit for life.",
   "about_text": "<!--StartFragment-->\n\nSignal Preparatory is a school aiming at mentoring a coexisting generation with high levels of creativity, Innovations, World awareness and respect for Environmental Conservation in Children and young Adults.\n\nFostering creative thinking, problem-solving, and interdependence skills in children and young adults is a core responsibility that everyone needs to play in making the world a better place for all.\n\n<!--EndFragment-->",
-  "designer_name": "zxcvbn"
+  "designer_name": "Mumbere Darius"
 }
