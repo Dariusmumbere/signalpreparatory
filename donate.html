@@ -131,153 +131,162 @@
             // Skip if in admin interface
             if (window.location.pathname.includes('/admin/')) return;
 
+            // Function to clean markdown content
+            function cleanMarkdownContent(content) {
+                if (!content) return '';
+                // Remove HTML fragment comments if present
+                return content.replace(/<!--\s*(Start|End)Fragment\s*-->/g, '');
+            }
+
             // Load content from JSON
-            fetch('/src/data/donate.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Loaded JSON data:', data); // Debugging log
+            function loadContent() {
+                fetch('/src/data/donate.json')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Site-wide content
+                        if (data.title) {
+                            document.getElementById('site-title').textContent = data.title;
+                            document.title = data.title;
+                        }
+                        if (data.school_name) {
+                            document.getElementById('school-name').textContent = data.school_name;
+                            document.getElementById('footer-school-name').textContent = data.school_name;
+                        }
+                        if (data.logo) {
+                            document.getElementById('main-logo').src = data.logo;
+                        }
+                        if (data.footer_logo) {
+                            document.getElementById('footer-logo').src = data.footer_logo;
+                        }
+                        if (data.admin_text) {
+                            document.getElementById('admin-btn-text').textContent = data.admin_text;
+                            document.getElementById('admin-link-text').textContent = data.admin_text;
+                        }
 
-                    // Site-wide content
-                    if (data.title) {
-                        document.getElementById('site-title').textContent = data.title;
-                        document.title = data.title;
-                    }
-                    if (data.school_name) {
-                        document.getElementById('school-name').textContent = data.school_name;
-                        document.getElementById('footer-school-name').textContent = data.school_name;
-                    }
-                    if (data.logo) {
-                        document.getElementById('main-logo').src = data.logo;
-                        document.getElementById('footer-logo').src = data.logo;
-                    }
-                    if (data.admin_text) {
-                        document.getElementById('admin-btn-text').textContent = data.admin_text;
-                        document.getElementById('admin-link-text').textContent = data.admin_text;
-                    }
+                        // Donate Header
+                        if (data.donate_main_heading) {
+                            document.getElementById('donate-main-heading').textContent = data.donate_main_heading;
+                        }
+                        if (data.donate_subheading) {
+                            document.getElementById('donate-subheading').textContent = data.donate_subheading;
+                        }
 
-                    // Donate Header
-                    if (data.donate_main_heading) {
-                        document.getElementById('donate-main-heading').textContent = data.donate_main_heading;
-                    }
-                    if (data.donate_subheading) {
-                        document.getElementById('donate-subheading').textContent = data.donate_subheading;
-                    }
+                        // Why Donate Section
+                        if (data.why_donate_heading) {
+                            document.getElementById('why-donate-heading').textContent = data.why_donate_heading;
+                        }
+                        if (data.why_donate_text) {
+                            const cleanedContent = cleanMarkdownContent(data.why_donate_text);
+                            document.getElementById('why-donate-text').innerHTML = marked.parse(cleanedContent);
+                        }
 
-                    // Why Donate Section
-                    if (data.why_donate_heading) {
-                        document.getElementById('why-donate-heading').textContent = data.why_donate_heading;
-                    }
-                    if (data.why_donate_text) {
-                        // Clean up markdown content if it contains HTML fragments
-                        let cleanText = data.why_donate_text.replace(/<!--.*?-->/g, '');
-                        document.getElementById('why-donate-text').innerHTML = marked.parse(cleanText);
-                    }
-
-                    // Donation Methods
-                    if (data.donation_methods_heading) {
-                        document.getElementById('donation-methods-heading').textContent = data.donation_methods_heading;
-                    }
-                    if (data.payment_methods && Array.isArray(data.payment_methods)) {
-                        const paymentMethodsContainer = document.getElementById('payment-methods-container');
-                        paymentMethodsContainer.innerHTML = '';
-                        
-                        data.payment_methods.forEach(method => {
-                            const methodHTML = `
-                                <div class="payment-method">
-                                    <i class="${method.icon_class || 'fas fa-money-bill-wave'}"></i>
-                                    <h3>${method.title || 'Donation Method'}</h3>
-                                    ${method.details.map(detail => `<p>${detail.detail || detail}</p>`).join('')}
-                                </div>
-                            `;
-                            paymentMethodsContainer.innerHTML += methodHTML;
-                        });
-                    }
-
-                    // Parallax Section
-                    if (data.parallax_image) {
-                        document.getElementById('donate-parallax-image').style.backgroundImage = `url('${data.parallax_image}')`;
-                    }
-                    if (data.parallax_heading) {
-                        document.getElementById('parallax-heading').textContent = data.parallax_heading;
-                    }
-                    if (data.parallax_text) {
-                        document.getElementById('parallax-text').textContent = data.parallax_text;
-                    }
-
-                    // Footer Section
-                    if (data.footer_tagline) {
-                        document.getElementById('footer-tagline').textContent = data.footer_tagline;
-                    }
-
-                    // Social Links
-                    if (data.social_links && Array.isArray(data.social_links)) {
-                        const socialContainer = document.getElementById('social-icons-container');
-                        socialContainer.innerHTML = '';
-                        
-                        data.social_links.forEach(link => {
-                            const iconClass = getSocialIconClass(link.platform);
-                            if (iconClass) {
-                                const socialHTML = `
-                                    <a href="${link.url}" target="_blank" class="social-icon"><i class="${iconClass}"></i></a>
+                        // Donation Methods
+                        if (data.donation_methods_heading) {
+                            document.getElementById('donation-methods-heading').textContent = data.donation_methods_heading;
+                        }
+                        if (data.payment_methods && Array.isArray(data.payment_methods)) {
+                            const paymentMethodsContainer = document.getElementById('payment-methods-container');
+                            paymentMethodsContainer.innerHTML = '';
+                            
+                            data.payment_methods.forEach(method => {
+                                const methodHTML = `
+                                    <div class="payment-method">
+                                        <i class="${method.icon_class || 'fas fa-money-bill-wave'}"></i>
+                                        <h3>${method.title || 'Donation Method'}</h3>
+                                        ${method.details ? method.details.map(detail => `<p>${detail.detail || ''}</p>`).join('') : ''}
+                                    </div>
                                 `;
-                                socialContainer.innerHTML += socialHTML;
-                            }
-                        });
-                    }
+                                paymentMethodsContainer.innerHTML += methodHTML;
+                            });
+                        }
 
-                    // Footer Links
-                    if (data.footer_links && Array.isArray(data.footer_links)) {
-                        const footerLinksContainer = document.getElementById('footer-links-container');
-                        footerLinksContainer.innerHTML = '';
-                        
-                        data.footer_links.forEach(link => {
-                            const linkHTML = `
-                                <li><a href="${link.url}" class="footer-link">${link.text}</a></li>
-                            `;
-                            footerLinksContainer.innerHTML += linkHTML;
-                        });
-                    }
+                        // Parallax Section
+                        if (data.parallax_image) {
+                            document.getElementById('donate-parallax-image').style.backgroundImage = `url('${data.parallax_image}')`;
+                        }
+                        if (data.parallax_heading) {
+                            document.getElementById('parallax-heading').textContent = data.parallax_heading;
+                        }
+                        if (data.parallax_text) {
+                            document.getElementById('parallax-text').textContent = data.parallax_text;
+                        }
 
-                    if (data.contact_heading) {
-                        document.getElementById('contact-heading').textContent = data.contact_heading;
-                    }
-                    if (data.email) {
-                        document.getElementById('footer-email').textContent = `Email: ${data.email}`;
-                    }
-                    if (data.phone1) {
-                        document.getElementById('footer-phone1').textContent = `Phone: ${data.phone1}`;
-                    }
-                    if (data.phone2) {
-                        document.getElementById('footer-phone2').textContent = `Phone: ${data.phone2}`;
-                    }
-                    if (data.address) {
-                        document.getElementById('footer-address').textContent = `Address: ${data.address}`;
-                    }
+                        // Footer Section
+                        if (data.footer_tagline) {
+                            document.getElementById('footer-tagline').textContent = data.footer_tagline;
+                        }
 
-                    if (data.copyright_text) {
-                        document.getElementById('copyright-text').textContent = data.copyright_text;
-                    }
-                    if (data.designer_text) {
-                        document.getElementById('designer-credit').textContent = data.designer_text;
-                    }
-                    if (data.designer_link) {
-                        document.getElementById('designer-link').href = data.designer_link;
-                    }
-                    if (data.designer_name) {
-                        document.getElementById('designer-link').textContent = data.designer_name;
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading donate content:', error);
-                    loadFallbackContent();
-                });
+                        // Social Links
+                        if (data.social_links && Array.isArray(data.social_links)) {
+                            const socialContainer = document.getElementById('social-icons-container');
+                            socialContainer.innerHTML = '';
+                            
+                            data.social_links.forEach(link => {
+                                const iconClass = getSocialIconClass(link.platform);
+                                if (iconClass) {
+                                    const socialHTML = `
+                                        <a href="${link.url}" target="_blank" class="social-icon"><i class="${iconClass}"></i></a>
+                                    `;
+                                    socialContainer.innerHTML += socialHTML;
+                                }
+                            });
+                        }
+
+                        // Footer Links
+                        if (data.footer_links && Array.isArray(data.footer_links)) {
+                            const footerLinksContainer = document.getElementById('footer-links-container');
+                            footerLinksContainer.innerHTML = '';
+                            
+                            data.footer_links.forEach(link => {
+                                const linkHTML = `
+                                    <li><a href="${link.url}" class="footer-link">${link.text}</a></li>
+                                `;
+                                footerLinksContainer.innerHTML += linkHTML;
+                            });
+                        }
+
+                        if (data.contact_heading) {
+                            document.getElementById('contact-heading').textContent = data.contact_heading;
+                        }
+                        if (data.email) {
+                            document.getElementById('footer-email').textContent = `Email: ${data.email}`;
+                        }
+                        if (data.phone1) {
+                            document.getElementById('footer-phone1').textContent = `Phone: ${data.phone1}`;
+                        }
+                        if (data.phone2) {
+                            document.getElementById('footer-phone2').textContent = `Phone: ${data.phone2}`;
+                        }
+                        if (data.address) {
+                            document.getElementById('footer-address').textContent = `Address: ${data.address}`;
+                        }
+
+                        if (data.copyright_text) {
+                            document.getElementById('copyright-text').textContent = data.copyright_text;
+                        }
+                        if (data.designer_text) {
+                            document.getElementById('designer-credit').textContent = data.designer_text;
+                        }
+                        if (data.designer_link) {
+                            document.getElementById('designer-link').href = data.designer_link;
+                        }
+                        if (data.designer_name) {
+                            document.getElementById('designer-link').textContent = data.designer_name;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error loading donate content:', error);
+                        loadFallbackContent();
+                    });
+            }
 
             function getSocialIconClass(platform) {
+                if (!platform) return 'fas fa-share-alt';
                 const platformLower = platform.toLowerCase();
                 if (platformLower.includes('facebook')) return 'fab fa-facebook-f';
                 if (platformLower.includes('twitter')) return 'fab fa-twitter';
@@ -289,7 +298,6 @@
             }
 
             function loadFallbackContent() {
-                console.log('Loading fallback content');
                 // Fallback content for donate page
                 document.getElementById('donate-main-heading').textContent = 'Support Our Cause';
                 document.getElementById('donate-subheading').textContent = 'Your contribution helps us make a difference. Every donation counts!';
@@ -327,6 +335,9 @@
                 document.getElementById('parallax-heading').textContent = 'Together We Can Make a Difference';
                 document.getElementById('parallax-text').textContent = 'Your support helps us create a better future for everyone. Join us in our mission to bring positive change through education. Every donation, no matter the size, contributes to transforming lives and building a brighter tomorrow for our students and community.';
             }
+
+            // Initial content load
+            loadContent();
 
             // Modern toggle menu with animation
             const hamburger = document.getElementById('hamburger');
