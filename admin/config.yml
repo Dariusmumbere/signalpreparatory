@@ -352,3 +352,71 @@ collections:
           - { label: "Designer Text", name: "designer_text_contact", widget: "string" }
           - { label: "Designer Link", name: "designer_link_contact", widget: "string" }
           - { label: "Designer Name", name: "designer_name_contact", widget: "string" }
+  - name: "donate_content"
+    label: "Donate Page Content"
+    files:
+      - name: "donate"
+        label: "Donate Page"
+        file: "src/data/donate.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "School Name", name: "school_name", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+          - { label: "Footer Logo", name: "footer_logo", widget: "image", required: false }
+          - { label: "Footer School Name", name: "footer_school_name", widget: "string" }
+          - { label: "Admin Text", name: "admin_text", widget: "string" }
+          
+          # Donate Header
+          - { label: "Main Heading", name: "donate_main_heading", widget: "string" }
+          - { label: "Subheading", name: "donate_subheading", widget: "text" }
+          
+          # Why Donate Section
+          - { label: "Why Donate Heading", name: "why_donate_heading", widget: "string" }
+          - { label: "Why Donate Text", name: "why_donate_text", widget: "markdown" }
+          
+          # Donation Methods
+          - { label: "Donation Methods Heading", name: "donation_methods_heading", widget: "string" }
+          - label: "Payment Methods"
+            name: "payment_methods"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Icon Class (Font Awesome)", name: "icon_class", widget: "string" }
+              - label: "Details"
+                name: "details"
+                widget: "list"
+                fields:
+                  - { label: "Detail", name: "detail", widget: "string" }
+          
+          # Parallax Section
+          - { label: "Parallax Image", name: "parallax_image", widget: "image" }
+          - { label: "Parallax Heading", name: "parallax_heading", widget: "string" }
+          - { label: "Parallax Text", name: "parallax_text", widget: "text" }
+          
+          # Footer
+          - { label: "Footer Tagline", name: "footer_tagline", widget: "text" }
+          
+          - label: "Social Links"
+            name: "social_links"
+            widget: "list"
+            fields:
+              - { label: "Platform", name: "platform", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          
+          - label: "Footer Links"
+            name: "footer_links"
+            widget: "list"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          
+          - { label: "Contact Heading", name: "contact_heading", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone 1", name: "phone1", widget: "string" }
+          - { label: "Phone 2", name: "phone2", widget: "string" }
+          - { label: "Address", name: "address", widget: "string" }
+          
+          - { label: "Copyright Text", name: "copyright_text", widget: "string" }
+          - { label: "Designer Text", name: "designer_text", widget: "string" }
+          - { label: "Designer Link", name: "designer_link", widget: "string" }
+          - { label: "Designer Name", name: "designer_name", widget: "string" }
