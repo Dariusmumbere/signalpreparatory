@@ -158,9 +158,6 @@
     
     <div class="gallery" id="gallery-container">
         <!-- Gallery images will be dynamically inserted here -->
-        <img src="g1.webp" alt="Gallery Image 1">
-        <img src="g2.webp" alt="Gallery Image 2">
-        <img src="g3.webp" alt="Gallery Image 3">
     </div>
     
     <footer class="footer">
@@ -318,6 +315,19 @@
                     });
                 }
 
+                // Gallery section
+                if (data.gallery_images && Array.isArray(data.gallery_images)) {
+                    const galleryContainer = document.getElementById('gallery-container');
+                    galleryContainer.innerHTML = '';
+                    
+                    data.gallery_images.forEach((image, index) => {
+                        const imgHTML = `
+                            <img src="${image.url}" alt="Gallery Image ${index + 1}">
+                        `;
+                        galleryContainer.innerHTML += imgHTML;
+                    });
+                }
+
                 // Empower section
                 if (data.empower_heading) {
                     document.getElementById('empower-heading').textContent = data.empower_heading;
@@ -458,7 +468,7 @@
 
             // Animation on scroll
             const animateOnScroll = () => {
-                const elements = document.querySelectorAll('.mission-section, .section, .full-width-section, .team-section, .image-text-section, .text-section');
+                const elements = document.querySelectorAll('.mission-section, .section, .full-width-section, .team-section, .image-text-section, .text-section, .gallery');
                 
                 elements.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
@@ -472,7 +482,7 @@
             };
             
             // Set initial styles for animation
-            document.querySelectorAll('.mission-section, .section, .full-width-section, .team-section, .image-text-section, .text-section').forEach(element => {
+            document.querySelectorAll('.mission-section, .section, .full-width-section, .team-section, .image-text-section, .text-section, .gallery').forEach(element => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(30px)';
                 element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
