@@ -140,6 +140,8 @@
                     return response.json();
                 })
                 .then(data => {
+                    console.log('Loaded JSON data:', data); // Debugging log
+
                     // Site-wide content
                     if (data.title) {
                         document.getElementById('site-title').textContent = data.title;
@@ -147,15 +149,11 @@
                     }
                     if (data.school_name) {
                         document.getElementById('school-name').textContent = data.school_name;
+                        document.getElementById('footer-school-name').textContent = data.school_name;
                     }
                     if (data.logo) {
                         document.getElementById('main-logo').src = data.logo;
-                    }
-                    if (data.footer_logo) {
-                        document.getElementById('footer-logo').src = data.footer_logo;
-                    }
-                    if (data.footer_school_name) {
-                        document.getElementById('footer-school-name').textContent = data.footer_school_name;
+                        document.getElementById('footer-logo').src = data.logo;
                     }
                     if (data.admin_text) {
                         document.getElementById('admin-btn-text').textContent = data.admin_text;
@@ -175,7 +173,9 @@
                         document.getElementById('why-donate-heading').textContent = data.why_donate_heading;
                     }
                     if (data.why_donate_text) {
-                        document.getElementById('why-donate-text').innerHTML = marked.parse(data.why_donate_text);
+                        // Clean up markdown content if it contains HTML fragments
+                        let cleanText = data.why_donate_text.replace(/<!--.*?-->/g, '');
+                        document.getElementById('why-donate-text').innerHTML = marked.parse(cleanText);
                     }
 
                     // Donation Methods
@@ -189,9 +189,9 @@
                         data.payment_methods.forEach(method => {
                             const methodHTML = `
                                 <div class="payment-method">
-                                    <i class="${method.icon_class}"></i>
-                                    <h3>${method.title}</h3>
-                                    ${method.details.map(detail => `<p>${detail}</p>`).join('')}
+                                    <i class="${method.icon_class || 'fas fa-money-bill-wave'}"></i>
+                                    <h3>${method.title || 'Donation Method'}</h3>
+                                    ${method.details.map(detail => `<p>${detail.detail || detail}</p>`).join('')}
                                 </div>
                             `;
                             paymentMethodsContainer.innerHTML += methodHTML;
@@ -289,6 +289,7 @@
             }
 
             function loadFallbackContent() {
+                console.log('Loading fallback content');
                 // Fallback content for donate page
                 document.getElementById('donate-main-heading').textContent = 'Support Our Cause';
                 document.getElementById('donate-subheading').textContent = 'Your contribution helps us make a difference. Every donation counts!';
