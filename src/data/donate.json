@@ -1,1 +1,98 @@
-
+{
+  "designer_text": "Designed by Darius",
+  "phone1": "+256 775413318",
+  "contact_heading": "Contact Us",
+  "phone2": "+256754406992",
+  "copyright_text": "&copy; 2025 Signal Preparatory School. All Rights Reserved.",
+  "why_donate_text": "<!--StartFragment-->\n\nYour donations help us continue our mission to provide quality education and support to underprivileged children. With your support, we can build a brighter future for the next generation by funding educational programs, school supplies, and infrastructure improvements that directly benefit our students.\n\nAt Signal Preparatory School, we believe every child deserves access to quality education regardless of their background. Your generous contributions help us maintain this vision and expand our impact in the community.\n\n<!--EndFragment-->",
+  "social_links": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/signal.arts.5"
+    },
+    {
+      "url": "https://www.youtube.com/@signalarts85",
+      "platform": "youtube"
+    },
+    {
+      "url": "https://www.tiktok.com/@henry.signal.arts",
+      "platform": "tiktok"
+    },
+    {
+      "url": "https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==",
+      "platform": "instagram"
+    }
+  ],
+  "donation_methods_heading": "Donation Methods",
+  "why_donate_heading": "Why Donate to Signal Preparatory",
+  "footer_tagline": "Signal Arts",
+  "donate_main_heading": "Support Our Cause",
+  "designer_link": "https://dariusmumbere.github.io/personal",
+  "donate_subheading": "Your contribution helps us make a difference. Every donation counts!",
+  "footer_school_name": "SIGNAL PREPARATORY SCHOOL",
+  "parallax_image": "/images/uploads/circle.jpeg",
+  "address": "Bwera, Kasese, Uganda",
+  "footer_links": [
+    {
+      "text": "Home",
+      "url": "index.html"
+    },
+    {
+      "text": "About",
+      "url": "about.html"
+    },
+    {
+      "text": "Projects",
+      "url": "projects.html"
+    },
+    {
+      "text": "Contact Us",
+      "url": "address.html"
+    }
+  ],
+  "parallax_text": "Your support helps us create a better future for everyone. Join us in our mission to bring positive change through education. ",
+  "school_name": "SIGNAL PREPARATORY SCHOOL",
+  "title": "Donate to US",
+  "payment_methods": [
+    {
+      "title": "MTN MOBILE MONEY",
+      "details": [
+        {
+          "detail": "+256 775413318"
+        },
+        {
+          "detail": "Name signal arts"
+        }
+      ],
+      "icon_class": "fa fa-money"
+    },
+    {
+      "title": "Airtel money",
+      "icon_class": "fa fa-money",
+      "details": [
+        {
+          "detail": "Name: Signal arts"
+        },
+        {
+          "detail": "+256754406992"
+        }
+      ]
+    },
+    {
+      "icon_class": "fa fa-money",
+      "title": "Centenary Bank",
+      "details": [
+        {
+          "detail": "Name: Signal arts"
+        },
+        {
+          "detail": "Account: 3200054198"
+        }
+      ]
+    }
+  ],
+  "parallax_heading": "Together We Can Make a Difference",
+  "email": "signalarts1@gmail.com",
+  "admin_text": "Admin ",
+  "designer_name": "Mumbere Darius"
+}
