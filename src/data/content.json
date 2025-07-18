@@ -1,7 +1,7 @@
 {
   "ethos_heading": "The Ethos and the Environment.",
   "happy": {
-    "heading": "A happy Learning Environment.",
+    "heading": "A happy Learning Environment",
     "text": "Our objective is to ignite a lifelong passion for learning. By challenging the advanced and uplifting the less assured, we ensure each pupil realizes their unique academic potential that can help him be an inspiration the world needs.",
     "image": "/images/uploads/happy.jpg"
   },
@@ -34,7 +34,7 @@
     }
   ],
   "academic": {
-    "heading": "Academic Excellence.",
+    "heading": "Academic Excellence",
     "text": "Dynamic instruction at Signal School fosters intellectual curiosity, autonomy, and self-assurance. We inspire girls and boys to cultivate distinctiveness in character and innovative thought. This has made our Pupils icons of community transformation.",
     "image": "/images/uploads/school.png"
   },
