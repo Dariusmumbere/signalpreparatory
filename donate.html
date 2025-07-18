@@ -3,18 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate - SIGNAL PREPARATORY SCHOOL</title>
+    <title id="site-title">Donate - SIGNAL PREPARATORY SCHOOL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link rel="stylesheet" href="style.css">  
 </head>
 <body>
+    <!-- CMS Admin Button (visible when logged in) -->
+    <a href="/admin/" class="cms-admin-btn" id="cmsAdminBtn" style="display: none;">
+        <i class="fas fa-cog"></i> <span id="admin-btn-text">CMS Admin</span>
+    </a>
+    
+    <!-- CMS Login Modal -->
+    <div class="cms-modal" id="cmsModal">
+        <div class="cms-modal-content">
+            <h2>Website Administration</h2>
+            <p>To access the content management system, please log in with your administrator credentials.</p>
+            <button class="cms-modal-btn" onclick="window.location.href='/admin/'">Go to Admin</button>
+            <button class="cms-modal-btn cms-modal-close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
     <nav class="navbar" id="navbar">
         <div class="logo-container">
-            <img src="logo.png" alt="Logo" class="logo">
-            <div class="logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
+            <img src="logo.png" alt="Logo" class="logo" id="main-logo">
+            <div class="logo-text" id="school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
         </div>
         
         <!-- Modern Hamburger Menu -->
@@ -36,20 +52,256 @@
     
     <main class="donate-container">
         <div class="donate-header">
-            <h1>Support Our Cause</h1>
-            <p>Your contribution helps us make a difference. Every donation counts!</p>
+            <h1 id="donate-main-heading">Support Our Cause</h1>
+            <p id="donate-subheading">Your contribution helps us make a difference. Every donation counts!</p>
         </div>
 
         <div class="donate-content">
             <div class="why-donate">
-                <h2>Why Donate?</h2>
-                <p>Your donations help us continue our mission to provide quality education and support to underprivileged children. With your support, we can build a brighter future for the next generation by funding educational programs, school supplies, and infrastructure improvements that directly benefit our students.</p>
-                <p>At Signal Preparatory School, we believe every child deserves access to quality education regardless of their background. Your generous contributions help us maintain this vision and expand our impact in the community.</p>
+                <h2 id="why-donate-heading">Why Donate?</h2>
+                <div id="why-donate-text">
+                    <p>Your donations help us continue our mission to provide quality education and support to underprivileged children. With your support, we can build a brighter future for the next generation by funding educational programs, school supplies, and infrastructure improvements that directly benefit our students.</p>
+                    <p>At Signal Preparatory School, we believe every child deserves access to quality education regardless of their background. Your generous contributions help us maintain this vision and expand our impact in the community.</p>
+                </div>
             </div>
             
             <div class="donate-via">
-                <h2>Donation Methods</h2>
-                <div class="payment-methods">
+                <h2 id="donation-methods-heading">Donation Methods</h2>
+                <div class="payment-methods" id="payment-methods-container">
+                    <!-- Payment methods will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="parallax-section">
+            <div class="parallax-image" id="donate-parallax-image"></div>
+            <div class="parallax-content">
+                <h2 id="parallax-heading">Together We Can Make a Difference</h2>
+                <p id="parallax-text">Your support helps us create a better future for everyone. Join us in our mission to bring positive change through education. Every donation, no matter the size, contributes to transforming lives and building a brighter tomorrow for our students and community.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo and School Name -->
+            <div class="footer-column logo-column">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo" id="footer-logo">
+                    <div class="footer-logo-text" id="footer-school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
+                </div>
+                <p class="footer-text" id="footer-tagline">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
+                <div class="social-icons" id="social-icons-container">
+                    <!-- Social icons will be dynamically inserted here -->
+                </div>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3 class="footer-heading" id="footer-links-heading">Quick Links</h3>
+                <ul class="footer-links" id="footer-links-container">
+                    <!-- Footer links will be dynamically inserted here -->
+                </ul>
+            </div>
+    
+            <!-- Contact Information -->
+            <div class="footer-column">
+                <h3 class="footer-heading" id="contact-heading">Contact Us</h3>
+                <p class="footer-text" id="footer-email">Email: signalarts1@gmail.com</p>
+                <p class="footer-text" id="footer-phone1">Phone: +256 775413318</p>
+                <p class="footer-text" id="footer-phone2">Phone: +256754406992</p>
+                <p class="footer-text" id="footer-address">Address: Bwera, Kasese, Uganda</p>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <p class="footer-copyright" id="copyright-text">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
+            <p class="designer-credit" id="designer-credit">Designed by <a href="#" class="designer-link" id="designer-link">Mumbere Darius</a></p>
+            <a href="/admin/" class="admin-link" id="admin-link-text">Admin Login</a>
+        </div>
+    </footer>
+
+    <!-- Marked.js for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Content Loading Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Skip if in admin interface
+            if (window.location.pathname.includes('/admin/')) return;
+
+            // Load content from JSON
+            fetch('/src/data/donate.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Site-wide content
+                    if (data.title) {
+                        document.getElementById('site-title').textContent = data.title;
+                        document.title = data.title;
+                    }
+                    if (data.school_name) {
+                        document.getElementById('school-name').textContent = data.school_name;
+                    }
+                    if (data.logo) {
+                        document.getElementById('main-logo').src = data.logo;
+                    }
+                    if (data.footer_logo) {
+                        document.getElementById('footer-logo').src = data.footer_logo;
+                    }
+                    if (data.footer_school_name) {
+                        document.getElementById('footer-school-name').textContent = data.footer_school_name;
+                    }
+                    if (data.admin_text) {
+                        document.getElementById('admin-btn-text').textContent = data.admin_text;
+                        document.getElementById('admin-link-text').textContent = data.admin_text;
+                    }
+
+                    // Donate Header
+                    if (data.donate_main_heading) {
+                        document.getElementById('donate-main-heading').textContent = data.donate_main_heading;
+                    }
+                    if (data.donate_subheading) {
+                        document.getElementById('donate-subheading').textContent = data.donate_subheading;
+                    }
+
+                    // Why Donate Section
+                    if (data.why_donate_heading) {
+                        document.getElementById('why-donate-heading').textContent = data.why_donate_heading;
+                    }
+                    if (data.why_donate_text) {
+                        document.getElementById('why-donate-text').innerHTML = marked.parse(data.why_donate_text);
+                    }
+
+                    // Donation Methods
+                    if (data.donation_methods_heading) {
+                        document.getElementById('donation-methods-heading').textContent = data.donation_methods_heading;
+                    }
+                    if (data.payment_methods && Array.isArray(data.payment_methods)) {
+                        const paymentMethodsContainer = document.getElementById('payment-methods-container');
+                        paymentMethodsContainer.innerHTML = '';
+                        
+                        data.payment_methods.forEach(method => {
+                            const methodHTML = `
+                                <div class="payment-method">
+                                    <i class="${method.icon_class}"></i>
+                                    <h3>${method.title}</h3>
+                                    ${method.details.map(detail => `<p>${detail}</p>`).join('')}
+                                </div>
+                            `;
+                            paymentMethodsContainer.innerHTML += methodHTML;
+                        });
+                    }
+
+                    // Parallax Section
+                    if (data.parallax_image) {
+                        document.getElementById('donate-parallax-image').style.backgroundImage = `url('${data.parallax_image}')`;
+                    }
+                    if (data.parallax_heading) {
+                        document.getElementById('parallax-heading').textContent = data.parallax_heading;
+                    }
+                    if (data.parallax_text) {
+                        document.getElementById('parallax-text').textContent = data.parallax_text;
+                    }
+
+                    // Footer Section
+                    if (data.footer_tagline) {
+                        document.getElementById('footer-tagline').textContent = data.footer_tagline;
+                    }
+
+                    // Social Links
+                    if (data.social_links && Array.isArray(data.social_links)) {
+                        const socialContainer = document.getElementById('social-icons-container');
+                        socialContainer.innerHTML = '';
+                        
+                        data.social_links.forEach(link => {
+                            const iconClass = getSocialIconClass(link.platform);
+                            if (iconClass) {
+                                const socialHTML = `
+                                    <a href="${link.url}" target="_blank" class="social-icon"><i class="${iconClass}"></i></a>
+                                `;
+                                socialContainer.innerHTML += socialHTML;
+                            }
+                        });
+                    }
+
+                    // Footer Links
+                    if (data.footer_links && Array.isArray(data.footer_links)) {
+                        const footerLinksContainer = document.getElementById('footer-links-container');
+                        footerLinksContainer.innerHTML = '';
+                        
+                        data.footer_links.forEach(link => {
+                            const linkHTML = `
+                                <li><a href="${link.url}" class="footer-link">${link.text}</a></li>
+                            `;
+                            footerLinksContainer.innerHTML += linkHTML;
+                        });
+                    }
+
+                    if (data.contact_heading) {
+                        document.getElementById('contact-heading').textContent = data.contact_heading;
+                    }
+                    if (data.email) {
+                        document.getElementById('footer-email').textContent = `Email: ${data.email}`;
+                    }
+                    if (data.phone1) {
+                        document.getElementById('footer-phone1').textContent = `Phone: ${data.phone1}`;
+                    }
+                    if (data.phone2) {
+                        document.getElementById('footer-phone2').textContent = `Phone: ${data.phone2}`;
+                    }
+                    if (data.address) {
+                        document.getElementById('footer-address').textContent = `Address: ${data.address}`;
+                    }
+
+                    if (data.copyright_text) {
+                        document.getElementById('copyright-text').textContent = data.copyright_text;
+                    }
+                    if (data.designer_text) {
+                        document.getElementById('designer-credit').textContent = data.designer_text;
+                    }
+                    if (data.designer_link) {
+                        document.getElementById('designer-link').href = data.designer_link;
+                    }
+                    if (data.designer_name) {
+                        document.getElementById('designer-link').textContent = data.designer_name;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading donate content:', error);
+                    loadFallbackContent();
+                });
+
+            function getSocialIconClass(platform) {
+                const platformLower = platform.toLowerCase();
+                if (platformLower.includes('facebook')) return 'fab fa-facebook-f';
+                if (platformLower.includes('twitter')) return 'fab fa-twitter';
+                if (platformLower.includes('instagram')) return 'fab fa-instagram';
+                if (platformLower.includes('youtube')) return 'fab fa-youtube';
+                if (platformLower.includes('linkedin')) return 'fab fa-linkedin';
+                if (platformLower.includes('tiktok')) return 'fab fa-tiktok';
+                return 'fas fa-share-alt'; // default icon
+            }
+
+            function loadFallbackContent() {
+                // Fallback content for donate page
+                document.getElementById('donate-main-heading').textContent = 'Support Our Cause';
+                document.getElementById('donate-subheading').textContent = 'Your contribution helps us make a difference. Every donation counts!';
+                document.getElementById('why-donate-heading').textContent = 'Why Donate?';
+                document.getElementById('why-donate-text').innerHTML = `
+                    <p>Your donations help us continue our mission to provide quality education and support to underprivileged children. With your support, we can build a brighter future for the next generation by funding educational programs, school supplies, and infrastructure improvements that directly benefit our students.</p>
+                    <p>At Signal Preparatory School, we believe every child deserves access to quality education regardless of their background. Your generous contributions help us maintain this vision and expand our impact in the community.</p>
+                `;
+                document.getElementById('donation-methods-heading').textContent = 'Donation Methods';
+                
+                // Fallback payment methods
+                const paymentMethodsContainer = document.getElementById('payment-methods-container');
+                paymentMethodsContainer.innerHTML = `
                     <div class="payment-method">
                         <i class="fas fa-mobile-alt"></i>
                         <h3>MTN Mobile Money</h3>
@@ -69,112 +321,88 @@
                         <p>Account: 3200054198</p>
                         <p>Name: Signal Arts</p>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="parallax-section">
-            <div class="parallax-image"></div>
-            <div class="parallax-content">
-                <h2>Together We Can Make a Difference</h2>
-                <p>Your support helps us create a better future for everyone. Join us in our mission to bring positive change through education. Every donation, no matter the size, contributes to transforming lives and building a brighter tomorrow for our students and community.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Logo and School Name -->
-            <div class="footer-column logo-column">
-                <div class="logo-container">
-                    <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo">
-                    <div class="footer-logo-text">SIGNAL PREPARATORY<br>SCHOOL</div>
-                </div>
-                <p class="footer-text">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/signal.arts.5" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.youtube.com/@signalarts85" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.tiktok.com/@henry.signal.arts" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-    
-            <!-- Quick Links -->
-            <div class="footer-column">
-                <h3 class="footer-heading">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="about.html" class="footer-link">About</a></li>
-                    <li><a href="projects.html" class="footer-link">Projects</a></li>
-                    <li><a href="address.html" class="footer-link">Contacts</a></li>
-                    <li><a href="donate.html" class="footer-link">Donate</a></li>
-                </ul>
-            </div>
-    
-            <!-- Contact Information -->
-            <div class="footer-column">
-                <h3 class="footer-heading">Contact Us</h3>
-                <p class="footer-text">Email: signalarts1@gmail.com</p>
-                <p class="footer-text">Phone: +256 775413318</p>
-                <p class="footer-text">Phone: +256754406992</p>
-                <p class="footer-text">Address: Bwera, Kasese, Uganda</p>
-            </div>
-        </div>
-    
-        <!-- Footer Bottom Section -->
-        <div class="footer-bottom">
-            <p class="footer-copyright">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
-            <p class="designer-credit">Designed by <a href="#" class="designer-link">Mumbere Darius</a></p>
-            <a href="/admin/" class="admin-link">Admin Login</a>
-        </div>
-    </footer>
-
-    <script>
-        // Modern toggle menu with animation
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            
-            // Toggle body scroll when menu is open
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-item').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-        
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+                `;
+                
+                document.getElementById('parallax-heading').textContent = 'Together We Can Make a Difference';
+                document.getElementById('parallax-text').textContent = 'Your support helps us create a better future for everyone. Join us in our mission to bring positive change through education. Every donation, no matter the size, contributes to transforming lives and building a brighter tomorrow for our students and community.';
             }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+
+            // Modern toggle menu with animation
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-item').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Netlify Identity and CMS Integration
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", user => {
+                    if (!user) {
+                        window.netlifyIdentity.on("login", () => {
+                            document.location.href = "/admin/";
+                        });
+                    }
+                });
+                
+                // Check if user is logged in
+                const currentUser = netlifyIdentity.currentUser();
+                if (currentUser) {
+                    document.getElementById('cmsAdminBtn').style.display = 'flex';
+                }
+                
+                // Listen for login events
+                netlifyIdentity.on('login', user => {
+                    document.getElementById('cmsAdminBtn').style.display = 'flex';
+                    closeModal();
+                });
+                
+                // Listen for logout events
+                netlifyIdentity.on('logout', () => {
+                    document.getElementById('cmsAdminBtn').style.display = 'none';
+                });
+            }
+            
+            // Modal functions
+            function openModal() {
+                document.getElementById('cmsModal').style.display = 'flex';
+            }
+            
+            function closeModal() {
+                document.getElementById('cmsModal').style.display = 'none';
+            }
+            
+            // Admin link click handler
+            document.querySelector('.admin-link').addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                openModal();
+            });
+            
+            // Close modal when clicking outside
+            document.getElementById('cmsModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
                 }
             });
         });
