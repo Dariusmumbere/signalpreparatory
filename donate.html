@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="site-title">Donate - SIGNAL PREPARATORY SCHOOL</title>
+    <title>Loading... - SIGNAL PREPARATORY SCHOOL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link rel="stylesheet" href="donate.css">  
+    <style>
+        .loading-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
     <!-- CMS Admin Button (visible when logged in) -->
@@ -30,7 +53,7 @@
     <nav class="navbar" id="navbar">
         <div class="logo-container">
             <img src="logo.png" alt="Logo" class="logo" id="main-logo">
-            <div class="logo-text" id="school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
+            <div class="logo-text" id="school-name">Loading...</div>
         </div>
         
         <!-- Modern Hamburger Menu -->
@@ -52,32 +75,27 @@
     
     <main class="donate-container">
         <div class="donate-header">
-            <h1 id="donate-main-heading">Support Our Cause</h1>
-            <p id="donate-subheading">Your contribution helps us make a difference. Every donation counts!</p>
+            <h1 id="donate-main-heading" class="loading-content"><div class="loading-spinner"></div>Loading content...</h1>
+            <p id="donate-subheading"></p>
         </div>
 
         <div class="donate-content">
             <div class="why-donate">
-                <h2 id="why-donate-heading">Why Donate?</h2>
-                <div id="why-donate-content">
-                    <p>Your donations help us continue our mission to provide quality education and support to underprivileged children. With your support, we can build a brighter future for the next generation by funding educational programs, school supplies, and infrastructure improvements that directly benefit our students.</p>
-                    <p>At Signal Preparatory School, we believe every child deserves access to quality education regardless of their background. Your generous contributions help us maintain this vision and expand our impact in the community.</p>
-                </div>
+                <h2 id="why-donate-heading"></h2>
+                <div id="why-donate-content" class="loading-content"><div class="loading-spinner"></div>Loading content...</div>
             </div>
             
             <div class="donate-via">
-                <h2 id="donation-methods-heading">Donation Methods</h2>
-                <div class="payment-methods" id="payment-methods-container">
-                    <!-- Payment methods will be dynamically inserted here -->
-                </div>
+                <h2 id="donation-methods-heading"></h2>
+                <div class="payment-methods" id="payment-methods-container" class="loading-content"><div class="loading-spinner"></div>Loading payment methods...</div>
             </div>
         </div>
 
         <div class="parallax-section">
             <div class="parallax-image" id="donate-parallax-image"></div>
             <div class="parallax-content">
-                <h2 id="parallax-heading">Together We Can Make a Difference</h2>
-                <p id="parallax-text">Your support helps us create a better future for everyone. Join us in our mission to bring positive change through education. Every donation, no matter the size, contributes to transforming lives and building a brighter tomorrow for our students and community.</p>
+                <h2 id="parallax-heading"></h2>
+                <p id="parallax-text"></p>
             </div>
         </div>
     </main>
@@ -88,37 +106,33 @@
             <div class="footer-column logo-column">
                 <div class="logo-container">
                     <img src="logo.png" alt="Signal Preparatory School Logo" class="footer-logo" id="footer-logo">
-                    <div class="footer-logo-text" id="footer-school-name">SIGNAL PREPARATORY<br>SCHOOL</div>
+                    <div class="footer-logo-text" id="footer-school-name">Loading...</div>
                 </div>
-                <p class="footer-text" id="footer-tagline">Mentoring a coexisting generation with creativity, innovation, and environmental respect.</p>
-                <div class="social-icons" id="social-icons-container">
-                    <!-- Social icons will be dynamically inserted here -->
-                </div>
+                <p class="footer-text" id="footer-tagline"></p>
+                <div class="social-icons" id="social-icons-container"></div>
             </div>
     
             <!-- Quick Links -->
             <div class="footer-column">
                 <h3 class="footer-heading" id="footer-links-heading">Quick Links</h3>
-                <ul class="footer-links" id="footer-links-container">
-                    <!-- Footer links will be dynamically inserted here -->
-                </ul>
+                <ul class="footer-links" id="footer-links-container"></ul>
             </div>
     
             <!-- Contact Information -->
             <div class="footer-column">
                 <h3 class="footer-heading" id="contact-heading">Contact Us</h3>
-                <p class="footer-text" id="footer-email">Email: signalarts1@gmail.com</p>
-                <p class="footer-text" id="footer-phone1">Phone: +256 775413318</p>
-                <p class="footer-text" id="footer-phone2">Phone: +256754406992</p>
-                <p class="footer-text" id="footer-address">Address: Bwera, Kasese, Uganda</p>
+                <p class="footer-text" id="footer-email"></p>
+                <p class="footer-text" id="footer-phone1"></p>
+                <p class="footer-text" id="footer-phone2"></p>
+                <p class="footer-text" id="footer-address"></p>
             </div>
         </div>
     
         <!-- Footer Bottom Section -->
         <div class="footer-bottom">
-            <p class="footer-copyright" id="copyright-text">&copy; 2025 Signal Preparatory School. All Rights Reserved.</p>
-            <p class="designer-credit" id="designer-credit">Designed by <a href="#" class="designer-link" id="designer-link">Mumbere Darius</a></p>
-            <a href="/admin/" class="admin-link" id="admin-link-text">Admin Login</a>
+            <p class="footer-copyright" id="copyright-text"></p>
+            <p class="designer-credit" id="designer-credit"></p>
+            <a href="/admin/" class="admin-link" id="admin-link-text"></a>
         </div>
     </footer>
 
@@ -127,11 +141,36 @@
     
     <!-- Content Loading Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Skip if in admin interface
-            if (window.location.pathname.includes('/admin/')) return;
+        // First, clear all content areas that will be populated from JSON
+        function clearContentAreas() {
+            // Main content
+            document.getElementById('donate-main-heading').innerHTML = '<div class="loading-spinner"></div>Loading content...';
+            document.getElementById('donate-subheading').textContent = '';
+            document.getElementById('why-donate-heading').textContent = '';
+            document.getElementById('why-donate-content').innerHTML = '<div class="loading-spinner"></div>Loading content...';
+            document.getElementById('donation-methods-heading').textContent = '';
+            document.getElementById('payment-methods-container').innerHTML = '<div class="loading-spinner"></div>Loading payment methods...';
+            document.getElementById('parallax-heading').textContent = '';
+            document.getElementById('parallax-text').textContent = '';
+            
+            // Footer
+            document.getElementById('footer-school-name').textContent = 'Loading...';
+            document.getElementById('footer-tagline').textContent = '';
+            document.getElementById('social-icons-container').innerHTML = '';
+            document.getElementById('footer-links-container').innerHTML = '';
+            document.getElementById('footer-email').textContent = '';
+            document.getElementById('footer-phone1').textContent = '';
+            document.getElementById('footer-phone2').textContent = '';
+            document.getElementById('footer-address').textContent = '';
+            document.getElementById('copyright-text').textContent = '';
+            document.getElementById('designer-credit').textContent = '';
+            document.getElementById('admin-link-text').textContent = '';
+        }
 
-            // Load content from JSON
+        // Load content from JSON
+        function loadContent() {
+            clearContentAreas();
+            
             fetch('/src/data/donate.json')
                 .then(response => {
                     if (!response.ok) {
@@ -140,198 +179,258 @@
                     return response.json();
                 })
                 .then(data => {
-                    console.log('Loaded JSON data:', data); // Debugging
-
-                    // Site-wide content
-                    if (data.title) {
-                        document.getElementById('site-title').textContent = data.title;
-                        document.title = data.title;
-                    }
-                    if (data.school_name) {
-                        document.getElementById('school-name').textContent = data.school_name;
-                        document.getElementById('footer-school-name').textContent = data.school_name;
-                    }
-                    if (data.logo) {
-                        document.getElementById('main-logo').src = data.logo;
-                        document.getElementById('footer-logo').src = data.logo;
-                    }
-                    if (data.admin_text) {
-                        document.getElementById('admin-btn-text').textContent = data.admin_text;
-                        document.getElementById('admin-link-text').textContent = data.admin_text;
-                    }
-
-                    // Donate Header
-                    if (data.donate_main_heading) {
-                        document.getElementById('donate-main-heading').textContent = data.donate_main_heading;
-                    }
-                    if (data.donate_subheading) {
-                        document.getElementById('donate-subheading').textContent = data.donate_subheading;
-                    }
-
-                    // Why Donate Section
-                    if (data.why_donate_heading) {
-                        document.getElementById('why-donate-heading').textContent = data.why_donate_heading;
-                    }
-                    if (data.why_donate_text) {
-                        try {
-                            // Clean up the markdown content if needed
-                            let cleanContent = data.why_donate_text.replace(/<!--StartFragment-->|<!--EndFragment-->/g, '').trim();
-                            document.getElementById('why-donate-content').innerHTML = marked.parse(cleanContent);
-                        } catch (e) {
-                            console.error('Error parsing markdown:', e);
-                            document.getElementById('why-donate-content').innerHTML = data.why_donate_text;
-                        }
-                    }
-
-                    // Donation Methods
-                    if (data.donation_methods_heading) {
-                        document.getElementById('donation-methods-heading').textContent = data.donation_methods_heading;
-                    }
-                    if (data.payment_methods && Array.isArray(data.payment_methods)) {
-                        const paymentMethodsContainer = document.getElementById('payment-methods-container');
-                        paymentMethodsContainer.innerHTML = '';
-                        
-                        data.payment_methods.forEach(method => {
-                            const methodHTML = `
-                                <div class="payment-method">
-                                    <i class="${method.icon_class || 'fas fa-money-bill-wave'}"></i>
-                                    <h3>${method.title || 'Donation Method'}</h3>
-                                    ${method.details.map(detail => `<p>${detail.detail || ''}</p>`).join('')}
-                                </div>
-                            `;
-                            paymentMethodsContainer.innerHTML += methodHTML;
-                        });
-                    }
-
-                    // Parallax Section
-                    if (data.parallax_image) {
-                        document.getElementById('donate-parallax-image').style.backgroundImage = `url('${data.parallax_image}')`;
-                    }
-                    if (data.parallax_heading) {
-                        document.getElementById('parallax-heading').textContent = data.parallax_heading;
-                    }
-                    if (data.parallax_text) {
-                        document.getElementById('parallax-text').textContent = data.parallax_text;
-                    }
-
-                    // Footer Section
-                    if (data.footer_tagline) {
-                        document.getElementById('footer-tagline').textContent = data.footer_tagline;
-                    }
-
-                    // Social Links
-                    if (data.social_links && Array.isArray(data.social_links)) {
-                        const socialContainer = document.getElementById('social-icons-container');
-                        socialContainer.innerHTML = '';
-                        
-                        data.social_links.forEach(link => {
-                            const iconClass = getSocialIconClass(link.platform);
-                            if (iconClass) {
-                                const socialHTML = `
-                                    <a href="${link.url}" target="_blank" class="social-icon"><i class="${iconClass}"></i></a>
-                                `;
-                                socialContainer.innerHTML += socialHTML;
-                            }
-                        });
-                    }
-
-                    // Footer Links
-                    if (data.footer_links && Array.isArray(data.footer_links)) {
-                        const footerLinksContainer = document.getElementById('footer-links-container');
-                        footerLinksContainer.innerHTML = '';
-                        
-                        data.footer_links.forEach(link => {
-                            const linkHTML = `
-                                <li><a href="${link.url}" class="footer-link">${link.text}</a></li>
-                            `;
-                            footerLinksContainer.innerHTML += linkHTML;
-                        });
-                    }
-
-                    if (data.contact_heading) {
-                        document.getElementById('contact-heading').textContent = data.contact_heading;
-                    }
-                    if (data.email) {
-                        document.getElementById('footer-email').textContent = `Email: ${data.email}`;
-                    }
-                    if (data.phone1) {
-                        document.getElementById('footer-phone1').textContent = `Phone: ${data.phone1}`;
-                    }
-                    if (data.phone2) {
-                        document.getElementById('footer-phone2').textContent = `Phone: ${data.phone2}`;
-                    }
-                    if (data.address) {
-                        document.getElementById('footer-address').textContent = `Address: ${data.address}`;
-                    }
-
-                    if (data.copyright_text) {
-                        document.getElementById('copyright-text').innerHTML = data.copyright_text;
-                    }
-                    if (data.designer_text) {
-                        document.getElementById('designer-credit').textContent = data.designer_text;
-                    }
-                    if (data.designer_link) {
-                        document.getElementById('designer-link').href = data.designer_link;
-                    }
-                    if (data.designer_name) {
-                        document.getElementById('designer-link').textContent = data.designer_name;
-                    }
+                    console.log('Successfully loaded JSON data:', data);
+                    updateContent(data);
                 })
                 .catch(error => {
                     console.error('Error loading donate content:', error);
                     loadFallbackContent();
                 });
+        }
 
-            function getSocialIconClass(platform) {
-                const platformLower = platform.toLowerCase();
-                if (platformLower.includes('facebook')) return 'fab fa-facebook-f';
-                if (platformLower.includes('twitter')) return 'fab fa-twitter';
-                if (platformLower.includes('instagram')) return 'fab fa-instagram';
-                if (platformLower.includes('youtube')) return 'fab fa-youtube';
-                if (platformLower.includes('linkedin')) return 'fab fa-linkedin';
-                if (platformLower.includes('tiktok')) return 'fab fa-tiktok';
-                return 'fas fa-share-alt'; // default icon
-            }
+        // Update content with JSON data
+        function updateContent(data) {
+            try {
+                // Site-wide content
+                if (data.title) {
+                    document.getElementById('site-title').textContent = data.title;
+                    document.title = data.title;
+                }
+                if (data.school_name) {
+                    document.getElementById('school-name').textContent = data.school_name;
+                    document.getElementById('footer-school-name').textContent = data.school_name;
+                }
+                if (data.logo) {
+                    document.getElementById('main-logo').src = data.logo;
+                    document.getElementById('footer-logo').src = data.logo;
+                }
+                if (data.admin_text) {
+                    document.getElementById('admin-btn-text').textContent = data.admin_text;
+                    document.getElementById('admin-link-text').textContent = data.admin_text;
+                }
 
-            function loadFallbackContent() {
-                console.log('Loading fallback content');
-                // Fallback content for donate page
-                document.getElementById('donate-main-heading').textContent = 'Support Our Cause';
-                document.getElementById('donate-subheading').textContent = 'Your contribution helps us make a difference. Every donation counts!';
-                document.getElementById('why-donate-heading').textContent = 'Why Donate?';
-                document.getElementById('why-donate-content').innerHTML = `
-                    <p>Your donations help us continue our mission to provide quality education and support to underprivileged children. With your support, we can build a brighter future for the next generation by funding educational programs, school supplies, and infrastructure improvements that directly benefit our students.</p>
-                    <p>At Signal Preparatory School, we believe every child deserves access to quality education regardless of their background. Your generous contributions help us maintain this vision and expand our impact in the community.</p>
-                `;
-                document.getElementById('donation-methods-heading').textContent = 'Donation Methods';
-                
-                // Fallback payment methods
-                const paymentMethodsContainer = document.getElementById('payment-methods-container');
-                paymentMethodsContainer.innerHTML = `
-                    <div class="payment-method">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>MTN Mobile Money</h3>
-                        <p>+256 775413318</p>
-                        <p>Name: Signal Arts</p>
-                    </div>
-                    <div class="payment-method">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Airtel Money</h3>
-                        <p>+256754406992</p>
-                        <p>Name: Signal Arts</p>
-                    </div>
-                    <div class="payment-method">
-                        <i class="fas fa-university"></i>
-                        <h3>Bank Transfer</h3>
-                        <p>Centenary Bank</p>
-                        <p>Account: 3200054198</p>
-                        <p>Name: Signal Arts</p>
-                    </div>
-                `;
-                
-                document.getElementById('parallax-heading').textContent = 'Together We Can Make a Difference';
-                document.getElementById('parallax-text').textContent = 'Your support helps us create a better future for everyone. Join us in our mission to bring positive change through education. Every donation, no matter the size, contributes to transforming lives and building a brighter tomorrow for our students and community.';
+                // Donate Header
+                if (data.donate_main_heading) {
+                    document.getElementById('donate-main-heading').textContent = data.donate_main_heading;
+                }
+                if (data.donate_subheading) {
+                    document.getElementById('donate-subheading').textContent = data.donate_subheading;
+                }
+
+                // Why Donate Section
+                if (data.why_donate_heading) {
+                    document.getElementById('why-donate-heading').textContent = data.why_donate_heading;
+                }
+                if (data.why_donate_text) {
+                    try {
+                        let cleanContent = data.why_donate_text.replace(/<!--StartFragment-->|<!--EndFragment-->/g, '').trim();
+                        document.getElementById('why-donate-content').innerHTML = marked.parse(cleanContent);
+                    } catch (e) {
+                        console.error('Error parsing markdown:', e);
+                        document.getElementById('why-donate-content').innerHTML = data.why_donate_text;
+                    }
+                }
+
+                // Donation Methods
+                if (data.donation_methods_heading) {
+                    document.getElementById('donation-methods-heading').textContent = data.donation_methods_heading;
+                }
+                if (data.payment_methods && Array.isArray(data.payment_methods)) {
+                    const container = document.getElementById('payment-methods-container');
+                    container.innerHTML = '';
+                    
+                    data.payment_methods.forEach(method => {
+                        const methodDiv = document.createElement('div');
+                        methodDiv.className = 'payment-method';
+                        
+                        if (method.icon_class) {
+                            const icon = document.createElement('i');
+                            icon.className = method.icon_class;
+                            methodDiv.appendChild(icon);
+                        }
+                        
+                        if (method.title) {
+                            const title = document.createElement('h3');
+                            title.textContent = method.title;
+                            methodDiv.appendChild(title);
+                        }
+                        
+                        if (method.details && Array.isArray(method.details)) {
+                            method.details.forEach(detail => {
+                                if (detail.detail) {
+                                    const p = document.createElement('p');
+                                    p.textContent = detail.detail;
+                                    methodDiv.appendChild(p);
+                                }
+                            });
+                        }
+                        
+                        container.appendChild(methodDiv);
+                    });
+                }
+
+                // Parallax Section
+                if (data.parallax_image) {
+                    document.getElementById('donate-parallax-image').style.backgroundImage = `url('${data.parallax_image}')`;
+                }
+                if (data.parallax_heading) {
+                    document.getElementById('parallax-heading').textContent = data.parallax_heading;
+                }
+                if (data.parallax_text) {
+                    document.getElementById('parallax-text').textContent = data.parallax_text;
+                }
+
+                // Footer Section
+                if (data.footer_tagline) {
+                    document.getElementById('footer-tagline').textContent = data.footer_tagline;
+                }
+
+                // Social Links
+                if (data.social_links && Array.isArray(data.social_links)) {
+                    const container = document.getElementById('social-icons-container');
+                    container.innerHTML = '';
+                    
+                    data.social_links.forEach(link => {
+                        if (link.url) {
+                            const a = document.createElement('a');
+                            a.href = link.url;
+                            a.target = '_blank';
+                            a.className = 'social-icon';
+                            
+                            const icon = document.createElement('i');
+                            icon.className = getSocialIconClass(link.platform);
+                            a.appendChild(icon);
+                            
+                            container.appendChild(a);
+                        }
+                    });
+                }
+
+                // Footer Links
+                if (data.footer_links && Array.isArray(data.footer_links)) {
+                    const container = document.getElementById('footer-links-container');
+                    container.innerHTML = '';
+                    
+                    data.footer_links.forEach(link => {
+                        if (link.url && link.text) {
+                            const li = document.createElement('li');
+                            const a = document.createElement('a');
+                            a.href = link.url;
+                            a.className = 'footer-link';
+                            a.textContent = link.text;
+                            li.appendChild(a);
+                            container.appendChild(li);
+                        }
+                    });
+                }
+
+                // Contact Info
+                if (data.contact_heading) {
+                    document.getElementById('contact-heading').textContent = data.contact_heading;
+                }
+                if (data.email) {
+                    document.getElementById('footer-email').textContent = `Email: ${data.email}`;
+                }
+                if (data.phone1) {
+                    document.getElementById('footer-phone1').textContent = `Phone: ${data.phone1}`;
+                }
+                if (data.phone2) {
+                    document.getElementById('footer-phone2').textContent = `Phone: ${data.phone2}`;
+                }
+                if (data.address) {
+                    document.getElementById('footer-address').textContent = `Address: ${data.address}`;
+                }
+
+                // Footer Bottom
+                if (data.copyright_text) {
+                    document.getElementById('copyright-text').innerHTML = data.copyright_text;
+                }
+                if (data.designer_text) {
+                    document.getElementById('designer-credit').textContent = data.designer_text;
+                }
+                if (data.designer_link) {
+                    document.getElementById('designer-link').href = data.designer_link;
+                }
+                if (data.designer_name) {
+                    document.getElementById('designer-link').textContent = data.designer_name;
+                }
+
+            } catch (error) {
+                console.error('Error updating content:', error);
+                loadFallbackContent();
             }
+        }
+
+        function getSocialIconClass(platform) {
+            if (!platform) return 'fas fa-share-alt';
+            const platformLower = platform.toLowerCase();
+            if (platformLower.includes('facebook')) return 'fab fa-facebook-f';
+            if (platformLower.includes('twitter')) return 'fab fa-twitter';
+            if (platformLower.includes('instagram')) return 'fab fa-instagram';
+            if (platformLower.includes('youtube')) return 'fab fa-youtube';
+            if (platformLower.includes('linkedin')) return 'fab fa-linkedin';
+            if (platformLower.includes('tiktok')) return 'fab fa-tiktok';
+            return 'fas fa-share-alt';
+        }
+
+        function loadFallbackContent() {
+            console.log('Loading fallback content');
+            
+            // Main content
+            document.getElementById('donate-main-heading').textContent = 'Support Our Cause';
+            document.getElementById('donate-subheading').textContent = 'Your contribution helps us make a difference. Every donation counts!';
+            document.getElementById('why-donate-heading').textContent = 'Why Donate?';
+            document.getElementById('why-donate-content').innerHTML = `
+                <p>Your donations help us continue our mission to provide quality education and support to underprivileged children. With your support, we can build a brighter future for the next generation by funding educational programs, school supplies, and infrastructure improvements that directly benefit our students.</p>
+                <p>At Signal Preparatory School, we believe every child deserves access to quality education regardless of their background. Your generous contributions help us maintain this vision and expand our impact in the community.</p>
+            `;
+            document.getElementById('donation-methods-heading').textContent = 'Donation Methods';
+            
+            // Fallback payment methods
+            const paymentMethodsContainer = document.getElementById('payment-methods-container');
+            paymentMethodsContainer.innerHTML = `
+                <div class="payment-method">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>MTN Mobile Money</h3>
+                    <p>+256 775413318</p>
+                    <p>Name: Signal Arts</p>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Airtel Money</h3>
+                    <p>+256754406992</p>
+                    <p>Name: Signal Arts</p>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-university"></i>
+                    <h3>Bank Transfer</h3>
+                    <p>Centenary Bank</p>
+                    <p>Account: 3200054198</p>
+                    <p>Name: Signal Arts</p>
+                </div>
+            `;
+            
+            document.getElementById('parallax-heading').textContent = 'Together We Can Make a Difference';
+            document.getElementById('parallax-text').textContent = 'Your support helps us create a better future for everyone. Join us in our mission to bring positive change through education. Every donation, no matter the size, contributes to transforming lives and building a brighter tomorrow for our students and community.';
+            
+            // Footer fallback
+            document.getElementById('footer-school-name').textContent = 'SIGNAL PREPARATORY SCHOOL';
+            document.getElementById('footer-tagline').textContent = 'Mentoring a coexisting generation with creativity, innovation, and environmental respect.';
+            document.getElementById('footer-email').textContent = 'Email: signalarts1@gmail.com';
+            document.getElementById('footer-phone1').textContent = 'Phone: +256 775413318';
+            document.getElementById('footer-phone2').textContent = 'Phone: +256754406992';
+            document.getElementById('footer-address').textContent = 'Address: Bwera, Kasese, Uganda';
+            document.getElementById('copyright-text').innerHTML = '&copy; 2025 Signal Preparatory School. All Rights Reserved.';
+            document.getElementById('designer-credit').textContent = 'Designed by Mumbere Darius';
+            document.getElementById('designer-link').href = 'https://dariusmumbere.github.io/personal';
+            document.getElementById('designer-link').textContent = 'Mumbere Darius';
+            document.getElementById('admin-link-text').textContent = 'Admin Login';
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Skip if in admin interface
+            if (window.location.pathname.includes('/admin/')) return;
 
             // Modern toggle menu with animation
             const hamburger = document.getElementById('hamburger');
@@ -411,6 +510,9 @@
                     closeModal();
                 }
             });
+
+            // Load the content
+            loadContent();
         });
     </script>
 </body>
