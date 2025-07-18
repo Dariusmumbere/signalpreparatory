@@ -48,6 +48,10 @@
     },
     {
       "url": "/images/uploads/circle.jpeg"
+    },
+    {
+      "url": "/images/uploads/juice.jpg",
+      "alt": "juice"
     }
   ],
   "about_hero_title": "About Us",
