@@ -3,6 +3,29 @@
   "phone1": "+256 775413318",
   "contact_heading": "Contact Us",
   "phone2": "+256754406992",
+  "footer_links_projects": [
+    {
+      "text": "Home",
+      "url": "index.html"
+    },
+    {
+      "text": "About",
+      "url": "about.html"
+    },
+    {
+      "text": "Contact Us",
+      "url": "address.html"
+    },
+    {
+      "text": "Completed projects",
+      "url": "projects.html"
+    },
+    {
+      "text": "Donate",
+      "url": "donate.html"
+    }
+  ],
+  "address_projects": "Bwera, Kasese, Uganda",
   "copyright_text": "© 2025 Signal Preparatory School. All Rights Reserved.",
   "social_links": [
     {
@@ -24,11 +47,36 @@
   ],
   "projects_subheading": "Explore our impactful projects aimed at fostering growth, skills, and community connections.",
   "footer_tagline": "SIGNAL PREPARATORY\nSCHOOL",
+  "designer_link_projects": "https://dariusmumbere.github.io/personal",
   "designer_link": "https://dariusmumbere.github.io/personal",
+  "footer_tagline_projects": "Signal Preparatory School",
   "parallax_title": "Our Projects",
+  "social_links_projects": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/signal.arts.5"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@signalarts85"
+    },
+    {
+      "platform": "https://www.tiktok.com/@henry.signal.arts",
+      "url": "tiktok"
+    },
+    {
+      "url": "https://www.instagram.com/signalarts1/profilecard/?igsh=MXJ4MjV2ZjBrcTBjeQ==",
+      "platform": "instagram"
+    }
+  ],
   "footer_school_name": "Signal Preparatory School",
+  "copyright_text_projects": "&copy; 2025 Signal Preparatory School. All Rights Reserved.",
   "address": "Bwera, Kasese, Uganda",
+  "phone2_projects": "+256754406992",
+  "contact_heading_projects": "Contact Us",
   "school_name": "SIGNAL PREPARATORY SCHOOL",
+  "phone1_projects": "+256 775413318",
+  "designer_text_projects": "Designed by Mumbere Darius",
   "title": "Projects-Signal Preparatory",
   "projects": [
     {
@@ -48,8 +96,10 @@
       "image": "/images/uploads/mdd.webp"
     }
   ],
+  "designer_name_projects": "Mumbere Darius",
   "email": "signalarts1@gmail.com",
   "admin_text": "Admin Login",
+  "email_projects": "signalarts1@gmail.com",
   "projects_heading": "Our Projects",
   "designer_name": "Mumbere Darius"
 }
