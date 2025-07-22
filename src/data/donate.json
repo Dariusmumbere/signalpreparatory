@@ -4,7 +4,7 @@
   "contact_heading": "Contact Us",
   "phone2": "+256754406992",
   "copyright_text": "&copy; 2025 Signal Preparatory School. All Rights Reserved.",
-  "why_donate_text": "<!--StartFragment-->\n\nYour donations help us continue our mission to provide quality education and support to underprivileged children. With your support, we can build a brighter future for the next generation by funding educational programs, school supplies, and infrastructure improvements that directly benefit our students.\n\nAt Signal Preparatory School, we believe every child deserves access to quality education regardless of their background. Your generous contributions help us maintain this vision and expand our impact in the community.\n\n<!--EndFragment-->",
+  "why_donate_text": "<!--StartFragment-->\n\nYour donations help us continue our mission to provide quality education and support the underprivileged children. With your support, we can build a brighter future for the next generation by funding educational programs, school supplies, and infrastructure improvements that directly benefit our students.\n\nAt Signal Preparatory School, we believe every child deserves access to quality education regardless of their background.\n\n<!--EndFragment-->",
   "social_links": [
     {
       "platform": "facebook",
@@ -32,7 +32,7 @@
   "footer_logo": "/images/uploads/logo-1-.png",
   "donate_subheading": "Your contribution helps us make a difference. Every donation counts!",
   "footer_school_name": "SIGNAL PREPARATORY SCHOOL",
-  "parallax_image": "/images/uploads/donate.jpg",
+  "parallax_image": "/images/uploads/whatsapp-image-2025-06-04-at-10.58.28-1-.jpeg",
   "address": "Bwera, Kasese, Uganda",
   "footer_links": [
     {
@@ -63,7 +63,7 @@
           "detail": "+256 775413318"
         },
         {
-          "detail": "Name signal arts"
+          "detail": "Name Bwambale Henry"
         }
       ],
       "icon_class": "fa fa-money"
@@ -73,7 +73,7 @@
       "icon_class": "fa fa-money",
       "details": [
         {
-          "detail": "Name: Signal arts"
+          "detail": "Name: Bwambale Henry"
         },
         {
           "detail": "+256754406992"
