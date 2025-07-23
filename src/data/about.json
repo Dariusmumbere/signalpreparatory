@@ -52,6 +52,21 @@
     {
       "url": "/images/uploads/juice.jpg",
       "alt": "juice"
+    },
+    {
+      "url": "/images/uploads/whatsapp-image-2025-01-12-at-23.37.14.jpeg"
+    },
+    {
+      "url": "/images/uploads/whatsapp-image-2024-12-21-at-19.38.23.jpeg"
+    },
+    {
+      "url": "/images/uploads/whatsapp-image-2025-04-22-at-14.34.25.jpeg"
+    },
+    {
+      "url": "/images/uploads/whatsapp-image-2025-04-22-at-17.00.33-1-.jpeg"
+    },
+    {
+      "url": "/images/uploads/whatsapp-image-2024-12-21-at-19.38.26-1-.jpeg"
     }
   ],
   "about_hero_title": "About Us",
@@ -145,7 +160,7 @@
       "image": "/images/uploads/bwambale.webp"
     },
     {
-      "name": "Enter Name",
+      "name": "Muhindo Grace",
       "position": "Chairperson Board",
       "image": "/images/uploads/dep.jpeg"
     },
@@ -156,17 +171,17 @@
     },
     {
       "position": "Academic affairs",
-      "name": "Enter name",
+      "name": "Biira Joyce",
       "image": "/images/uploads/affairs.jpeg"
     },
     {
       "position": "Assistant Team leader",
-      "name": "Enter name",
+      "name": "Muhindo Loice",
       "image": "/images/uploads/ass.jpeg"
     },
     {
       "position": "Daycare Team leader",
-      "name": "Enter name",
+      "name": "Kaugho Husiina",
       "image": "/images/uploads/daycare.jpeg"
     },
     {
@@ -176,7 +191,7 @@
     },
     {
       "position": "Sports and entertainment master",
-      "name": "Enter name",
+      "name": "Brenda",
       "image": "/images/uploads/whatsapp-image-2025-04-22-at-17.00.24.jpeg"
     }
   ],
